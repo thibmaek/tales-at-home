@@ -1,8 +1,6 @@
-![](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square")
+[![Greenkeeper badge](https://badges.greenkeeper.io/thibmaek/tales-at-home.svg?token=fdb06d781a40b3c90c8e9f4dad59bd29779690768c0fdadd9d246785a038c18c)](https://greenkeeper.io/) ![](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square")
 
 ## Table of Contents
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/thibmaek/tales-at-home.svg?token=fdb06d781a40b3c90c8e9f4dad59bd29779690768c0fdadd9d246785a038c18c)](https://greenkeeper.io/)
 1. [Management](#management)
 2. [Maintaining](#maintaining)
 3. [Testing](#testing)
