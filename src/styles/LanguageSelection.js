@@ -1,16 +1,14 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: `center`,
   },
   title: {
     textAlign: `center`,
+    color: `white`,
     fontSize: 24,
+    backgroundColor: `transparent`,
   },
 });
-
-
-
-export default styles;
