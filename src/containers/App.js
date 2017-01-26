@@ -1,14 +1,7 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 
-import styles from '../styles/App';
+import LanguageSelection from './LanguageSelection';
 
-export default () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>
-        Welcome to Talesathome!
-      </Text>
-    </View>
-  );
-};
+export default () => (
+  <LanguageSelection initialLang='en' />
+);
