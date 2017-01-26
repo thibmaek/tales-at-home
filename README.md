@@ -11,6 +11,7 @@
 * Use feature branches for merging new features and more extensive fixes into `develop`. Prefix feature branches with your initials (eg. `tm-homepage`)
   * Delete these once merged in, no dead branches pls 💀
 * Never merge in branches failing on CI.
+* Please signoff commits (preferably with a GPG signature, otherwise with `git commit -S`)
 
 ## Maintaining
 * Use gitmoji for each commit. Install gitmoji-cli and create a git hook inside the root project (`gitmoji -i`).
