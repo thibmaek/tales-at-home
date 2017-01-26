@@ -1,12 +1,12 @@
 import 'react-native';
 import React from 'react';
-import Index from '../index.ios.js';
-
-// Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <Index />
-  );
+import TalesAtHome from '../index.ios.js';
+
+describe(`Container: <TalesAtHome />`, () => {
+  it(`should render the container`, () => {
+    const tree = renderer.create(<TalesAtHome />).toJSON();
+    expect(tree).toMatchSnapshot(`TalesAtHome`);
+  });
 });
