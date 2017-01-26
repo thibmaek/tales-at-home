@@ -6,7 +6,10 @@
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"start:iphone": "react-native run-ios --simulator=\"iPhone SE\"",
 		"start:ipad": "react-native run-ios --simulator=\"iPad Retina\"",
-		"test": "jest --coverage"
+		"test": "jest",
+		"test:update": "npm t -- --updateSnapshot",
+		"test:coverage": "npm t -- --coverage",
+		"test:lint": "eslint src/*.js index.ios.js"
 	},
 	"dependencies": {
 		"react": "~15.4.0-rc.4",
@@ -22,6 +25,9 @@
 		"react-test-renderer": "~15.4.0-rc.4"
 	},
 	"jest": {
-		"preset": "react-native"
+		"preset": "react-native",
+		"notify": true,
+	 	"setupTestFrameworkScriptFile": "./__tests__/jestSetup.js",
+    "testPathIgnorePatterns": [ "jestSetup.js", "node_modules/" ]
 	}
 }

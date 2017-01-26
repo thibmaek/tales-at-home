@@ -2,14 +2,15 @@ sudo: false
 language: node_js
 
 node_js:
-  - "4"
-  - "6"
   - "7"
 
 cache:
-  yarn: false
   directories:
     - "node_modules"
 
 script:
+  - npm run test:lint
   - npm t
+
+notifications:
+  slack: heteiland:g4vLefTvS5BFrGwjXHzaquwM
