@@ -5,12 +5,11 @@ node_js:
   - "7"
 
 cache:
-  yarn: false
   directories:
     - "node_modules"
 
 script:
-  - npm test:lint
+  - npm run test:lint
   - npm t
 
 notifications:
