@@ -13,9 +13,11 @@
 * Never merge in branches failing on CI.
 
 ## Maintaining
-* Use gitmoji for each commit. Install gitmoji-cli and create a git hook inside the root project (`gitmoji -i`). 
+* Use gitmoji for each commit. Install gitmoji-cli and create a git hook inside the root project (`gitmoji -i`).
 * PR reviews are required to be marked OK by everyone before merging. Only use admin merge when discussed with everyone.
 * Use issue & PR labels.
+  * Multiple words should be chained with a dash (eg. `wont-fix`)
+  * Use [GitScout](https://gitscout.com/) for issue tracking & project boards
 * Clean up unused deps. Preferably keep using the currently integrated Greenkeeper.
 * Tag release new master builds.
 
