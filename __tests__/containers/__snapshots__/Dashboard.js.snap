@@ -30,13 +30,39 @@ exports[`Dashboard 1`] = `
           "justifyContent": "space-around",
         }
       }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgba(74, 74, 74, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 16,
+            },
+            Object {
+              "flex": 1,
+              "fontSize": 20,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        DASHBOARD
+      </Text>
       <TextInput
         style={
-          Object {
-            "color": "rgba(220, 221, 225, 1)",
-            "flex": 1,
-            "fontSize": 14,
-          }
+          Array [
+            Object {
+              "color": "rgba(74, 74, 74, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 16,
+            },
+            Object {
+              "color": "rgba(220, 221, 225, 1)",
+              "flex": 3,
+            },
+          ]
         }
         value="zoeken…" />
     </View>
@@ -47,15 +73,11 @@ exports[`Dashboard 1`] = `
           "flex": 2,
           "flexDirection": "row",
           "justifyContent": "flex-end",
-          "marginRight": 40,
+          "marginRight": 20,
         }
       }>
       <Image
-        source={
-          Object {
-            "uri": "https://secure.gravatar.com/avatar/ee5f9d49d43486e5dffad318c1e6199b?s=100",
-          }
-        }
+        source={1}
         style={
           Object {
             "borderRadius": 2.5,
@@ -69,12 +91,20 @@ exports[`Dashboard 1`] = `
         allowFontScaling={true}
         ellipsizeMode="tail"
         style={
-          Object {
-            "color": "rgba(155, 155, 155, 1)",
-            "fontSize": 12,
-          }
+          Array [
+            Object {
+              "color": "rgba(74, 74, 74, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 16,
+            },
+            Object {
+              "color": "rgba(155, 155, 155, 1)",
+              "fontSize": 14,
+              "fontWeight": "bold",
+            },
+          ]
         }>
-        Thibault Maekelbergh
+        Celestine Verghaege
       </Text>
     </View>
   </View>
