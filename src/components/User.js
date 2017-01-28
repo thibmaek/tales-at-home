@@ -1,21 +1,23 @@
 import React, { PropTypes } from 'react';
 import { View, Image, Text, StyleSheet } from 'react-native';
 
+import globalStyle from '../styles/GlobalStyle.js';
+
 const User = ({ name, imageURI }) => {
   return (
     <View style={s.container}>
       <Image
-        source={{ uri: imageURI }}
+        source={imageURI}
         style={s.image}
       />
-      <Text style={s.text}>{name}</Text>
+      <Text style={[globalStyle, s.text]}>{name}</Text>
     </View>
   );
 };
 
 User.propTypes = {
   name: PropTypes.string.isRequired,
-  imageURI: PropTypes.string,
+  imageURI: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 const s = StyleSheet.create({
@@ -24,7 +26,7 @@ const s = StyleSheet.create({
     flex: 2,
     justifyContent: `flex-end`,
     alignItems: `center`,
-    marginRight: 40,
+    marginRight: 20,
   },
   image: {
     width: 35,
@@ -34,7 +36,8 @@ const s = StyleSheet.create({
   },
   text: {
     color: `rgba(155, 155, 155, 1)`,
-    fontSize: 12,
+    fontSize: 14,
+    fontWeight: `bold`,
   },
 });
 
