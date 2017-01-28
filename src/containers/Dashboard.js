@@ -3,7 +3,7 @@ import { View, StatusBar } from 'react-native';
 
 import NavigationBar from '../components/NavigationBar';
 
-import s from '../styles/Dashboard';
+import s from '../styles/containers/Dashboard';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
@@ -17,7 +17,7 @@ export default class Dashboard extends Component {
     return (
       <View style={s.container}>
         <StatusBar hidden={true} />
-        <NavigationBar />
+        <NavigationBar title='Dashboard' />
       </View>
     );
   }
