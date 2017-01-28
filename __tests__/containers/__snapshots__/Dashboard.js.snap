@@ -1,0 +1,82 @@
+exports[`Dashboard 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "flex-start",
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "height": 50,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "width": 2,
+        },
+        "shadowOpacity": 0.09,
+        "shadowRadius": 4,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "flex": 2,
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+        }
+      }>
+      <TextInput
+        style={
+          Object {
+            "color": "rgba(220, 221, 225, 1)",
+            "flex": 1,
+            "fontSize": 14,
+          }
+        }
+        value="zoeken…" />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 2,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "marginRight": 40,
+        }
+      }>
+      <Image
+        source={
+          Object {
+            "uri": "https://secure.gravatar.com/avatar/ee5f9d49d43486e5dffad318c1e6199b?s=100",
+          }
+        }
+        style={
+          Object {
+            "borderRadius": 2.5,
+            "height": 35,
+            "marginRight": 6,
+            "width": 35,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(155, 155, 155, 1)",
+            "fontSize": 12,
+          }
+        }>
+        Thibault Maekelbergh
+      </Text>
+    </View>
+  </View>
+</View>
+`;
