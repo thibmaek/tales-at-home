@@ -9,7 +9,7 @@
 		"test": "jest",
 		"test:update": "npm t -- --updateSnapshot",
 		"test:coverage": "npm t -- --coverage",
-		"test:lint": "eslint src/*.js index.ios.js"
+		"lint": "eslint src/*.js index.ios.js"
 	},
 	"dependencies": {
 		"react": "~15.4.0-rc.4",

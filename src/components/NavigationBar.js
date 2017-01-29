@@ -1,17 +1,22 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 
-import User from './User';
+import User from 'src/components/User';
 
-import globalStyle from '../styles/GlobalStyle.js';
-import mockedUser from '../assets/img/mockedUser.jpg';
+import globalStyle from 'src/assets/styles/GlobalStyle.js';
+import s from 'src/assets/styles/components/NavigationBar';
+import mockedUser from 'src/assets/img/mockedUser.jpg';
 
 const NavigationBar = ({ title }) => {
   return (
     <View style={s.navbar}>
       <View style={s.rightNav}>
         { title ? <Text style={[globalStyle, s.title]}>{title.toUpperCase()}</Text> : null }
-        <TextInput value='zoeken…' style={[globalStyle, s.input]} />
+        <TextInput
+          style={[globalStyle, s.input]}
+          placeholder='zoeken…'
+          onChangeText={text => console.log(text)}
+        />
       </View>
       <User style={s.user} name='Celestine Verghaege' imageURI={mockedUser} />
     </View>
@@ -20,34 +25,6 @@ const NavigationBar = ({ title }) => {
 
 NavigationBar.propTypes = {
   title: PropTypes.string,
-};
-
-const s = {
-  navbar: {
-    flexDirection: `row`,
-    height: 50,
-    paddingLeft: 20,
-    paddingRight: 20,
-    alignItems: `center`,
-    shadowColor: `black`,
-    shadowOffset: { width: 2 },
-    shadowOpacity: .09,
-    shadowRadius: 4,
-  },
-  rightNav: {
-    flexDirection: `row`,
-    justifyContent: `space-around`,
-    flex: 2,
-  },
-  title: {
-    flex: 1,
-    fontSize: 20,
-    fontWeight: `bold`,
-  },
-  input: {
-    flex: 3,
-    color: `rgba(220, 221, 225, 1)`,
-  },
 };
 
 export default NavigationBar;

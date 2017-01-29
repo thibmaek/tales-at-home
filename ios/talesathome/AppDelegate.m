@@ -18,12 +18,8 @@
 {
   NSURL *jsCodeLocation;
   
-  for (NSString* family in [UIFont familyNames]) {
-    NSLog(@"%@", family);
-    for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
-      NSLog(@" %@", name);
-    }
-  }
+  NSString* language = [[NSLocale preferredLanguages] objectAtIndex:0];
+  NSLog(@"Value of hello = %@", language);
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
 
