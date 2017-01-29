@@ -1,29 +1,26 @@
 import { StyleSheet } from 'react-native';
+import { white, lightGray, fontIsHeader, shadowColor } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   navbar: {
-    flexDirection: `row`,
+    flexDirection: `row`, alignItems: `center`,
     height: 50,
-    paddingLeft: 20,
-    paddingRight: 20,
-    alignItems: `center`,
-    shadowColor: `black`,
-    shadowOffset: { width: 2 },
-    shadowOpacity: .09,
-    shadowRadius: 4,
+    paddingLeft: 20, paddingRight: 20,
+    zIndex: 2,
+    backgroundColor: white,
+    shadowColor, shadowRadius: 4, shadowOffset: { width: 2 }, shadowOpacity: .09,
   },
   rightNav: {
     flexDirection: `row`,
-    justifyContent: `space-around`,
     flex: 2,
+    justifyContent: `space-around`,
   },
   title: {
     flex: 1,
-    fontSize: 20,
-    fontWeight: `bold`,
+    ...fontIsHeader,
   },
   input: {
     flex: 3,
-    color: `rgba(220, 221, 225, 1)`,
+    color: lightGray,
   },
 });
