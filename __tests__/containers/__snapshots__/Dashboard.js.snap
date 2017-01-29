@@ -896,7 +896,12 @@ exports[`Dashboard 1`] = `
             "marginTop": 55,
           }
         }>
-        <View>
+        <View
+          style={
+            Object {
+              "paddingLeft": 30,
+            }
+          }>
           <Image
             source={
               Object {
@@ -907,28 +912,55 @@ exports[`Dashboard 1`] = `
               Object {
                 "borderRadius": 55,
                 "height": 110,
+                "marginBottom": 13,
                 "width": 110,
               }
             } />
           <Text
             accessible={true}
             allowFontScaling={true}
-            ellipsizeMode="tail">
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail">
-              Samar Osman
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail">
-              Nederlands
-            </Text>
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Samar Osman
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Nederlands
           </Text>
         </View>
-        <View>
+        <View
+          style={
+            Object {
+              "paddingLeft": 30,
+            }
+          }>
           <View
             style={
               Object {
@@ -936,6 +968,7 @@ exports[`Dashboard 1`] = `
                 "backgroundColor": "rgba(255, 218, 33, .4)",
                 "borderRadius": 55,
                 "height": 110,
+                "marginBottom": 13,
                 "width": 110,
               }
             }>
@@ -949,6 +982,7 @@ exports[`Dashboard 1`] = `
                   "fontFamily": "Bariol",
                   "fontSize": 30,
                   "fontWeight": "bold",
+                  "marginTop": 40,
                   "textAlign": "center",
                 }
               }>
@@ -959,22 +993,48 @@ exports[`Dashboard 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            ellipsizeMode="tail">
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail">
-              Ahmad Osman
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail">
-              Nederlands
-            </Text>
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Ahmad Osman
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Nederlands
           </Text>
         </View>
-        <View>
+        <View
+          style={
+            Object {
+              "paddingLeft": 30,
+            }
+          }>
           <View
             style={
               Object {
@@ -982,6 +1042,7 @@ exports[`Dashboard 1`] = `
                 "backgroundColor": "rgba(255, 218, 33, .4)",
                 "borderRadius": 55,
                 "height": 110,
+                "marginBottom": 13,
                 "width": 110,
               }
             }>
@@ -995,6 +1056,7 @@ exports[`Dashboard 1`] = `
                   "fontFamily": "Bariol",
                   "fontSize": 30,
                   "fontWeight": "bold",
+                  "marginTop": 40,
                   "textAlign": "center",
                 }
               }>
@@ -1005,25 +1067,308 @@ exports[`Dashboard 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            ellipsizeMode="tail">
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail">
-              Hamza Alkobi
-            </Text>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail">
-              Soedanees
-            </Text>
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Hamza Alkobi
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Soedanees
           </Text>
         </View>
       </View>
       <ScrollView
         alwaysBounceHorizontal={true}
-        horizontal={true} />
+        horizontal={true}
+        style={
+          Object {
+            "marginBottom": 50,
+            "marginTop": 43,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 1)",
+              "borderRadius": 5,
+              "marginLeft": 30,
+              "padding": 30,
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Sessie 5 succesvol afgewerkt
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(155, 155, 155, 1)",
+                },
+              ]
+            }>
+            21/01/2017
+          </Text>
+          <ScrollView>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              selectable={true}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(76, 76, 76, 1)",
+                    "width": 205,
+                  },
+                ]
+              }>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada
+            </Text>
+          </ScrollView>
+          <Button
+            style={Object {}}
+            textStyle={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Bewerken
+          </Button>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 1)",
+              "borderRadius": 5,
+              "marginLeft": 30,
+              "padding": 30,
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Sessie 5 succesvol afgewerkt
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(155, 155, 155, 1)",
+                },
+              ]
+            }>
+            21/01/2017
+          </Text>
+          <ScrollView>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              selectable={true}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(76, 76, 76, 1)",
+                    "width": 205,
+                  },
+                ]
+              }>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. 
+            </Text>
+          </ScrollView>
+          <Button
+            style={Object {}}
+            textStyle={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Bewerken
+          </Button>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 1)",
+              "borderRadius": 5,
+              "marginLeft": 30,
+              "padding": 30,
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Sessie 5 succesvol afgewerkt
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(155, 155, 155, 1)",
+                },
+              ]
+            }>
+            21/01/2017
+          </Text>
+          <ScrollView>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              selectable={true}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(76, 76, 76, 1)",
+                    "width": 205,
+                  },
+                ]
+              }>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada
+            </Text>
+          </ScrollView>
+          <Button
+            style={Object {}}
+            textStyle={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Bewerken
+          </Button>
+        </View>
+      </ScrollView>
     </View>
   </View>
 </View>
