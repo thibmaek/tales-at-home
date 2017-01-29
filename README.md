@@ -22,6 +22,21 @@
 * Please sign-off commits (preferably with a GPG signature, otherwise with `git commit -S`)
 * Preferably use Nuclide as an IDE for React Native. Xcode works too, but Nuclide has first-class support for launching a packaging service and debugging inside Atom.
 
+## React
+* Write a component with props on 1 line if:
+	* …the props are within 100 chars line-length
+	* …callbacks are lambdas/immediate returns
+* For each new component but the component itself in src/containers or src/components and its style in src/assets/styles/containers or src/assets/styles/components. No inline styles
+* Import style objects/StyleSheets as `s`:
+`import s from 'src/assets/styles/components/Navigation'`
+* Only absolute imports
+* For text use the provided globalStyle:
+```
+<Text style={[globalStyle, s.yourStyle]}></Text>
+```
+* Use ternary expressions for your conditions as much as possible
+* Use lambda's as much as possible.
+
 ## Maintaining
 * Use gitmoji for each commit. Install gitmoji-cli and create a git hook inside the root project (`gitmoji -i`).
 * PR reviews are required to be marked OK by everyone before merging. Only use admin merge when discussed with everyone.
@@ -33,5 +48,7 @@
 
 ## Testing
 * Run jest with coverage. `npm t` does this automatically.
+	* Update your screenshots if needed with `npm run test:update`
+	* Mock third party modules
 * Use flow where suited. Don't check 3rd party stuff but focus on pure functions etc.
 * When a PR fails due to a regression, check the Travis logs, find the issue and discuss it in the PR.
