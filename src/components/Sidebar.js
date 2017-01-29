@@ -14,10 +14,6 @@ export default class Sidebar extends Component {
     this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
   }
 
-  handleCreateFamily(e) {
-    console.log(e);
-  }
-
   render() {
     return (
       <View style={sidebar}>
@@ -25,7 +21,7 @@ export default class Sidebar extends Component {
           dataSource={this.ds.cloneWithRows(this.props.families)}
           renderRow={family => <FamilyItem key={family.key} {...family} />}
         />
-        <Button onPress={this.handleCreateFamily} style={button.bg} textStyle={[globalStyle, button.text]}>
+        <Button style={button.bg} textStyle={[globalStyle, button.text]}>
           nieuw gezin aanmaken
         </Button>
       </View>
