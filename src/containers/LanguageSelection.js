@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Picker, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import s from '../styles/containers/LanguageSelection';
+import s from 'src/assets/styles/containers/LanguageSelection';
 
 export default class App extends Component {
   constructor(props, context) {
