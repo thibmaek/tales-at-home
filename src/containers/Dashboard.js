@@ -3,37 +3,10 @@ import { View, StatusBar } from 'react-native';
 
 import NavigationBar from 'src/components/NavigationBar';
 import Sidebar from 'src/components/Sidebar';
+import Results from 'src/containers/Results';
 
 import s from 'src/assets/styles/containers/Dashboard';
-import mockedUser from 'src/assets/img/mockedUser.jpg';
-
-const families = [
-  {
-    key: 1,
-    name: `Osman`,
-    avatar: mockedUser,
-  },
-  {
-    key: 2,
-    name: `Osman`,
-    avatar: mockedUser,
-  },
-  {
-    key: 3,
-    name: `Osman`,
-    avatar: mockedUser,
-  },
-  {
-    key: 4,
-    name: `Osman`,
-    avatar: mockedUser,
-  },
-  {
-    key: 5,
-    name: `Osman`,
-    avatar: mockedUser,
-  },
-];
+import { families, familyMembers } from 'src/assets/mockedData';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
@@ -50,6 +23,7 @@ export default class Dashboard extends Component {
         <NavigationBar title='Dashboard' />
         <View style={s.view}>
           <Sidebar families={families} />
+          <Results familyMembers={familyMembers} />
         </View>
       </View>
     );

@@ -2,6 +2,7 @@ exports[`Dashboard 1`] = `
 <View
   style={
     Object {
+      "backgroundColor": "rgba(248, 248, 248, 1)",
       "flex": 1,
       "flexDirection": "column",
       "justifyContent": "flex-start",
@@ -11,16 +12,18 @@ exports[`Dashboard 1`] = `
     style={
       Object {
         "alignItems": "center",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
         "flexDirection": "row",
         "height": 50,
         "paddingLeft": 20,
         "paddingRight": 20,
-        "shadowColor": "black",
+        "shadowColor": "rgb(0, 0, 0)",
         "shadowOffset": Object {
           "width": 2,
         },
         "shadowOpacity": 0.09,
         "shadowRadius": 4,
+        "zIndex": 2,
       }
     }>
     <View
@@ -120,19 +123,20 @@ exports[`Dashboard 1`] = `
     <View
       style={
         Object {
-          "paddingRight": 100,
+          "backgroundColor": "rgba(255, 255, 255, 1)",
           "shadowColor": "rgb(188, 188, 188)",
           "shadowOffset": Object {
             "height": 5,
             "width": 2.5,
           },
           "shadowOpacity": 0.5,
+          "zIndex": 3,
         }
       }>
       <ScrollView
         dataSource={
           ListViewDataSource {
-            "items": 5,
+            "items": 13,
           }
         }
         initialListSize={10}
@@ -157,6 +161,7 @@ exports[`Dashboard 1`] = `
               "flexDirection": "row",
               "paddingBottom": 18,
               "paddingLeft": 30,
+              "paddingRight": 130,
               "paddingTop": 18,
             }
           }>
@@ -226,6 +231,7 @@ exports[`Dashboard 1`] = `
               "flexDirection": "row",
               "paddingBottom": 18,
               "paddingLeft": 30,
+              "paddingRight": 130,
               "paddingTop": 18,
             }
           }>
@@ -295,6 +301,7 @@ exports[`Dashboard 1`] = `
               "flexDirection": "row",
               "paddingBottom": 18,
               "paddingLeft": 30,
+              "paddingRight": 130,
               "paddingTop": 18,
             }
           }>
@@ -364,6 +371,7 @@ exports[`Dashboard 1`] = `
               "flexDirection": "row",
               "paddingBottom": 18,
               "paddingLeft": 30,
+              "paddingRight": 130,
               "paddingTop": 18,
             }
           }>
@@ -433,6 +441,357 @@ exports[`Dashboard 1`] = `
               "flexDirection": "row",
               "paddingBottom": 18,
               "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
               "paddingTop": 18,
             }
           }>
@@ -496,6 +855,175 @@ exports[`Dashboard 1`] = `
           </View>
         </View>
       </ScrollView>
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "rgba(0, 122, 255, 1)",
+            "borderColor": 0,
+            "borderRadius": 0,
+            "flexGrow": 1,
+            "marginBottom": 0,
+          }
+        }
+        textStyle={
+          Array [
+            Object {
+              "color": "rgba(74, 74, 74, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 16,
+            },
+            Object {
+              "color": "rgba(255, 255, 255, 1)",
+              "textAlign": "center",
+            },
+          ]
+        }>
+        nieuw gezin aanmaken
+      </Button>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginTop": 55,
+          }
+        }>
+        <View>
+          <Image
+            source={
+              Object {
+                "uri": "https://avatars1.githubusercontent.com/u/12066078?v=3",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 55,
+                "height": 110,
+                "width": 110,
+              }
+            } />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail">
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail">
+              Samar Osman
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail">
+              Nederlands
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(255, 218, 33, .4)",
+                "borderRadius": 55,
+                "height": 110,
+                "width": 110,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(255, 218, 33, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 30,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                }
+              }>
+              A
+              O
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail">
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail">
+              Ahmad Osman
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail">
+              Nederlands
+            </Text>
+          </Text>
+        </View>
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(255, 218, 33, .4)",
+                "borderRadius": 55,
+                "height": 110,
+                "width": 110,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(255, 218, 33, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 30,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                }
+              }>
+              H
+              A
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail">
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail">
+              Hamza Alkobi
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail">
+              Soedanees
+            </Text>
+          </Text>
+        </View>
+      </View>
+      <ScrollView
+        alwaysBounceHorizontal={true}
+        horizontal={true} />
     </View>
   </View>
 </View>

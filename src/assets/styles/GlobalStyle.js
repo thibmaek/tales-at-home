@@ -1,5 +1,6 @@
+import { defaultFontColor, defaultFontFamily, defaultFontSize } from 'src/assets/styles/vars';
+
 export default {
-  color: `rgba(74, 74, 74, 1)`,
-  fontFamily: `Bariol`,
-  fontSize: 16,
+  color: defaultFontColor,
+  fontFamily: defaultFontFamily, fontSize: defaultFontSize,
 };
