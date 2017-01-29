@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 
+import Card from 'src/components/Card';
+
 import getNameInitials from 'src/lib/getNameInitials';
 
+import globalStyle from 'src/assets/styles/GlobalStyle';
 import { s, familyMember } from 'src/assets/styles/containers/Results';
 
 export default class Results extends Component {
@@ -16,7 +19,7 @@ export default class Results extends Component {
       <View style={s.container}>
         <View style={s.familyMembers}>
           {this.props.familyMembers.map(member =>
-            <View key={member.key}>
+            <View style={familyMember.container} key={member.key}>
               {member.avatar
                 ? <Image style={familyMember.avatar} source={{ uri: member.avatar }} />
                 : <View style={familyMember.noAvatar}>
@@ -25,15 +28,13 @@ export default class Results extends Component {
                     </Text>
                   </View>
               }
-              <Text>
-                <Text>{member.name}</Text>
-                <Text>{member.lang}</Text>
-              </Text>
+              <Text style={[globalStyle, familyMember.name]}>{member.name}</Text>
+              <Text style={[globalStyle, familyMember.language]}>{member.lang}</Text>
             </View>
           )}
         </View>
-        <ScrollView horizontal={true} alwaysBounceHorizontal={true}>
-
+        <ScrollView style={s.notes} horizontal={true} alwaysBounceHorizontal={true}>
+          {this.props.notes.map(note => <Card key={note.key} action='Bewerken' {...note} />)}
         </ScrollView>
       </View>
     );
@@ -41,5 +42,6 @@ export default class Results extends Component {
 
   static propTypes = {
     familyMembers: PropTypes.array.isRequired,
+    notes: PropTypes.array,
   }
 }

@@ -6,14 +6,12 @@ import Sidebar from 'src/components/Sidebar';
 import Results from 'src/containers/Results';
 
 import s from 'src/assets/styles/containers/Dashboard';
-import { families, familyMembers } from 'src/assets/mockedData';
+import { families, familyMembers, notes } from 'src/assets/mockedData';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      family: undefined,
-    };
+    this.state = {};
   }
 
   render() {
@@ -23,7 +21,7 @@ export default class Dashboard extends Component {
         <NavigationBar title='Dashboard' />
         <View style={s.view}>
           <Sidebar families={families} />
-          <Results familyMembers={familyMembers} />
+          <Results familyMembers={familyMembers} notes={notes} />
         </View>
       </View>
     );
