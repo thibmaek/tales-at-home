@@ -3,6 +3,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"precommit": "npm run test:update",
+		"prepush": "npm t",
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"start:iphone": "react-native run-ios --simulator=\"iPhone SE\"",
 		"start:ipad": "react-native run-ios --simulator=\"iPad Retina\"",
@@ -21,13 +23,17 @@
 		"babel-preset-react-native": "1.9.1",
 		"eslint": "^3.14.0",
 		"eslint-config-devine": "^1.6.1",
+		"husky": "^0.13.1",
 		"jest": "18.1.0",
 		"react-test-renderer": "~15.4.0-rc.4"
 	},
 	"jest": {
 		"preset": "react-native",
 		"notify": true,
-	 	"setupTestFrameworkScriptFile": "./__tests__/jestSetup.js",
-    "testPathIgnorePatterns": [ "jestSetup.js", "node_modules/" ]
+		"setupTestFrameworkScriptFile": "./__tests__/jestSetup.js",
+		"testPathIgnorePatterns": [
+			"jestSetup.js",
+			"node_modules/"
+		]
 	}
 }
