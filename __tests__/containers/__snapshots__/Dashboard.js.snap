@@ -1,0 +1,1375 @@
+exports[`Dashboard 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(248, 248, 248, 1)",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+    }
+  }>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
+        "flexDirection": "row",
+        "height": 50,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "shadowColor": "rgb(0, 0, 0)",
+        "shadowOffset": Object {
+          "width": 2,
+        },
+        "shadowOpacity": 0.09,
+        "shadowRadius": 4,
+        "zIndex": 2,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "flex": 2,
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgba(74, 74, 74, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 16,
+            },
+            Object {
+              "flex": 1,
+              "fontSize": 20,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        DASHBOARD
+      </Text>
+      <TextInput
+        onChangeText={[Function]}
+        placeholder="zoeken…"
+        style={
+          Array [
+            Object {
+              "color": "rgba(74, 74, 74, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 16,
+            },
+            Object {
+              "color": "rgba(220, 221, 225, 1)",
+              "flex": 3,
+            },
+          ]
+        } />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 2,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "marginRight": 20,
+        }
+      }>
+      <Image
+        source={1}
+        style={
+          Object {
+            "borderRadius": 2.5,
+            "height": 35,
+            "marginRight": 6,
+            "width": 35,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "rgba(74, 74, 74, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 16,
+            },
+            Object {
+              "color": "rgba(155, 155, 155, 1)",
+              "fontSize": 14,
+              "fontWeight": "bold",
+            },
+          ]
+        }>
+        Celestine Verghaege
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(255, 255, 255, 1)",
+          "shadowColor": "rgb(188, 188, 188)",
+          "shadowOffset": Object {
+            "height": 5,
+            "width": 2.5,
+          },
+          "shadowOpacity": 0.5,
+          "zIndex": 3,
+        }
+      }>
+      <ScrollView
+        dataSource={
+          ListViewDataSource {
+            "items": 13,
+          }
+        }
+        initialListSize={10}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={1000}
+        onKeyboardDidHide={undefined}
+        onKeyboardDidShow={undefined}
+        onKeyboardWillHide={undefined}
+        onKeyboardWillShow={undefined}
+        onLayout={[Function]}
+        onScroll={[Function]}
+        pageSize={1}
+        removeClippedSubviews={true}
+        renderRow={[Function]}
+        scrollEventThrottle={50}
+        scrollRenderAheadDistance={1000}
+        stickyHeaderIndices={Array []}>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "row",
+              "paddingBottom": 18,
+              "paddingLeft": 30,
+              "paddingRight": 130,
+              "paddingTop": 18,
+            }
+          }>
+          <Image
+            source={1}
+            style={
+              Object {
+                "borderRadius": 2.5,
+                "flexGrow": 1,
+                "height": 47,
+                "width": 47,
+              }
+            } />
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "marginLeft": 20,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "flex": 1,
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                  },
+                ]
+              }>
+              Familie
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(188, 188, 188, 1)",
+                    "flex": 1,
+                  },
+                ]
+              }>
+              Osman
+            </Text>
+          </View>
+        </View>
+      </ScrollView>
+      <Button
+        onPress={[Function]}
+        style={
+          Object {
+            "backgroundColor": "rgba(0, 122, 255, 1)",
+            "borderColor": 0,
+            "borderRadius": 0,
+            "flexGrow": 1,
+            "marginBottom": 0,
+          }
+        }
+        textStyle={
+          Array [
+            Object {
+              "color": "rgba(74, 74, 74, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 16,
+            },
+            Object {
+              "color": "rgba(255, 255, 255, 1)",
+              "textAlign": "center",
+            },
+          ]
+        }>
+        nieuw gezin aanmaken
+      </Button>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "marginTop": 55,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "paddingLeft": 30,
+            }
+          }>
+          <Image
+            source={
+              Object {
+                "uri": "https://avatars1.githubusercontent.com/u/12066078?v=3",
+              }
+            }
+            style={
+              Object {
+                "borderRadius": 55,
+                "height": 110,
+                "marginBottom": 13,
+                "width": 110,
+              }
+            } />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Samar Osman
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Nederlands
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingLeft": 30,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(255, 218, 33, .4)",
+                "borderRadius": 55,
+                "height": 110,
+                "marginBottom": 13,
+                "width": 110,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(255, 218, 33, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 30,
+                  "fontWeight": "bold",
+                  "marginTop": 40,
+                  "textAlign": "center",
+                }
+              }>
+              A
+              O
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Ahmad Osman
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Nederlands
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "paddingLeft": 30,
+            }
+          }>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "rgba(255, 218, 33, .4)",
+                "borderRadius": 55,
+                "height": 110,
+                "marginBottom": 13,
+                "width": 110,
+              }
+            }>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "rgba(255, 218, 33, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 30,
+                  "fontWeight": "bold",
+                  "marginTop": 40,
+                  "textAlign": "center",
+                }
+              }>
+              H
+              A
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Hamza Alkobi
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "textAlign": "center",
+                },
+              ]
+            }>
+            Soedanees
+          </Text>
+        </View>
+      </View>
+      <ScrollView
+        alwaysBounceHorizontal={true}
+        horizontal={true}
+        style={
+          Object {
+            "marginBottom": 50,
+            "marginTop": 43,
+          }
+        }>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 1)",
+              "borderRadius": 5,
+              "marginLeft": 30,
+              "padding": 30,
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Sessie 5 succesvol afgewerkt
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(155, 155, 155, 1)",
+                },
+              ]
+            }>
+            21/01/2017
+          </Text>
+          <ScrollView>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              selectable={true}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(76, 76, 76, 1)",
+                    "width": 205,
+                  },
+                ]
+              }>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada
+            </Text>
+          </ScrollView>
+          <Button
+            style={Object {}}
+            textStyle={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Bewerken
+          </Button>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 1)",
+              "borderRadius": 5,
+              "marginLeft": 30,
+              "padding": 30,
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Sessie 5 succesvol afgewerkt
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(155, 155, 155, 1)",
+                },
+              ]
+            }>
+            21/01/2017
+          </Text>
+          <ScrollView>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              selectable={true}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(76, 76, 76, 1)",
+                    "width": 205,
+                  },
+                ]
+              }>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. 
+            </Text>
+          </ScrollView>
+          <Button
+            style={Object {}}
+            textStyle={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Bewerken
+          </Button>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 1)",
+              "borderRadius": 5,
+              "marginLeft": 30,
+              "padding": 30,
+            }
+          }>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Sessie 5 succesvol afgewerkt
+          </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "color": "rgba(155, 155, 155, 1)",
+                },
+              ]
+            }>
+            21/01/2017
+          </Text>
+          <ScrollView>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              selectable={true}
+              style={
+                Array [
+                  Object {
+                    "color": "rgba(74, 74, 74, 1)",
+                    "fontFamily": "Bariol",
+                    "fontSize": 16,
+                  },
+                  Object {
+                    "color": "rgba(76, 76, 76, 1)",
+                    "width": 205,
+                  },
+                ]
+              }>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc euismod luctus nunc eget viverra. Etiam arcu purus, tristique ut nisl nec, semper tempus eros. Etiam feugiat interdum blandit. Sed facilisis, augue vitae convallis tincidunt, elit magna scelerisque urna, sit amet sodales orci orci eu orci. Pellentesque habitant morbi tristique senectus et netus et malesuada
+            </Text>
+          </ScrollView>
+          <Button
+            style={Object {}}
+            textStyle={
+              Array [
+                Object {
+                  "color": "rgba(74, 74, 74, 1)",
+                  "fontFamily": "Bariol",
+                  "fontSize": 16,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }>
+            Bewerken
+          </Button>
+        </View>
+      </ScrollView>
+    </View>
+  </View>
+</View>
+`;

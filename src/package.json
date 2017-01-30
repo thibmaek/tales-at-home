@@ -1,0 +1,5 @@
+{
+  "name": "src",
+  "description": "We're using this for absolute imports from src/…",
+  "author": "Thibault Maekelbergh"
+}

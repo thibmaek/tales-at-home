@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LanguageSelection from './LanguageSelection';
+import Dashboard from 'src/containers/Dashboard';
 
 export default () => (
-  <LanguageSelection initialLang='en' />
+  <Dashboard />
 );

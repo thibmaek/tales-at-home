@@ -1,13 +1,11 @@
 // import 'react-native';
 // import React from 'react';
 // import renderer from 'react-test-renderer';
-//
-// import TalesAtHome from '../index.ios.js';
-//
-// describe(`Container: <TalesAtHome />`, () => {
+
+// describe(`Container: <App />`, () => {
 //   it(`should render the container`, () => {
-//     const tree = renderer.create(<TalesAtHome />).toJSON();
-//     expect(tree).toMatchSnapshot(`TalesAtHome`);
+//     const tree = renderer.create(<App />).toJSON();
+//     expect(tree).toMatchSnapshot(`App`);
 //   });
 // });
 
