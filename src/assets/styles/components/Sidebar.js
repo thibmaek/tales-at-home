@@ -11,11 +11,11 @@ export const sidebar = {
 
 export const button = StyleSheet.create({
   bg: {
-    flexGrow: 1,
+    // flexGrow: 1,
+    height: 50,
     marginBottom: 0,
     backgroundColor: accentBlue,
-    borderRadius: 0,
-    borderColor: 0,
+    borderRadius: 0, borderColor: 0,
   },
   text: {
     color: white,
