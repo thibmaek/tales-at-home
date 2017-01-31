@@ -1,5 +1,5 @@
  import { StyleSheet } from 'react-native';
- import { white, fontIsTitle, fontIsLabel } from 'src/assets/styles/vars';
+ import { white, accentBlue, fontIsTitle, fontIsLabel } from 'src/assets/styles/vars';
 
  export default StyleSheet.create({
    container: {
@@ -30,11 +30,16 @@
    input: {
      height: 30,
      color: white,
+     marginTop: 30,
    },
    button: {
      width: 280,
      backgroundColor: white,
      borderWidth: 0, borderRadius: 50,
+   },
+   buttonText: {
+     fontWeight: `bold`,
+     color: accentBlue,
    },
    anonLogin: {
      marginBottom: 50,
