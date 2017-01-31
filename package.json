@@ -25,6 +25,7 @@
 		"babel-preset-react-native": "1.9.1",
 		"eslint": "^3.14.0",
 		"eslint-config-devine": "^1.6.1",
+		"flow-bin": "^0.38.0",
 		"husky": "^0.13.1",
 		"jest": "18.1.0",
 		"react-test-renderer": "~15.4.0-rc.4"
