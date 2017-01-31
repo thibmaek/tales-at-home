@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { mediumGray, fontIsLabel } from 'src/assets/styles/vars';
+import { globalStyle, mediumGray, fontIsLabel } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
@@ -12,7 +12,8 @@ export default StyleSheet.create({
     borderRadius: 2.5,
   },
   text: {
-    color: mediumGray,
+    ...globalStyle,
     ...fontIsLabel,
+    color: mediumGray,
   },
 });

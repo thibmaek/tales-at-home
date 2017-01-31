@@ -46,7 +46,6 @@ export const families = [
   {
     key: 1,
     name: `Osman`,
-    avatar: mockedUser,
   },
   {
     key: 2,

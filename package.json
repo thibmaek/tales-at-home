@@ -5,13 +5,14 @@
 	"scripts": {
 		"precommit": "npm run test:update",
 		"prepush": "npm t",
-		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"start:packager": "node node_modules/react-native/local-cli/cli.js start",
 		"start:iphone": "react-native run-ios --simulator=\"iPhone SE\"",
-		"start:ipad": "react-native run-ios --simulator=\"iPad Retina\"",
+		"start:ipad": "react-native run-ios --simulator=\"iPad Air\"",
 		"test": "jest",
 		"test:update": "npm t -- --updateSnapshot",
 		"test:coverage": "npm t -- --coverage",
-		"lint": "eslint src/*.js index.ios.js"
+		"lint": "eslint src/*.js index.ios.js",
+		"list:simulators": "xcrun simctl list devices"
 	},
 	"dependencies": {
 		"apsl-react-native-button": "^3.0.2",
@@ -23,8 +24,9 @@
 	"devDependencies": {
 		"babel-jest": "18.0.0",
 		"babel-preset-react-native": "1.9.1",
-		"eslint": "^3.14.0",
+		"eslint": "^3.14.1",
 		"eslint-config-devine": "^1.6.1",
+		"flow-bin": "^0.38.0",
 		"husky": "^0.13.1",
 		"jest": "18.1.0",
 		"react-test-renderer": "~15.4.0-rc.4"
