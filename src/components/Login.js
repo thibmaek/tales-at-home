@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
-import { accentBlue } from 'src/assets/styles/vars';
+import { accentBlue, white } from 'src/assets/styles/vars';
 import LinearGradient from 'react-native-linear-gradient';
 
 import Button from 'apsl-react-native-button';
@@ -8,29 +8,25 @@ import Button from 'apsl-react-native-button';
 import globalStyle from 'src/assets/styles/GlobalStyle.js';
 import s from 'src/assets/styles/components/Login';
 
-const Login = ({ title, action }) => {
+const Login = () => {
   return (
     <LinearGradient colors={[`#008EFF`, `#00C8FF`]}  style={s.container}>
     <View style={s.loginContainer}>
       <View style={s.loginTopContainer}>
-          { title ? <Text style={[globalStyle, s.title]}>{title}</Text> : null }
+          <Text style={[globalStyle, s.title]}>Aanmelden</Text>
           <View style={s.textInput}>
             <TextInput
               style={[globalStyle, s.input]}
               placeholder='Wat is je e-mail adres?'
-              placeholderTextColor='white'
-              onChangeText={text => console.log(text)}
+              placeholderTextColor={white}
             />
           </View>
           <View style={s.buttonContainer}>
-            {action ?
-              <Button style={s.button} textStyle={[globalStyle, { fontWeight: `bold`, color: accentBlue }]}>{action}</Button>
-              : null
-            }
+              <Button style={s.button} textStyle={[globalStyle, { fontWeight: `bold`, color: accentBlue }]}>Doorgaan</Button>
           </View>
       </View>
-      <View style={s.annonLogin}>
-        <Text style={[globalStyle, s.underlineLink]}>{`Anonieme Login`}</Text>
+      <View style={s.anonLogin}>
+        <Text style={[globalStyle, s.underlineLink]}>Anonieme Login</Text>
       </View>
     </View>
     </LinearGradient>
