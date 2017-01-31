@@ -5,9 +5,8 @@ import Button from 'apsl-react-native-button';
 
 import FamilyItem from 'src/components/FamilyItem';
 
-import globalStyle from 'src/assets/styles/GlobalStyle';
 import { highLightNeutral } from 'src/assets/styles/vars';
-import { sidebar, button } from 'src/assets/styles/components/Sidebar';
+import s from 'src/assets/styles/components/Sidebar';
 
 export default class Sidebar extends Component {
   constructor(props, context) {
@@ -30,7 +29,7 @@ export default class Sidebar extends Component {
 
   render() {
     return (
-      <View style={sidebar}>
+      <View style={s.sidebar}>
         <ListView
           dataSource={this.ds.cloneWithRows(this.state.active)}
           renderRow={family => (
@@ -41,11 +40,7 @@ export default class Sidebar extends Component {
             </TouchableHighlight>
           )}
         />
-        <Button
-          style={button.bg} textStyle={[globalStyle, button.text]}
-        >
-          nieuw gezin aanmaken
-        </Button>
+        <Button style={s.buttonBg} textStyle={s.buttonText}>nieuw gezin aanmaken</Button>
       </View>
     );
   }

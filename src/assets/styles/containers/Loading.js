@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { fontIsTitle } from 'src/assets/styles/vars';
+import { globalStyle, fontIsTitle } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   loadingView: {
@@ -13,7 +13,8 @@ export default StyleSheet.create({
     height: 256,
   },
   loadingText: {
-    ...fontIsTitle, textAlign: `center`,
+    ...globalStyle,
+    ...fontIsTitle, fontWeight: `bold`, textAlign: `center`,
     marginTop: 40,
   },
 });
