@@ -5,7 +5,6 @@ import Card from 'src/components/Card';
 
 import getNameInitials from 'src/lib/getNameInitials';
 
-import globalStyle from 'src/assets/styles/GlobalStyle';
 import { s, familyMember } from 'src/assets/styles/containers/Results';
 
 export default class Results extends Component {
@@ -28,8 +27,8 @@ export default class Results extends Component {
                     </Text>
                   </View>
               }
-              <Text style={[globalStyle, familyMember.name]}>{member.name}</Text>
-              <Text style={[globalStyle, familyMember.language]}>{member.lang}</Text>
+              <Text style={familyMember.name}>{member.name}</Text>
+              <Text style={familyMember.language}>{member.lang}</Text>
             </View>
           )}
         </View>

@@ -1,24 +1,31 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
-import globalStyle from 'src/assets/styles/GlobalStyle';
-import { familyItem } from 'src/assets/styles/components/Sidebar';
+import s from 'src/assets/styles/components/FamilyItem';
+import avatar from 'src/assets/img/avatars/rectangle_blue.png';
 
-const FamilyItem = ({ name, avatar }) => {
-  return (
-    <View style={familyItem.container}>
-      <Image source={avatar} style={familyItem.image} />
-      <View style={familyItem.textContainer}>
-        <Text style={[globalStyle, familyItem.label]}>Familie</Text>
-        <Text style={[globalStyle, familyItem.name]}>{name}</Text>
+export default class FamilyItem extends Component {
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  setNativeProps(nativeProps) {
+    this._root.setNativeProps(nativeProps);
+  }
+
+  render() {
+    return (
+      <View style={s.container} ref={component => this._root = component}>
+        <Image source={avatar} style={s.image} />
+        <View style={s.textContainer}>
+          <Text style={s.label}>Familie</Text>
+          <Text style={s.name}>{ this.props.name }</Text>
+        </View>
       </View>
-    </View>
-  );
-};
+    );
+  }
 
-FamilyItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  avatar: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-};
-
-export default FamilyItem;
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+  }
+}
