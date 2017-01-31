@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { accentYellow, accentYellowDim, fontIsTitle, fontIsSubHeader } from 'src/assets/styles/vars';
+import {
+  accentYellow, accentYellowDim,
+  fontIsTitle, fontIsSubHeader,
+} from 'src/assets/styles/vars';
 
 export const avatar = {
   width: 110, height: 110,
@@ -16,7 +19,7 @@ export const familyMember = {
     backgroundColor: accentYellowDim,
   },
   initials: {
-    marginTop: 40, // needs to fixed
+    marginTop: 40,
     ...fontIsTitle, fontWeight: `bold`, fontFamily: `Bariol`,
     color: accentYellow,
   },

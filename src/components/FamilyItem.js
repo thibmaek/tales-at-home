@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
-import globalStyle from 'src/assets/styles/GlobalStyle';
-import { familyItem } from 'src/assets/styles/components/Sidebar';
+import s from 'src/assets/styles/components/FamilyItem';
 import avatar from 'src/assets/img/avatars/rectangle_blue.png';
 
 export default class FamilyItem extends Component {
@@ -16,11 +15,11 @@ export default class FamilyItem extends Component {
 
   render() {
     return (
-      <View style={familyItem.container} ref={component => this._root = component}>
-        <Image source={avatar} style={familyItem.image} />
-        <View style={familyItem.textContainer}>
-          <Text style={[globalStyle, familyItem.label]}>Familie</Text>
-          <Text style={[globalStyle, familyItem.name]}>{ this.props.name }</Text>
+      <View style={s.container} ref={component => this._root = component}>
+        <Image source={avatar} style={s.image} />
+        <View style={s.textContainer}>
+          <Text style={s.label}>Familie</Text>
+          <Text style={s.name}>{ this.props.name }</Text>
         </View>
       </View>
     );
