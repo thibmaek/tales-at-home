@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import {
+  globalStyle,
   accentYellow, accentYellowDim,
   fontIsTitle, fontIsSubHeader,
 } from 'src/assets/styles/vars';
@@ -23,8 +24,12 @@ export const familyMember = {
     ...fontIsTitle, fontWeight: `bold`, fontFamily: `Bariol`,
     color: accentYellow,
   },
-  language: { textAlign: `center` },
+  language: {
+    ...globalStyle,
+    textAlign: `center`,
+  },
   name: {
+    ...globalStyle,
     ...fontIsSubHeader,
     fontWeight: `bold`,
     textAlign: `center`,
