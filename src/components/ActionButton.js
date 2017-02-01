@@ -9,8 +9,8 @@ const ActionButton = ({ type }) => {
   return (
     <View style={s.buttonContainer}>
       { type === `plus`
-      ? <Button style={s.circleButton} textStyle={s.circleButtonText}>+</Button>
-      : <Button style={s.button} textStyle={s.buttonText}>{ type }</Button>
+        ? <Button style={s.circleButton} textStyle={s.circleButtonText}>+</Button>
+        : <Button style={s.button} textStyle={s.buttonText}>{ type }</Button>
      }
     </View>
   );
