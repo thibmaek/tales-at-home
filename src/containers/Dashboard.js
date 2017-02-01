@@ -8,6 +8,7 @@ import Loading from 'src/containers/Loading';
 import Sidebar from 'src/components/Sidebar';
 import Results from 'src/containers/Results';
 import ActionButton from 'src/components/ActionButton';
+import Alert from 'src/components/Alert';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import { familyMembers, notes } from 'src/assets/mockedData';
