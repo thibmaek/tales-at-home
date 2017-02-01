@@ -6,6 +6,7 @@ import { Database } from 'src/config/firebase';
 import NavigationBar from 'src/components/NavigationBar';
 import Loading from 'src/containers/Loading';
 import Sidebar from 'src/components/Sidebar';
+import Families from 'src/containers/Families';
 import Results from 'src/containers/Results';
 
 import s from 'src/assets/styles/containers/Dashboard';
@@ -37,15 +38,15 @@ export default class Dashboard extends Component {
   }
 
   _renderLoading() {
-    return (
-      <Loading title='Families aan het ophalen…' />
-    );
+    return (<Loading title='Families aan het ophalen…' />);
   }
 
   _renderView() {
     return (
       <View style={s.view}>
-        <Sidebar families={this.state.families} />
+        <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
+          <Families families={this.state.families} />
+        </Sidebar>
         <Results familyMembers={familyMembers} notes={notes} />
       </View>
     );
