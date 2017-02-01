@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import {
   globalStyle,
   white, mediumGray, lightBlack,
-  fontIsSubHeader, 
+  fontIsSubHeader,
 } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
@@ -21,15 +21,15 @@ export default StyleSheet.create({
   title: {
     ...globalStyle,
     ...fontIsSubHeader,
-    fontSize: 14,
     paddingLeft: 20, paddingRight: 20, paddingTop: 20,
     borderRadius: 10,
+    fontSize: 14,
   },
   meta: {
     ...globalStyle,
-    fontSize: 11,
     paddingLeft: 20, paddingRight: 20, paddingBottom: 3,
     marginTop: 5,
+    fontSize: 11,
     color: mediumGray,
   },
   contentScrollView: {

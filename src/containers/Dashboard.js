@@ -48,7 +48,7 @@ export default class Dashboard extends Component {
       <View style={s.view}>
         <Sidebar families={this.state.families} />
         <Results familyMembers={familyMembers} notes={notes} />
-        <ActionButton onPress={this.buttonPressed} type='plus'></ActionButton>
+        <ActionButton type='plus'></ActionButton>
       </View>
     );
   }

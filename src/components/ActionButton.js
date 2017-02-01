@@ -1,31 +1,23 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 
 import Button from 'apsl-react-native-button';
 
 import s from 'src/assets/styles/components/ActionButton';
 
-export default class ActionButton extends Component {
-  constructor(props, context) {
-    super(props, context);
-  }
+const ActionButton = ({ type }) => {
+  return (
+    <View style={s.buttonContainer}>
+      { type === `plus`
+      ? <Button style={s.circleButton} textStyle={s.circleButtonText}>+</Button>
+      : <Button style={s.button} textStyle={s.buttonText}>{ type }</Button>
+     }
+    </View>
+  );
+};
 
-  buttonPressed() {
-    console.log(`buttonPressed`);
-  }
+ActionButton.propTypes = {
+  type: PropTypes.string,
+};
 
-  render() {
-    return (
-      <View style={s.buttonContainer}>
-        { this.props.type === `plus` ?
-          <Button style={s.circleButton} textStyle={s.circleButtonText}>+</Button>
-        : <Button style={s.button} textStyle={s.buttonText}>{ this.props.type }</Button>
-       }
-      </View>
-    );
-  }
-
-  static propTypes = {
-    type: PropTypes.string,
-  }
-}
+export default ActionButton;

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {
   accentYellow, accentYellowDim,
-  fontIsTitle, fontIsSubHeader, accentRed,
+  fontIsTitle, fontIsSubHeader,
 } from 'src/assets/styles/vars';
 
 export const avatar = {
