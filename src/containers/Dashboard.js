@@ -7,6 +7,7 @@ import NavigationBar from 'src/components/NavigationBar';
 import Loading from 'src/containers/Loading';
 import Sidebar from 'src/components/Sidebar';
 import Results from 'src/containers/Results';
+import ActionButton from 'src/components/ActionButton';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import { familyMembers, notes } from 'src/assets/mockedData';
@@ -47,6 +48,7 @@ export default class Dashboard extends Component {
       <View style={s.view}>
         <Sidebar families={this.state.families} />
         <Results familyMembers={familyMembers} notes={notes} />
+        <ActionButton onPress={this.buttonPressed} type='plus'></ActionButton>
       </View>
     );
   }

@@ -10,5 +10,22 @@ export default StyleSheet.create({
   view: {
     flexDirection: `row`,
     flex: 1,
+    position: `relative`,
+  },
+  sideBar: {
+    zIndex: 2,
+    position: `absolute`,
+    left: 0,
+    top: 0,
+  },
+  results: {
+    zIndex: 1,
+    position: `absolute`,
+    left: 400,
+    top: 0,
+  },
+  actionButton: {
+    zIndex: 3,
+    position: `absolute`,
   },
 });

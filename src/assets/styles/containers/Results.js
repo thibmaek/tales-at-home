@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {
   accentYellow, accentYellowDim,
-  fontIsTitle, fontIsSubHeader,
+  fontIsTitle, fontIsSubHeader, accentRed,
 } from 'src/assets/styles/vars';
 
 export const avatar = {
@@ -32,12 +32,15 @@ export const familyMember = {
 };
 
 export const s = StyleSheet.create({
-  container: { flex: 1 },
+  container: {
+    flex: 1,
+  },
   familyMembers: {
     flexDirection: `row`, justifyContent: `center`,
     marginTop: 55,
   },
   notes: {
+    flex: 1,
     marginTop: 43,
     marginBottom: 50,
   },
