@@ -5,7 +5,6 @@ const isNumber = n => typeof n === `number`;
  * @param {Number} id - A generated number (e.g from `Date.now()`)
  * @return {Number}
  */
-
 export default id => {
   return isNumber(id)
   ? id.toString().split(``)
@@ -13,5 +12,5 @@ export default id => {
       a = ((a << 5) - a) + b.charCodeAt(0);
       return a & a;
     }, 0)
-  : new TypeError(`id is not a Date`);
+  : new TypeError(`id is not a number`);
 };
