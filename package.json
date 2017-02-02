@@ -11,7 +11,7 @@
 		"test": "jest",
 		"test:update": "npm t -- --updateSnapshot",
 		"test:coverage": "npm t -- --coverage",
-		"lint": "eslint src/*.js index.ios.js",
+		"lint": "eslint src/",
 		"list:simulators": "xcrun simctl list devices"
 	},
 	"dependencies": {
