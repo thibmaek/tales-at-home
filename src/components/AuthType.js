@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
-import { white } from 'src/assets/styles/vars';
 import LinearGradient from 'react-native-linear-gradient';
-
 import Button from 'apsl-react-native-button';
 
+import { white } from 'src/assets/styles/vars';
 import s from 'src/assets/styles/components/AuthType';
 
 const AuthType = ({ action, title }) => (

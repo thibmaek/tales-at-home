@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { View, StatusBar } from 'react-native';
 
-import AuthType from 'src/components/AuthType';
+import { AuthType } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Setup';
 

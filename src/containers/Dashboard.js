@@ -3,13 +3,8 @@ import { View, StatusBar } from 'react-native';
 
 import { Database } from 'src/config/firebase';
 
-import NavigationBar from 'src/components/NavigationBar';
-import Loading from 'src/containers/Loading';
-import Sidebar from 'src/components/Sidebar';
-import Families from 'src/containers/Families';
-import Results from 'src/containers/Results';
-import ActionButton from 'src/components/ActionButton';
-import SessionItem from 'src/components/SessionItem';
+import { Loading, Families, Results } from 'src/containers/';
+import { NavigationBar, Sidebar, ActionButton, SessionItem } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import { familyMembers, notes } from 'src/assets/mockedData';

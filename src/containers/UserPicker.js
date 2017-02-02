@@ -8,23 +8,21 @@ import btnFamily from 'src/assets/img/icons/btnFamily.png';
 import professionalChar from 'src/assets/img/chars/professionalChar.png';
 import familyChars from 'src/assets/img/chars/familyChars.png';
 
-const UserPicker = () => {
-  return (
-    <View style={s.container}>
-      <View style={s.buttonsContainer}>
-        <TouchableWithoutFeedback onPress={Actions.dashboardScene}>
-          <Image source={btnProfessional} />
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback>
-          <Image source={btnFamily} />
-        </TouchableWithoutFeedback>
-      </View>
-      <View style={s.charsContainer} onPress={Actions.connectionScene}>
-        <Image source={professionalChar} />
-        <Image source={familyChars} />
-      </View>
+const UserPicker = () => (
+  <View style={s.container}>
+    <View style={s.buttonsContainer}>
+      <TouchableWithoutFeedback onPress={Actions.dashboardScene}>
+        <Image source={btnProfessional} />
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback>
+        <Image source={btnFamily} />
+      </TouchableWithoutFeedback>
     </View>
-  );
-};
+    <View style={s.charsContainer} onPress={Actions.connectionScene}>
+      <Image source={professionalChar} />
+      <Image source={familyChars} />
+    </View>
+  </View>
+);
 
 export default UserPicker;
