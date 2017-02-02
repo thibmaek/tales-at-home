@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"precommit": "npm run test:update",
+		"precommit": "npm run lint && npm run test:update",
 		"prepush": "npm t",
 		"start:packager": "node node_modules/react-native/local-cli/cli.js start",
 		"start:iphone": "react-native run-ios --simulator=\"iPhone SE\"",
