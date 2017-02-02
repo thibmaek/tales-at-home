@@ -1,21 +1,14 @@
 import React from 'react';
+import { Router, Scene } from 'react-native-router-flux';
 
-//import Setup from 'src/containers/Setup';
+import UserPicker from 'src/containers/UserPicker';
 import Dashboard from 'src/containers/Dashboard';
 
-// const LoginType = { //eslint-disable-line no-unused-vars
-//   title: `Aanmelden`,
-//   action: `Doorgaan`,
-//   method: `login`,
-// };
-
-// const SignupType = {
-//   title: `Account aanmaken`,
-//   action: `Bevestigen`,
-//   method: `signup`,
-// };
-
-export default () => (
-  //<Setup authType={SignupType} />
-  <Dashboard />
+const App = () => (
+  <Router hideNavBar={true}>
+    <Scene key='rootScene' component={UserPicker} initial={true} />
+    <Scene key='dashboardScene' component={Dashboard} title='Dashboard' />
+  </Router>
 );
+
+export default App;
