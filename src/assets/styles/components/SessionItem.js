@@ -4,18 +4,20 @@ import {
   globalStyle, fontIsTitle,
   } from 'src/assets/styles/vars';
 
+  // Order: flex, margin, padding, fonts, colors, rest…
+
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: blackDim,
+    flex: 1, flexDirection: `row`,
+    marginTop: 10, marginBottom: 10,
+    backgroundColor: white,
     borderColor: lightGray,
     borderWidth: 1,
     borderRadius: 5,
-    flexDirection: `row`,
   },
   imageContainer: {
     width: 140,
-    height: 68,
+    height: 70,
     backgroundColor: black,
   },
   textContainer: {
