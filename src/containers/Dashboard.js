@@ -8,7 +8,7 @@ import Loading from 'src/containers/Loading';
 import Sidebar from 'src/components/Sidebar';
 import Results from 'src/containers/Results';
 import ActionButton from 'src/components/ActionButton';
-import Note from 'src/components/Note';
+import SessionItem from 'src/components/SessionItem';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import { familyMembers, notes } from 'src/assets/mockedData';
@@ -50,7 +50,9 @@ export default class Dashboard extends Component {
         <Sidebar families={this.state.families} />
         <Results familyMembers={familyMembers} notes={notes} />
         <ActionButton type='toevoegen'></ActionButton>
-        <Note></Note>
+        <SessionItem image='url'
+        description='dit is een beschrijving. Maar wat als er hier nu eens meer tekst staat da'
+        title='dit is de titel'></SessionItem>
       </View>
     );
   }
