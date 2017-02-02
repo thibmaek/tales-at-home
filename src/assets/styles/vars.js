@@ -11,6 +11,8 @@ export const accentBlue = `rgba(0, 122, 255, 1)`;
 export const accentYellow = `rgba(255, 218, 33, 1)`;
 export const accentYellowDim = `rgba(255, 218, 33, .4)`;
 export const accentRed = `rgba(224, 6, 40, 1)`;
+export const seeThroughBlack = `rgba(0, 0, 0, 0.7)`;
+export const accentGreen = `rgb(35, 177, 41)`;
 
 // VAR: Textstyles
 export const fontIsTitle = { fontSize: 30, textAlign: `center` };
@@ -21,6 +23,7 @@ export const fontIsLabel = { fontSize: 14, fontWeight: `bold` };
 // VAR: Shadows
 export const shadowColor = `rgb(0, 0, 0)`;
 export const shadowColorGray = `rgb(188, 188, 188)`;
+export const buttonShadowColor = `rgb(74, 74, 74)`;
 
 // Var: Global spreading style
 export const globalStyle = {

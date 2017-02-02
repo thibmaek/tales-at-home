@@ -5,14 +5,9 @@ export default StyleSheet.create({
     flexDirection: `column`,
     flex: 1,
     justifyContent: `flex-start`,
-    backgroundColor: `rgba(248, 248, 248, 1)`,
   },
   view: {
     flexDirection: `row`,
     flex: 1,
-  },
-  actionButton: {
-    zIndex: 3,
-    position: `absolute`,
   },
 });

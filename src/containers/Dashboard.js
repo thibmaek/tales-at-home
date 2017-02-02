@@ -8,6 +8,8 @@ import Loading from 'src/containers/Loading';
 import Sidebar from 'src/components/Sidebar';
 import Families from 'src/containers/Families';
 import Results from 'src/containers/Results';
+import ActionButton from 'src/components/ActionButton';
+import SessionItem from 'src/components/SessionItem';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import { familyMembers, notes } from 'src/assets/mockedData';
@@ -16,14 +18,17 @@ export default class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.ref = Database.ref(`/families/-KblImH1pkb5Ew9-Qg_h`);
+    this.familyRef = Database.ref(`/families/-KblImH1pkb5Ew9-Qg_h`);
+    this.sessionRef = Database.ref(`/sessions`);
     this.state = {
       families: null,
+      sessions: null,
     };
   }
 
   componentDidMount() {
-    this._getFamilies(this.ref);
+    this._getFamilies(this.familyRef);
+    this._getSessionList(this.sessionRef);
   }
 
   _getFamilies(ref) {
@@ -37,17 +42,38 @@ export default class Dashboard extends Component {
     });
   }
 
+  _getSessionList(ref) {
+    ref.once(`value`)
+      .then(snapshot => {
+        const sessions = [];
+        snapshot.forEach(data => {
+          sessions.push(data.val());
+        });
+
+        this.setState({ sessions });
+      });
+  }
+
   _renderLoading() {
     return (<Loading title='Families aan het ophalen…' />);
   }
 
   _renderView() {
+    const { families, sessions } = this.state;
+    console.log(sessions);
+
     return (
       <View style={s.view}>
         <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
           <Families families={this.state.families} />
         </Sidebar>
         <Results familyMembers={familyMembers} notes={notes} />
+        <ActionButton type='add'>
+          {sessions
+            ? sessions.map(session => <SessionItem key={session.key} {...session} />)
+            : null
+          }
+        </ActionButton>
       </View>
     );
   }
@@ -57,10 +83,7 @@ export default class Dashboard extends Component {
       <View style={s.container}>
         <StatusBar hidden={true} />
         <NavigationBar title='Dashboard' />
-        { this.state.families
-          ? this._renderView()
-          : this._renderLoading()
-        }
+        { this.state.families ? this._renderView() : this._renderLoading() }
       </View>
     );
   }
