@@ -11,6 +11,7 @@ export const accentYellow = `rgba(255, 218, 33, 1)`;
 export const accentYellowDim = `rgba(255, 218, 33, .4)`;
 export const accentRed = `rgba(224, 6, 40, 1)`;
 export const seeThroughBlack = `rgba(0, 0, 0, 0.7)`;
+export const accentGreen = `rgb(35, 177, 41)`;
 
 // VAR: Textstyles
 export const fontIsTitle = { fontSize: 30, textAlign: `center` };

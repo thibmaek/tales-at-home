@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
 import Button from 'apsl-react-native-button';
-import cross from 'src/assets/img/icons/cross.png';
 
 import s from 'src/assets/styles/components/Alert';
+import cross from 'src/assets/img/icons/cross.png';
 
 const Alert = ({ action, title, message }) => {
   return (

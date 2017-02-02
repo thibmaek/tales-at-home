@@ -1,25 +1,20 @@
 import { StyleSheet } from 'react-native';
 import {
-  white, buttonShadowColor, seeThroughBlack, black, accentYellow,
+  white, buttonShadowColor, blackDim, black, accentYellow,
   globalStyle, fontIsTitle,
   } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
-    width: 1024,
-    height: 768,
-    flex: 1,
-    justifyContent: `center`,
-    alignItems: `center`,
+    width: 1024, height: 768,
+    flex: 1, justifyContent: `center`, alignItems: `center`,
     position: `absolute`,
     zIndex: 5,
-    backgroundColor: seeThroughBlack,
+    backgroundColor: blackDim,
   },
   alertContainer: {
     position: `relative`,
-    flexDirection: `column`,
-    alignItems: `center`,
-    justifyContent: `center`,
+    flexDirection: `column`, alignItems: `center`, justifyContent: `center`,
     borderRadius: 5,
     backgroundColor: white,
   },
@@ -32,11 +27,11 @@ export default StyleSheet.create({
     zIndex: 2,
   },
   title: {
-    ...globalStyle,
-    ...fontIsTitle,
     width: 420,
     marginTop: 20,
     marginBottom: 20,
+    ...globalStyle,
+    ...fontIsTitle,
     fontSize: 20,
     fontWeight: `bold`,
     color: black,

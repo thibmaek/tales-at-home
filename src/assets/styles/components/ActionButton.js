@@ -1,16 +1,19 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, white, accentBlue, accentRed } from 'src/assets/styles/vars';
+import { globalStyle,
+  white, accentRed, accentGreen, buttonShadowColor,
+} from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   buttonContainer: {
-    width: 65, height: 65,
-    position: `absolute`, bottom: 0, right: 0,
+    position: `absolute`, bottom: 20, right: 30,
     zIndex: 4,
   },
   circleButton: {
     width: 35, height: 35,
     backgroundColor: accentRed,
     borderWidth: 0, borderRadius: 50,
+    shadowColor: buttonShadowColor, shadowOpacity: .3,
+    shadowOffset: { width: 0, height: 3 }, shadowRadius: 3,
   },
   circleButtonText: {
     ...globalStyle,
@@ -18,13 +21,16 @@ export default StyleSheet.create({
     color: white,
   },
   button: {
-    width: 280,
-    backgroundColor: white,
+    height: 35,
+    paddingLeft: 20, paddingRight: 20,
+    backgroundColor: accentGreen,
     borderWidth: 0, borderRadius: 50,
+    shadowColor: buttonShadowColor, shadowOpacity: .3,
+    shadowOffset: { width: 0, height: 3 }, shadowRadius: 3,
   },
   buttonText: {
     ...globalStyle,
     fontWeight: `bold`,
-    color: accentBlue,
+    color: white,
   },
 });

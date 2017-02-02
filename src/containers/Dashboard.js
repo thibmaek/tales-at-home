@@ -8,7 +8,7 @@ import Loading from 'src/containers/Loading';
 import Sidebar from 'src/components/Sidebar';
 import Results from 'src/containers/Results';
 import ActionButton from 'src/components/ActionButton';
-import Alert from 'src/components/Alert';
+import Note from 'src/components/Note';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import { familyMembers, notes } from 'src/assets/mockedData';
@@ -49,7 +49,8 @@ export default class Dashboard extends Component {
       <View style={s.view}>
         <Sidebar families={this.state.families} />
         <Results familyMembers={familyMembers} notes={notes} />
-        <ActionButton type='plus'></ActionButton>
+        <ActionButton type='toevoegen'></ActionButton>
+        <Note></Note>
       </View>
     );
   }
