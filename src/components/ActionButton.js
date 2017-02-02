@@ -1,23 +1,41 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
 
 import Button from 'apsl-react-native-button';
 
 import s from 'src/assets/styles/components/ActionButton';
 
-const ActionButton = ({ type }) => {
-  return (
-    <View style={s.buttonContainer}>
-      { type === `plus`
-        ? <Button style={s.circleButton} textStyle={s.circleButtonText}>+</Button>
-        : <Button style={s.button} textStyle={s.buttonText}>{ type }</Button>
-      }
-    </View>
-  );
-};
+export default class ActionButton extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = { displayChildren: false };
+  }
 
-ActionButton.propTypes = {
-  type: PropTypes.string,
-};
+  _toggleChildren() {
+    this.setState({
+      displayChildren: !this.state.displayChildren,
+    });
+  }
 
-export default ActionButton;
+  render() {
+    return (
+      <View style={s.buttonContainer}>
+        {this.state.displayChildren ? this.props.children : null}
+        {this.props.type === `add`
+          ? <Button
+              style={s.circleButton} textStyle={s.circleButtonText}
+              onPress={() => this._toggleChildren()}
+            >
+              +
+            </Button>
+          : <Button style={s.button} textStyle={s.buttonText}>{ this.props.type }</Button>
+        }
+      </View>
+    );
+  }
+
+  static propTypes = {
+    children: PropTypes.array,
+    type: PropTypes.string,
+  }
+}
