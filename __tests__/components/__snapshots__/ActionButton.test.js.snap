@@ -1,0 +1,77 @@
+exports[`ActionButton 1`] = `
+<View
+  style={
+    Object {
+      "bottom": 20,
+      "position": "absolute",
+      "right": 30,
+      "zIndex": 4,
+    }
+  }>
+  <Button
+    style={
+      Object {
+        "backgroundColor": "rgb(35, 177, 41)",
+        "borderRadius": 50,
+        "borderWidth": 0,
+        "height": 35,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "shadowColor": "rgb(74, 74, 74)",
+        "shadowOffset": Object {
+          "height": 3,
+          "width": 0,
+        },
+        "shadowOpacity": 0.3,
+        "shadowRadius": 3,
+      }
+    }
+    textStyle={
+      Object {
+        "color": "rgba(255, 255, 255, 1)",
+        "fontFamily": "Bariol",
+        "fontSize": 16,
+        "fontWeight": "bold",
+      }
+    } />
+</View>
+`;
+
+exports[`ActionButton: Wrapping 1`] = `
+<View
+  style={
+    Object {
+      "bottom": 20,
+      "position": "absolute",
+      "right": 30,
+      "zIndex": 4,
+    }
+  }>
+  <Button
+    style={
+      Object {
+        "backgroundColor": "rgb(35, 177, 41)",
+        "borderRadius": 50,
+        "borderWidth": 0,
+        "height": 35,
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "shadowColor": "rgb(74, 74, 74)",
+        "shadowOffset": Object {
+          "height": 3,
+          "width": 0,
+        },
+        "shadowOpacity": 0.3,
+        "shadowRadius": 3,
+      }
+    }
+    textStyle={
+      Object {
+        "color": "rgba(255, 255, 255, 1)",
+        "fontFamily": "Bariol",
+        "fontSize": 16,
+        "fontWeight": "bold",
+      }
+    } />
+</View>
+`;

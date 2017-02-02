@@ -1,0 +1,174 @@
+exports[`Sidebar <Prop:title> 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "shadowColor": "rgb(188, 188, 188)",
+      "shadowOffset": Object {
+        "height": 5,
+        "width": 2.5,
+      },
+      "shadowOpacity": 0.5,
+      "zIndex": 3,
+    }
+  }>
+  <Button
+    style={
+      Object {
+        "backgroundColor": "rgba(0, 122, 255, 1)",
+        "borderColor": 0,
+        "borderRadius": 0,
+        "height": 50,
+        "marginBottom": 0,
+      }
+    }
+    textStyle={
+      Object {
+        "color": "rgba(255, 255, 255, 1)",
+        "fontFamily": "Bariol",
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "textAlign": "center",
+      }
+    }>
+    A snapshot action
+  </Button>
+</View>
+`;
+
+exports[`Sidebar 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "shadowColor": "rgb(188, 188, 188)",
+      "shadowOffset": Object {
+        "height": 5,
+        "width": 2.5,
+      },
+      "shadowOpacity": 0.5,
+      "zIndex": 3,
+    }
+  } />
+`;
+
+exports[`Sidebar: Wrapping 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "shadowColor": "rgb(188, 188, 188)",
+      "shadowOffset": Object {
+        "height": 5,
+        "width": 2.5,
+      },
+      "shadowOpacity": 0.5,
+      "zIndex": 3,
+    }
+  } />
+`;
+
+exports[`Sidebar: Wrapping children 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "shadowColor": "rgb(188, 188, 188)",
+      "shadowOffset": Object {
+        "height": 5,
+        "width": 2.5,
+      },
+      "shadowOpacity": 0.5,
+      "zIndex": 3,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 1)",
+        "borderRadius": 10,
+        "marginLeft": 30,
+        "position": "relative",
+        "width": 280,
+      }
+    }>
+    <View
+      style={
+        Object {
+          "borderBottomWidth": 0,
+          "borderColor": "rgba(255, 255, 255, 1)",
+          "borderRadius": 10,
+          "borderWidth": 10,
+          "position": "absolute",
+          "shadowColor": "rgba(255, 255, 255, 1)",
+          "shadowOffset": Object {
+            "height": 20,
+            "width": 0,
+          },
+          "shadowOpacity": 1,
+          "shadowRadius": 7,
+          "top": 0,
+          "zIndex": 3,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "borderRadius": 10,
+            "color": "rgba(74, 74, 74, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "paddingLeft": 20,
+            "paddingRight": 20,
+            "paddingTop": 20,
+          }
+        } />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "rgba(155, 155, 155, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 11,
+            "fontWeight": "normal",
+            "marginTop": 5,
+            "paddingBottom": 3,
+            "paddingLeft": 20,
+            "paddingRight": 20,
+          }
+        } />
+    </View>
+    <ScrollView
+      style={
+        Object {
+          "marginRight": 10,
+          "marginTop": 60,
+          "paddingTop": 23,
+        }
+      }>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        selectable={true}
+        style={
+          Object {
+            "color": "rgba(76, 76, 76, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 18,
+            "paddingLeft": 30,
+            "paddingRight": 20,
+          }
+        } />
+    </ScrollView>
+  </View>
+</View>
+`;
