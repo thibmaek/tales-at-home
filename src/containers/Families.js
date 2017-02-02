@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { ListView, TouchableHighlight } from 'react-native';
 
-import FamilyItem from 'src/components/FamilyItem';
+import { FamilyItem } from 'src/components/';
 
 import { highLightNeutral } from 'src/assets/styles/vars';
 

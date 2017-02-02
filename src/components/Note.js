@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import { View, TextInput, Image } from 'react-native';
-
 import Button from 'apsl-react-native-button';
 
 import s from 'src/assets/styles/components/Note';
