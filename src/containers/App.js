@@ -6,10 +6,8 @@ import Dashboard from 'src/containers/Dashboard';
 
 const App = () => (
   <Router hideNavBar={true}>
-    <Scene key='rootScene' component={UserPicker} />
-    <Scene key='dashboardScenes'>
-      <Scene key='dashboard' component={Dashboard} title='Dashboard' initial={true} />
-    </Scene>
+    <Scene key='rootScene' component={UserPicker} initial={true} />
+    <Scene key='dashboardScene' component={Dashboard} title='Dashboard' />
   </Router>
 );
 
