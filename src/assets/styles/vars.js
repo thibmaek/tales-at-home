@@ -6,6 +6,7 @@ export const white = `rgba(255, 255, 255, 1)`;
 export const black = `rgba(0, 0, 0, 1)`;
 export const lightBlack = `rgba(76, 76, 76, 1)`;
 export const highLightNeutral = `rgba(248, 248, 248, 1)`;
+export const lightBlue = `rgba(194, 237, 243, 1)`;
 export const accentBlue = `rgba(0, 122, 255, 1)`;
 export const accentYellow = `rgba(255, 218, 33, 1)`;
 export const accentYellowDim = `rgba(255, 218, 33, .4)`;
