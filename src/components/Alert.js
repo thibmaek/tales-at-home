@@ -4,7 +4,7 @@ import { View, Text, Image } from 'react-native';
 import Button from 'apsl-react-native-button';
 
 import s from 'src/assets/styles/components/Alert';
-import cross from 'src/assets/img/icons/cross.png';
+import cross from 'src/assets/img/icons/cross@2x.png';
 
 const Alert = ({ action, title, message }) => (
   <View style={s.container}>

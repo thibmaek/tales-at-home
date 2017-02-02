@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
 import s from 'src/assets/styles/components/SessionItem';
-import sessionImage from 'src/assets/img/sessions/sessionIsAudio.png';
+import sessionImage from 'src/assets/img/icons/sessionDefault@2x.png';
 
 const SessionItem = ({ title, description }) => (
   <View style={s.container}>

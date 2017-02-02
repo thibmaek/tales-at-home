@@ -60,12 +60,11 @@ export default class Dashboard extends Component {
 
   _renderView() {
     const { families, sessions } = this.state;
-    console.log(sessions);
 
     return (
       <View style={s.view}>
         <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
-          <Families families={this.state.families} />
+          <Families families={families} />
         </Sidebar>
         <Results familyMembers={familyMembers} notes={notes} />
         <ActionButton type='add'>

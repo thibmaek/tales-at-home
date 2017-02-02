@@ -4,7 +4,7 @@ import { View, TextInput, Image } from 'react-native';
 import Button from 'apsl-react-native-button';
 
 import s from 'src/assets/styles/components/Note';
-import cross from 'src/assets/img/icons/cross.png';
+import cross from 'src/assets/img/icons/cross@2x.png';
 
 const _renderNote = () => (
   <View style={s.container}>

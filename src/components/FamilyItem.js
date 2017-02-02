@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
 import s from 'src/assets/styles/components/FamilyItem';
-import avatar from 'src/assets/img/avatars/rectangle_blue.png';
+import avatar from 'src/assets/img/icons/avatar_blue@2x.png';
 
 export default class FamilyItem extends Component {
   constructor(props, context) {
