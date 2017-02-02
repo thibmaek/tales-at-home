@@ -13,7 +13,7 @@ const User = ({ name, imageURI }) => {
 };
 
 User.defaultProps = {
-  imageURI: require(`src/assets/img/avatars/defaultUser.png`),
+  imageURI: require(`src/assets/img/icons/defaultUser.png`),
 };
 
 User.propTypes = {

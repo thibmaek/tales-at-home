@@ -11,4 +11,8 @@ export default StyleSheet.create({
     flexDirection: `row`,
     flex: 1,
   },
+  actionButton: {
+    zIndex: 3,
+    position: `absolute`,
+  },
 });

@@ -1,0 +1,575 @@
+exports[`Card <Prop:action> 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "borderRadius": 10,
+      "marginLeft": 30,
+      "position": "relative",
+      "width": 280,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 0,
+        "borderColor": "rgba(255, 255, 255, 1)",
+        "borderRadius": 10,
+        "borderWidth": 10,
+        "position": "absolute",
+        "shadowColor": "rgba(255, 255, 255, 1)",
+        "shadowOffset": Object {
+          "height": 20,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 7,
+        "top": 0,
+        "zIndex": 3,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "borderRadius": 10,
+          "color": "rgba(74, 74, 74, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 20,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(155, 155, 155, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 11,
+          "fontWeight": "normal",
+          "marginTop": 5,
+          "paddingBottom": 3,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+        }
+      } />
+  </View>
+  <ScrollView
+    style={
+      Object {
+        "marginRight": 10,
+        "marginTop": 60,
+        "paddingTop": 23,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      selectable={true}
+      style={
+        Object {
+          "color": "rgba(76, 76, 76, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 18,
+          "paddingLeft": 30,
+          "paddingRight": 20,
+        }
+      } />
+  </ScrollView>
+  <Button
+    style={
+      Object {
+        "backgroundColor": "rgba(255, 255, 255, 1)",
+        "borderWidth": 0,
+        "shadowColor": "rgba(255, 255, 255, 1)",
+        "shadowOffset": Object {
+          "height": -25,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 10,
+      }
+    }
+    textStyle={
+      Object {
+        "color": "rgba(74, 74, 74, 1)",
+        "fontFamily": "Bariol",
+        "fontSize": 16,
+        "fontWeight": "bold",
+      }
+    }>
+    Snapshot action
+  </Button>
+</View>
+`;
+
+exports[`Card <Prop:content> 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "borderRadius": 10,
+      "marginLeft": 30,
+      "position": "relative",
+      "width": 280,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 0,
+        "borderColor": "rgba(255, 255, 255, 1)",
+        "borderRadius": 10,
+        "borderWidth": 10,
+        "position": "absolute",
+        "shadowColor": "rgba(255, 255, 255, 1)",
+        "shadowOffset": Object {
+          "height": 20,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 7,
+        "top": 0,
+        "zIndex": 3,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "borderRadius": 10,
+          "color": "rgba(74, 74, 74, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 20,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(155, 155, 155, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 11,
+          "fontWeight": "normal",
+          "marginTop": 5,
+          "paddingBottom": 3,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+        }
+      } />
+  </View>
+  <ScrollView
+    style={
+      Object {
+        "marginRight": 10,
+        "marginTop": 60,
+        "paddingTop": 23,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      selectable={true}
+      style={
+        Object {
+          "color": "rgba(76, 76, 76, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 18,
+          "paddingLeft": 30,
+          "paddingRight": 20,
+        }
+      }>
+      Snapshot content
+    </Text>
+  </ScrollView>
+</View>
+`;
+
+exports[`Card <Prop:meta> 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "borderRadius": 10,
+      "marginLeft": 30,
+      "position": "relative",
+      "width": 280,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 0,
+        "borderColor": "rgba(255, 255, 255, 1)",
+        "borderRadius": 10,
+        "borderWidth": 10,
+        "position": "absolute",
+        "shadowColor": "rgba(255, 255, 255, 1)",
+        "shadowOffset": Object {
+          "height": 20,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 7,
+        "top": 0,
+        "zIndex": 3,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "borderRadius": 10,
+          "color": "rgba(74, 74, 74, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 20,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(155, 155, 155, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 11,
+          "fontWeight": "normal",
+          "marginTop": 5,
+          "paddingBottom": 3,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+        }
+      }>
+      Snapshot meta
+    </Text>
+  </View>
+  <ScrollView
+    style={
+      Object {
+        "marginRight": 10,
+        "marginTop": 60,
+        "paddingTop": 23,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      selectable={true}
+      style={
+        Object {
+          "color": "rgba(76, 76, 76, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 18,
+          "paddingLeft": 30,
+          "paddingRight": 20,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
+
+exports[`Card <Prop:title> 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "borderRadius": 10,
+      "marginLeft": 30,
+      "position": "relative",
+      "width": 280,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 0,
+        "borderColor": "rgba(255, 255, 255, 1)",
+        "borderRadius": 10,
+        "borderWidth": 10,
+        "position": "absolute",
+        "shadowColor": "rgba(255, 255, 255, 1)",
+        "shadowOffset": Object {
+          "height": 20,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 7,
+        "top": 0,
+        "zIndex": 3,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "borderRadius": 10,
+          "color": "rgba(74, 74, 74, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 20,
+        }
+      }>
+      Snapshot title
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(155, 155, 155, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 11,
+          "fontWeight": "normal",
+          "marginTop": 5,
+          "paddingBottom": 3,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+        }
+      } />
+  </View>
+  <ScrollView
+    style={
+      Object {
+        "marginRight": 10,
+        "marginTop": 60,
+        "paddingTop": 23,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      selectable={true}
+      style={
+        Object {
+          "color": "rgba(76, 76, 76, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 18,
+          "paddingLeft": 30,
+          "paddingRight": 20,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
+
+exports[`Card 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "borderRadius": 10,
+      "marginLeft": 30,
+      "position": "relative",
+      "width": 280,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 0,
+        "borderColor": "rgba(255, 255, 255, 1)",
+        "borderRadius": 10,
+        "borderWidth": 10,
+        "position": "absolute",
+        "shadowColor": "rgba(255, 255, 255, 1)",
+        "shadowOffset": Object {
+          "height": 20,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 7,
+        "top": 0,
+        "zIndex": 3,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "borderRadius": 10,
+          "color": "rgba(74, 74, 74, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 20,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(155, 155, 155, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 11,
+          "fontWeight": "normal",
+          "marginTop": 5,
+          "paddingBottom": 3,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+        }
+      } />
+  </View>
+  <ScrollView
+    style={
+      Object {
+        "marginRight": 10,
+        "marginTop": 60,
+        "paddingTop": 23,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      selectable={true}
+      style={
+        Object {
+          "color": "rgba(76, 76, 76, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 18,
+          "paddingLeft": 30,
+          "paddingRight": 20,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
+
+exports[`Card: Wrapping 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgba(255, 255, 255, 1)",
+      "borderRadius": 10,
+      "marginLeft": 30,
+      "position": "relative",
+      "width": 280,
+    }
+  }>
+  <View
+    style={
+      Object {
+        "borderBottomWidth": 0,
+        "borderColor": "rgba(255, 255, 255, 1)",
+        "borderRadius": 10,
+        "borderWidth": 10,
+        "position": "absolute",
+        "shadowColor": "rgba(255, 255, 255, 1)",
+        "shadowOffset": Object {
+          "height": 20,
+          "width": 0,
+        },
+        "shadowOpacity": 1,
+        "shadowRadius": 7,
+        "top": 0,
+        "zIndex": 3,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "borderRadius": 10,
+          "color": "rgba(74, 74, 74, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "paddingLeft": 20,
+          "paddingRight": 20,
+          "paddingTop": 20,
+        }
+      } />
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "rgba(155, 155, 155, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 11,
+          "fontWeight": "normal",
+          "marginTop": 5,
+          "paddingBottom": 3,
+          "paddingLeft": 20,
+          "paddingRight": 20,
+        }
+      } />
+  </View>
+  <ScrollView
+    style={
+      Object {
+        "marginRight": 10,
+        "marginTop": 60,
+        "paddingTop": 23,
+      }
+    }>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      selectable={true}
+      style={
+        Object {
+          "color": "rgba(76, 76, 76, 1)",
+          "fontFamily": "Bariol",
+          "fontSize": 14,
+          "fontWeight": "normal",
+          "lineHeight": 18,
+          "paddingLeft": 30,
+          "paddingRight": 20,
+        }
+      } />
+  </ScrollView>
+</View>
+`;
