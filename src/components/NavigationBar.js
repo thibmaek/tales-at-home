@@ -7,7 +7,7 @@ import s from 'src/assets/styles/components/NavigationBar';
 
 const NavigationBar = ({ title }) => (
   <View style={s.navbar}>
-    <View style={s.rightNav}>
+    <View style={s.leftNav}>
       { title ? <Text style={s.title}>{title.toUpperCase()}</Text> : null }
       <TextInput style={s.input} placeholder='zoeken…' />
     </View>

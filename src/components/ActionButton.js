@@ -1,13 +1,15 @@
 import React, { Component, PropTypes } from 'react';
-import { View } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import Button from 'apsl-react-native-button';
 
 import s from 'src/assets/styles/components/ActionButton';
 
+import closeIcon from 'src/assets/img/icons/cross.png';
+
 export default class ActionButton extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = { displayChildren: false };
+    this.state = { displayChildren: true, displayOptions: false };
   }
 
   _toggleChildren() {
@@ -16,10 +18,22 @@ export default class ActionButton extends Component {
     });
   }
 
+  _toggleOptions() {
+    this.setState({
+      displayOptions: !this.state.displayOptions,
+    });
+  }
+
   render() {
     return (
-      <View style={s.buttonContainer}>
-        {this.state.displayChildren ? this.props.children : null}
+      <View style={s.actionContainer}>
+        <View style={s.optionContainer}>
+          <View style={s.headerBar}>
+            <Text style={s.title}>Nieuwe sessie starten</Text>
+            <Image style={s.closeButton} source={closeIcon} />
+          </View>
+          {this.state.displayChildren ? this.props.children : null}
+        </View>
         {this.props.type === `add`
           ? <Button
               style={s.circleButton} textStyle={s.circleButtonText}

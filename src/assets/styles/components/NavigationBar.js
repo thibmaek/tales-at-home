@@ -15,7 +15,7 @@ export default StyleSheet.create({
     backgroundColor: white,
     shadowColor, shadowRadius: 4, shadowOffset: { width: 2 }, shadowOpacity: .09,
   },
-  rightNav: {
+  leftNav: {
     flexDirection: `row`,
     flex: 2,
     justifyContent: `space-around`,
