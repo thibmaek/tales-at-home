@@ -3,7 +3,7 @@ import { globalStyle, accentBlue, white, shadowColorGray } from 'src/assets/styl
 
 export default StyleSheet.create({
   sidebar: {
-    zIndex: 3,
+    zIndex: 99,
     backgroundColor: white,
     shadowColor: shadowColorGray,
     shadowOffset: { width: 2.5, height: 5 },

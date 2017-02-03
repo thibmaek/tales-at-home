@@ -3,7 +3,7 @@ import { View, StatusBar } from 'react-native';
 
 import { Database } from 'src/config/firebase';
 
-import { Loading, Families, Results } from 'src/containers/';
+import { Loading, Families, Results, NewFamily } from 'src/containers/';
 import { NavigationBar, Sidebar, ActionButton, SessionItem } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
@@ -18,6 +18,7 @@ export default class Dashboard extends Component {
     this.state = {
       families: null,
       sessions: null,
+      dimmed: true,
     };
   }
 
@@ -53,14 +54,25 @@ export default class Dashboard extends Component {
     return (<Loading title='Families aan het ophalen…' />);
   }
 
+  _renderSidebar(type) {
+    return (
+      type
+      ? <Sidebar action={{ type: `neutral`, text: `nieuw gezin aanmaken` }}>
+          <Families families={this.state.families} />
+        </Sidebar>
+      : <Sidebar>
+          <NewFamily />
+        </Sidebar>
+    );
+  }
+
   _renderView() {
-    const { families, sessions } = this.state;
+    const { sessions, dimmed } = this.state;
 
     return (
       <View style={s.view}>
-        <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
-          <Families families={families} />
-        </Sidebar>
+        {this._renderSidebar(false)}
+        {dimmed ? <View style={s.dimmed}></View> : null}
         <Results familyMembers={familyMembers} notes={notes} />
         <ActionButton type='add'>
           {sessions

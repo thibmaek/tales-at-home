@@ -9,7 +9,9 @@ const App = () => (
   <Router hideNavBar={true}>
     <Scene key='rootScene' component={UserPicker} initial={true} />
     <Scene key='setupScene' component={Setup} hideNavBar={false} title='Aanmelden' navBar={NavigationBar} />
-    <Scene key='dashboardScene' component={Dashboard} title='Dashboard' />
+    <Scene key='dashboardScene' component={Dashboard} title='Dashboard' type='reset'>
+      <Scene key='dashboardScene_new' component={Dashboard} title='Nieuw gezin aanmaken' />
+    </Scene>
   </Router>
 );
 /* eslint-enable max-len */
