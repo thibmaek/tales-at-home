@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import {
-  white, lightBlack, blackDim, black, lightGray,
+  white, lightBlack, black, lightGray,
   globalStyle, fontIsTitle,
   } from 'src/assets/styles/vars';
 
