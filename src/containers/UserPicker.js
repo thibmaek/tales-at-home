@@ -8,17 +8,20 @@ import btnFamily from 'src/assets/img/icons/btnFamily.png';
 import professionalChar from 'src/assets/img/chars/professionalChar.png';
 import familyChars from 'src/assets/img/chars/familyChars.png';
 
+const AUTH_LOGIN = { action: `inloggen`, title: `inloggen`, method: `login` };
+// const AUTH_REGISTER = { action: `registreren`, title: `aanmelden`, method: `register` };
+
 const UserPicker = () => (
   <View style={s.container}>
     <View style={s.buttonsContainer}>
-      <TouchableWithoutFeedback onPress={Actions.dashboardScene}>
+      <TouchableWithoutFeedback onPress={() => Actions.setupScene({ authType: AUTH_LOGIN })}>
         <Image source={btnProfessional} />
       </TouchableWithoutFeedback>
       <TouchableWithoutFeedback>
         <Image source={btnFamily} />
       </TouchableWithoutFeedback>
     </View>
-    <View style={s.charsContainer} onPress={Actions.connectionScene}>
+    <View style={s.charsContainer} onPress={() => Actions.connectionScene}>
       <Image source={professionalChar} />
       <Image source={familyChars} />
     </View>

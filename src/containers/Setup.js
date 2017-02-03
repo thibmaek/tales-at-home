@@ -1,25 +1,38 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, StatusBar } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+
+import { Auth } from 'src/config/firebase';
 
 import { AuthType } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Setup';
 
-const Setup = ({ authType }) => {
-  const { action, title } = authType;
+export default class Setup extends Component {
+  constructor(props, context) {
+    super(props, context);
+  }
 
-  return (
-    <View style={s.container}>
-      <StatusBar hidden={true} />
-      <View style={s.view}>
-        <AuthType action={action} title={title} {...authType} />
+  componentWillMount() {
+    Auth.onAuthStateChanged(user => {
+      if (user) Actions.dashboardScene();
+    });
+  }
+
+  render() {
+    const { action, title } = this.props.authType;
+
+    return (
+      <View style={s.container}>
+        <StatusBar hidden={true} />
+        <View style={s.view}>
+          <AuthType action={action} title={title} {...this.props.authType} />
+        </View>
       </View>
-    </View>
-  );
-};
+    );
+  }
 
-Setup.propTypes = {
-  authType: PropTypes.object.isRequired,
-};
-
-export default Setup;
+  static propTypes = {
+    authType: PropTypes.object.isRequired,
+  };
+}
