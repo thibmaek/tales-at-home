@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 
+import { Auth } from 'src/config/firebase';
+
 import { User } from 'src/components/';
 
 import s from 'src/assets/styles/components/NavigationBar';
@@ -11,7 +13,7 @@ const NavigationBar = ({ title }) => (
       { title ? <Text style={s.title}>{title.toUpperCase()}</Text> : null }
       <TextInput style={s.input} placeholder='zoeken…' />
     </View>
-    <User style={s.user} name='Celestine Verghaege' />
+    { Auth.currentUser ? <User style={s.user} name={Auth.currentUser.email} /> : null }
   </View>
 );
 
