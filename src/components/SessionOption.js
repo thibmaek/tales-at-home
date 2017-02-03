@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
-import s from 'src/assets/styles/components/SessionItem';
+import s from 'src/assets/styles/components/SessionOption';
 import sessionImage from 'src/assets/img/icons/sessionDefault@2x.png';
 
-const SessionItem = ({ title, description }) => (
+const SessionOption = ({ title, description }) => (
   <View style={s.container}>
     <View style={s.imageContainer}>
       <Image
@@ -19,10 +19,10 @@ const SessionItem = ({ title, description }) => (
   </View>
 );
 
-SessionItem.propTypes = {
+SessionOption.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
 };
 
-export default SessionItem;
+export default SessionOption;
