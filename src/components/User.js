@@ -3,14 +3,12 @@ import { View, Image, Text } from 'react-native';
 
 import s from 'src/assets/styles/components/User';
 
-const User = ({ name, imageURI }) => {
-  return (
-    <View style={s.container}>
-      <Image source={imageURI} style={s.image} />
-      <Text style={s.text}>{name}</Text>
-    </View>
-  );
-};
+const User = ({ name, imageURI }) => (
+  <View style={s.container}>
+    <Image source={imageURI} style={s.image} />
+    <Text style={s.text}>{name}</Text>
+  </View>
+);
 
 User.defaultProps = {
   imageURI: require(`src/assets/img/icons/defaultUser.png`),

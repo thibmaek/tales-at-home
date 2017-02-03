@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
-
 import Button from 'apsl-react-native-button';
 
 import s from 'src/assets/styles/components/ActionButton';
