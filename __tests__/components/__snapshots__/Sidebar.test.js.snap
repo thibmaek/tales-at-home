@@ -9,7 +9,7 @@ exports[`Sidebar <Prop:title> 1`] = `
         "width": 2.5,
       },
       "shadowOpacity": 0.5,
-      "zIndex": 3,
+      "zIndex": 99,
     }
   }>
   <Button
@@ -47,7 +47,7 @@ exports[`Sidebar 1`] = `
         "width": 2.5,
       },
       "shadowOpacity": 0.5,
-      "zIndex": 3,
+      "zIndex": 99,
     }
   } />
 `;
@@ -63,7 +63,7 @@ exports[`Sidebar: Wrapping 1`] = `
         "width": 2.5,
       },
       "shadowOpacity": 0.5,
-      "zIndex": 3,
+      "zIndex": 99,
     }
   } />
 `;
@@ -79,7 +79,7 @@ exports[`Sidebar: Wrapping children 1`] = `
         "width": 2.5,
       },
       "shadowOpacity": 0.5,
-      "zIndex": 3,
+      "zIndex": 99,
     }
   }>
   <View
