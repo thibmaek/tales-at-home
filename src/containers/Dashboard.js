@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, StatusBar } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import { Database } from 'src/config/firebase';
 
@@ -13,12 +14,11 @@ export default class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.familyRef = Database.ref(`/families/-KblImH1pkb5Ew9-Qg_h`);
+    this.familyRef = Database.ref(`/families`);
     this.sessionRef = Database.ref(`/sessions`);
     this.state = {
       families: null,
       sessions: null,
-      dimmed: true,
     };
   }
 
@@ -54,29 +54,29 @@ export default class Dashboard extends Component {
     return (<Loading title='Families aan het ophalen…' />);
   }
 
-  _renderSidebar(type) {
+  _renderSidebar() {
+    const NEUTRAL_TYPE = {
+      type: `neutral`,
+      text: `nieuw gezin aanmaken`,
+      handler: Actions.dashboardScene_new,
+    };
+
     return (
-      type
-      ? <Sidebar action={{ type: `neutral`, text: `nieuw gezin aanmaken` }}>
-          <Families families={this.state.families} />
-        </Sidebar>
-      : <Sidebar>
-          <NewFamily />
-        </Sidebar>
+      !this.props.addFamily
+      ? <Sidebar action={NEUTRAL_TYPE}><Families families={this.state.families} /></Sidebar>
+      : <Sidebar><NewFamily /></Sidebar>
     );
   }
 
   _renderView() {
-    const { sessions, dimmed } = this.state;
-
     return (
       <View style={s.view}>
-        {this._renderSidebar(false)}
-        {dimmed ? <View style={s.dimmed}></View> : null}
+        {this._renderSidebar(true)}
+        {this.props.dimmed ? <View style={s.dimmed}></View> : null}
         <Results familyMembers={familyMembers} notes={notes} />
         <ActionButton type='add'>
-          {sessions
-            ? sessions.map(session => <SessionItem key={session.key} {...session} />)
+          {this.state.sessions
+            ? this.state.sessions.map(session => <SessionItem key={session.key} {...session} />)
             : null
           }
         </ActionButton>
@@ -92,5 +92,10 @@ export default class Dashboard extends Component {
         { this.state.families ? this._renderView() : this._renderLoading() }
       </View>
     );
+  }
+
+  static propTypes = {
+    dimmed: PropTypes.bool,
+    addFamily: PropTypes.bool,
   }
 }

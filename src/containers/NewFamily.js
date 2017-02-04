@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import Button from 'apsl-react-native-button';
 
+import { Database } from 'src/config/firebase';
+import hash from 'src/lib/generateIdFromTime';
+
 import { FamilyMember } from 'src/components/';
 
 import s from 'src/assets/styles/containers/NewFamily';
@@ -9,6 +12,8 @@ import s from 'src/assets/styles/containers/NewFamily';
 export default class NewFamily extends Component {
   constructor(props, context) {
     super(props, context);
+
+    this.familyRef = Database.ref(`/families`);
     this.state = {
       members: [],
     };
@@ -16,6 +21,15 @@ export default class NewFamily extends Component {
 
   _handleAddMember() {
 
+  }
+
+  _handleAddFamily() {
+    this.familyRef.push({
+      active: true,
+      key: hash(Date.now()),
+      name: ``,
+      members: [{}, {}],
+    }).catch(e => console.error(e));
   }
 
   render() {
@@ -46,7 +60,7 @@ export default class NewFamily extends Component {
             {/* { isAddingMember ? <MemberAdd /> null } */}
           </View>
         </View>
-        <Button style={s.addButton}>Gezin toevoegen</Button>
+        <Button style={s.addButton} onPress={() => this._handleAddFamily()}>Gezin toevoegen</Button>
       </View>
     );
   }

@@ -9,9 +9,8 @@ const App = () => (
   <Router hideNavBar={true}>
     <Scene key='rootScene' component={UserPicker} initial={true} />
     <Scene key='setupScene' component={Setup} hideNavBar={false} title='Aanmelden' navBar={NavigationBar} />
-    <Scene key='dashboardScene' component={Dashboard} title='Dashboard' type='reset'>
-      <Scene key='dashboardScene_new' component={Dashboard} title='Nieuw gezin aanmaken' />
-    </Scene>
+    <Scene key='dashboardScene' component={Dashboard} title='Dashboard' type='reset' />
+    <Scene key='dashboardScene_new' component={Dashboard} title='Nieuw gezin aanmaken' type='replace' addFamily={true} dimmed={true} />
   </Router>
 );
 /* eslint-enable max-len */
