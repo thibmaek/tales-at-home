@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
 
-//import { CustomButton, AddNote, SessionOptions } from 'src/components/';
+import { CustomButton, AddNote } from 'src/components/';
 
 import s from 'src/assets/styles/components/ActionMenu';
 
@@ -13,6 +13,7 @@ export default class ActionMenu extends Component {
   }
 
   _toggleMenuOptions() {
+    console.log(`test`);
     this.setState({
       isOpen: !this.state.isOpen,
       displayMenuOptions: !this.state.displayMenuOptions,
@@ -34,10 +35,17 @@ export default class ActionMenu extends Component {
     });
   }
 
+  _closeAddNote() {
+    this.setState({
+      displayActionButton: true,
+      displayNoteInput: !this.state.displayNoteInput,
+    });
+  }
+
   render() {
     return (
       <View style={s.actionMenuContainer}>
-        {/* {this.state.displayMenuOptions ?
+        {this.state.displayMenuOptions ?
         <View>
             <CustomButton type='menuButton' content='nieuwe sessie starten'
               onPress={() => this._toggleSessionOptions()} />
@@ -45,26 +53,27 @@ export default class ActionMenu extends Component {
             <CustomButton type='menuButton' content='notitie toevoegen'
               onPress={() => this._toggleAddNote()} />
         </View>
-        : null } */}
+        : null }
 
-        {/* {this.state.displayNoteInput ?
+        {this.state.displayNoteInput ?
         <View>
-            <AddNote />
+            <AddNote onClose={() => this._closeAddNote()} />
         </View>
-        : null } */}
+        : null }
 
-        {/* {this.state.displaySessionOptions ?
+        {this.state.displaySessionOptions ?
         <View>
-            <SessionOptions sessions={this.props.sessionOptions} />
-        </View>
-        : null } */}
 
-        {/* {this.state.displayActionButton ?
+            {/* <SessionOptions sessionOptions={this.props.sessionOptions} /> */}
+        </View>
+        : null }
+
+        {this.state.displayActionButton ?
         <View>
           <CustomButton type='add' content='+'
             onPress={() => this._toggleMenuOptions()} />
         </View>
-        : null } */}
+        : null }
       </View>
 
     );

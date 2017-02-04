@@ -4,7 +4,7 @@ import { View, StatusBar } from 'react-native';
 import { Database } from 'src/config/firebase';
 
 import { Loading, Families, Results } from 'src/containers/';
-import { NavigationBar, Sidebar, ActionMenu } from 'src/components/';
+import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import { familyMembers, notes } from 'src/assets/mockedData';

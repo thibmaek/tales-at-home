@@ -26,6 +26,7 @@ export default StyleSheet.create({
   },
   cross: {
     width: 15, height: 15,
+    marginRight: 15, marginTop: 15,
   },
   contentContainer: { paddingBottom: 20 },
   content: {

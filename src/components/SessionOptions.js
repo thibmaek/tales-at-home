@@ -6,7 +6,7 @@ import cross from 'src/assets/img/icons/cross@2x.png';
 
 import { SessionOption } from 'src/components/';
 
-const SessionOptions = ({ sessionOptions }) => (
+const SessionOptions = () => (
   <View>
     <View style={s.sessionOptionContainer}>
       <View style={s.headerBar}>
@@ -14,7 +14,7 @@ const SessionOptions = ({ sessionOptions }) => (
         <Image style={s.cross} source={cross} />
       </View>
       <View style={s.contentContainer}>
-        {sessionOptions.map(session =>
+        {this.props.sessionOptions.map(session =>
           <SessionOption key={session.key} {...session} />)};
       </View>
     </View>
