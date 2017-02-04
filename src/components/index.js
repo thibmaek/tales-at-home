@@ -3,6 +3,7 @@ import Alert from 'src/components/Alert';
 import AuthType from 'src/components/AuthType';
 import Card from 'src/components/Card';
 import FamilyItem from 'src/components/FamilyItem';
+import Flag from 'src/components/Flag';
 import NavigationBar from 'src/components/NavigationBar';
 import Note from 'src/components/Note';
 import SessionItem from 'src/components/SessionItem';
@@ -15,6 +16,7 @@ export {
   AuthType,
   Card,
   FamilyItem,
+  Flag,
   NavigationBar,
   Note,
   SessionItem,
