@@ -6,7 +6,9 @@
      flex: 1, flexDirection: `column`,
    },
    loginContainer: {
-     flex: 1, flexDirection: `column`, alignItems: `center`,
+     flex: 1,
+     flexDirection: `column`,
+     alignItems: `center`,
    },
    loginTitleContainer: {
      flex: 1, alignItems: `center`,
@@ -18,7 +20,8 @@
      color: white, backgroundColor: `transparent`,
    },
    loginFormContainer: {
-     flexDirection: `column`, alignItems: `center`,
+     flexDirection: `column`,
+     alignItems: `center`,
    },
    inputContainer: {
      width: 280,

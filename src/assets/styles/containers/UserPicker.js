@@ -19,7 +19,9 @@ export default StyleSheet.create({
     backgroundColor: lightBlue,
   },
   professionalInnerContainer: {
-    flexDirection: `column`, alignItems: `center`, justifyContent: `center`,
+    flexDirection: `column`,
+    alignItems: `center`,
+    justifyContent: `center`,
   },
   professionalChar: {
     marginBottom: 30,
@@ -30,7 +32,9 @@ export default StyleSheet.create({
     backgroundColor: accentYellow,
   },
   familyInnerContainer: {
-    flexDirection: `column`, alignItems: `center`, justifyContent: `center`,
+    flexDirection: `column`,
+    alignItems: `center`,
+    justifyContent: `center`,
   },
   charsContainer: {
     ...sharedContainerRules,

@@ -8,7 +8,7 @@ import { NavigationBar } from 'src/components/';
 const App = () => (
   <Router hideNavBar={true}>
     <Scene key='rootScene' component={UserPicker} initial={true} />
-    <Scene key='setupScene' component={Setup} hideNavBar={true} title='Aanmelden' navBar={NavigationBar} />
+    <Scene key='setupScene' component={Setup} hideNavBar={false} title='Aanmelden' navBar={NavigationBar} />
     <Scene key='dashboardScene' component={Dashboard} title='Dashboard' />
   </Router>
 );

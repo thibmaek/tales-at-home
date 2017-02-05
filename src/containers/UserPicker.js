@@ -23,7 +23,7 @@ const UserPicker = () => (
         </TouchableWithoutFeedback>
       </View>
       <View style={s.familyContainer}>
-        <TouchableWithoutFeedback >
+        <TouchableWithoutFeedback onPress={() => Actions.connectionScene}>
           <View style={s.familyInnerContainer}>
             <Image source={familyChars} />
             <Image source={btnFamily}  style={s.button} />
