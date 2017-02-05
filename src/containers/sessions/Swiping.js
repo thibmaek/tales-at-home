@@ -12,7 +12,7 @@ export default class Swiping extends Component {
   constructor(props, context) {
     super(props, context);
 
-    BluetoothCP.advertise(`BT`);
+    BluetoothCP.advertise(`WIFI-BT`);
 
     this.state = {
       langs: [
@@ -24,7 +24,7 @@ export default class Swiping extends Component {
   }
 
   componentDidMount() {
-    BluetoothCP.getNearbyPeers(user => console.log(user));
+    BluetoothCP.getNearbyPeers(peers => console.log(peers));
   }
 
   _renderControl() {
