@@ -13,8 +13,7 @@ export default StyleSheet.create({
     height: 256,
   },
   loadingText: {
-    ...globalStyle,
-    ...fontIsTitle, fontWeight: `bold`, textAlign: `center`,
     marginTop: 40,
+    ...globalStyle, ...fontIsTitle, fontWeight: `bold`,
   },
 });

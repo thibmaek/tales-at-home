@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {
   white, buttonShadowColor, blackDim, lightBlack, lightGray,
-  globalStyle, fontIsTitle,
+  globalStyle, fontIsSubHeader,
 } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
@@ -34,7 +34,7 @@ export default StyleSheet.create({
   },
   title: {
     flex: 1,
-    ...globalStyle, ...fontIsTitle, fontSize: 18, textAlign: `left`, fontWeight: `bold`,
+    ...globalStyle, ...fontIsSubHeader, textAlign: `left`,
     color: lightBlack,
   },
   cross: {
@@ -46,7 +46,7 @@ export default StyleSheet.create({
   content: {
     width: 687, minHeight: 150,
     paddingBottom: 20, paddingLeft: 20, paddingRight: 20, paddingTop: 20,
-    ...globalStyle, ...fontIsTitle, textAlign: `left`, fontSize: 14, lineHeight: 18,
+    ...globalStyle, textAlign: `left`, fontSize: 14, lineHeight: 18,
     textAlignVertical: `top`,
     color: lightGray,
   },
