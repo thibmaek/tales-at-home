@@ -8,7 +8,7 @@ import btnFamily from 'src/assets/img/icons/btnFamily.png';
 import professionalChar from 'src/assets/img/chars/professionalChar.png';
 import familyChars from 'src/assets/img/chars/familyChars.png';
 
-const AUTH_LOGIN = { action: `inloggen`, title: `inloggen`, method: `login` };
+const AUTH_LOGIN = { action: `inloggen`, title: `aanmelden`, method: `login` };
 // const AUTH_REGISTER = { action: `registreren`, title: `aanmelden`, method: `register` };
 
 const UserPicker = () => (
