@@ -5,9 +5,7 @@ export default StyleSheet.create({
   sidebar: {
     zIndex: 3,
     backgroundColor: white,
-    shadowColor: shadowColorGray,
-    shadowOffset: { width: 2.5, height: 5 },
-    shadowOpacity: .5,
+    shadowColor: shadowColorGray, shadowOffset: { width: 2.5, height: 5 }, shadowOpacity: .5,
   },
   buttonBg: {
     height: 50,
@@ -16,8 +14,7 @@ export default StyleSheet.create({
     borderRadius: 0, borderColor: 0,
   },
   buttonText: {
-    ...globalStyle,
+    ...globalStyle, textAlign: `center`,
     color: white,
-    textAlign: `center`,
   },
 });

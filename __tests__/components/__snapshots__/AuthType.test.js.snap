@@ -41,7 +41,6 @@ exports[`AuthType 1`] = `
             "fontSize": 50,
             "fontWeight": "bold",
             "marginBottom": 75,
-            "textAlign": "center",
           }
         } />
       <View
@@ -186,7 +185,6 @@ exports[`AuthType: <Prop:title> 1`] = `
             "fontSize": 50,
             "fontWeight": "bold",
             "marginBottom": 75,
-            "textAlign": "center",
           }
         }>
         A snapshot title
@@ -333,7 +331,6 @@ exports[`AuthType: <Prop:title> 2`] = `
             "fontSize": 50,
             "fontWeight": "bold",
             "marginBottom": 75,
-            "textAlign": "center",
           }
         } />
       <View
@@ -480,7 +477,6 @@ exports[`AuthType: Wrapping 1`] = `
             "fontSize": 50,
             "fontWeight": "bold",
             "marginBottom": 75,
-            "textAlign": "center",
           }
         } />
       <View

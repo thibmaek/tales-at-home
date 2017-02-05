@@ -1,5 +1,5 @@
  import { StyleSheet } from 'react-native';
- import { globalStyle, white, accentBlue, fontIsTitle, fontIsLabel } from 'src/assets/styles/vars';
+ import { globalStyle, white, accentBlue } from 'src/assets/styles/vars';
 
  export default StyleSheet.create({
    container: {
@@ -19,8 +19,7 @@
    },
    title: {
      marginBottom: 75,
-     ...globalStyle,
-     ...fontIsTitle, fontSize: 50, fontWeight: `bold`,
+     ...globalStyle, fontSize: 50, fontWeight: `bold`,
      color: white, backgroundColor: `transparent`,
    },
    inputContainer: {
@@ -50,8 +49,7 @@
      borderBottomColor: white, borderBottomWidth: 0.5, borderStyle: `solid`,
    },
    underlineLink: {
-     ...globalStyle,
-     ...fontIsLabel, fontWeight: `normal`, fontSize: 11,
+     ...globalStyle, fontSize: 11,
      color: white,
    },
  });

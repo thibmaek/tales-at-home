@@ -3,7 +3,10 @@ import { StyleSheet } from 'react-native';
 import { lightBlue } from 'src/assets/styles/vars';
 
 const sharedContainerRules = {
-  flex: 1, justifyContent: `space-around`, flexDirection: `row`, alignItems: `center`,
+  flex: 1,
+  justifyContent: `space-around`,
+  flexDirection: `row`,
+  alignItems: `center`,
 };
 
 export default StyleSheet.create({
@@ -13,8 +16,6 @@ export default StyleSheet.create({
   },
   buttonsContainer: {
     ...sharedContainerRules,
-    alignItems: `center`,
-    justifyContent: `space-around`,
   },
   charsContainer: {
     ...sharedContainerRules,

@@ -7,13 +7,13 @@ import { Loading, Families, Results } from 'src/containers/';
 import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
-import { familyMembers, notes } from 'src/assets/mockedData';
+import { familyMembers } from 'src/assets/mockedData';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.familyRef = Database.ref(`/families/-KblImH1pkb5Ew9-Qg_h`);
+    this.familyRef = Database.ref(`/families`);
     this.sessionRef = Database.ref(`/sessions`);
     this.state = {
       families: null,
@@ -61,7 +61,7 @@ export default class Dashboard extends Component {
         <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
           <Families families={families} />
         </Sidebar>
-        <Results familyMembers={familyMembers} notes={notes} />
+        <Results familyMembers={familyMembers} />
         <ActionMenu sessionOptions={sessionOptions} />
       </View>
     );

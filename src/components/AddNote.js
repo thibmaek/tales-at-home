@@ -1,22 +1,25 @@
 import React, { Component, PropTypes } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 
-import hash from 'src/lib/generateIdFromTime';
-
 import { Database } from 'src/config/firebase';
+
+import { CustomButton } from 'src/components/';
+
+import hash from 'src/lib/generateIdFromTime';
 
 import s from 'src/assets/styles/components/AddNote';
 import cross from 'src/assets/img/icons/cross@2x.png';
 
-import { CustomButton } from 'src/components/';
-
 export default class AddNote extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = { title: ``, content: `` };
+    this.state = {
+      title: null,
+      content: null,
+    };
   }
 
-  _addNoteToFamily(familyId, title, content) {    
+  _addNoteToFamily(familyId, title, content) {
     Database.ref(`families/ + ${familyId} + notes/`).push({
       key: hash(Date.now()),
       title: title,

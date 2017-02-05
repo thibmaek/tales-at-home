@@ -7,10 +7,7 @@ import sessionImage from 'src/assets/img/icons/sessionDefault@2x.png';
 const SessionOption = ({ title, description }) => (
   <View style={s.container}>
     <View style={s.imageContainer}>
-      <Image
-        source={sessionImage}
-        style={s.cross}
-      />
+      <Image source={sessionImage} style={s.cross} />
     </View>
     <View style={s.textContainer}>
       <Text style={s.title}>{ title }</Text>
@@ -22,7 +19,7 @@ const SessionOption = ({ title, description }) => (
 SessionOption.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  description: PropTypes.string.isRequired,
 };
 
 export default SessionOption;
