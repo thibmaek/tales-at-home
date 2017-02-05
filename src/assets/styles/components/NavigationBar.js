@@ -1,10 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {
-  globalStyle,
-  white, lightGray,
-  fontIsHeader,
-  shadowColor,
-} from 'src/assets/styles/vars';
+import { globalStyle, fontIsHeader, white, lightGray, shadowColor } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   navbar: {
@@ -15,15 +10,14 @@ export default StyleSheet.create({
     backgroundColor: white,
     shadowColor, shadowRadius: 4, shadowOffset: { width: 2 }, shadowOpacity: .09,
   },
-  rightNav: {
+  leftNav: {
     flexDirection: `row`,
     flex: 2,
     justifyContent: `space-around`,
   },
   title: {
     flex: 1,
-    ...globalStyle,
-    ...fontIsHeader,
+    ...globalStyle, ...fontIsHeader,
   },
   input: {
     flex: 3,

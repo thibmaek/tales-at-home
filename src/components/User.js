@@ -1,23 +1,27 @@
 import React, { PropTypes } from 'react';
-import { View, Image, Text } from 'react-native';
+import { TouchableOpacity, View, Image, Text } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+
+import { Auth } from 'src/config/firebase';
 
 import s from 'src/assets/styles/components/User';
 
-const User = ({ name, imageURI }) => {
-  return (
+const User = ({ name, imageURI }) => (
+  <TouchableOpacity onPress={() => Auth.signOut().then(Actions.rootScene)}>
     <View style={s.container}>
       <Image source={imageURI} style={s.image} />
-      <Text style={s.text}>{name}</Text>
+      <Text style={s.text}>{ name ? name : `Gastgebruiker` }</Text>
     </View>
-  );
-};
+  </TouchableOpacity>
+);
 
 User.defaultProps = {
-  imageURI: require(`src/assets/img/avatars/defaultUser.png`),
+  imageURI: require(`src/assets/img/icons/defaultUser.png`),
+  name: `Gastgebruiker`,
 };
 
 User.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   imageURI: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 

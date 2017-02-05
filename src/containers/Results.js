@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 
-import Card from 'src/components/Card';
+import { Card } from 'src/components/';
 
 import getNameInitials from 'src/lib/getNameInitials';
 
@@ -32,9 +32,12 @@ export default class Results extends Component {
             </View>
           )}
         </View>
-        <ScrollView style={s.notes} horizontal={true} alwaysBounceHorizontal={true}>
-          {this.props.notes.map(note => <Card key={note.key} action='Bewerken' {...note} />)}
-        </ScrollView>
+        {this.props.notes
+          ? <ScrollView style={s.notes} horizontal={true} alwaysBounceHorizontal={true}>
+              {this.props.notes.map(note => <Card key={note.key} action='Bewerken' {...note} />)}
+            </ScrollView>
+          : null
+        }
       </View>
     );
   }

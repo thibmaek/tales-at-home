@@ -31,18 +31,20 @@ export const familyMember = {
   name: {
     ...globalStyle,
     ...fontIsSubHeader,
-    fontWeight: `bold`,
     textAlign: `center`,
   },
 };
 
 export const s = StyleSheet.create({
-  container: { flex: 1 },
+  container: {
+    flex: 1,
+  },
   familyMembers: {
     flexDirection: `row`, justifyContent: `center`,
     marginTop: 55,
   },
   notes: {
+    flex: 1,
     marginTop: 43,
     marginBottom: 50,
   },
