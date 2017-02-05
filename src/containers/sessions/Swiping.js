@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import BluetoothCP from 'react-native-bluetooth-cross-platform';
 
 import { CustomButton, Flag } from 'src/components/';
 
@@ -10,6 +11,9 @@ import upperCase from 'src/lib/upperCaseString';
 export default class Swiping extends Component {
   constructor(props, context) {
     super(props, context);
+
+    BluetoothCP.advertise(`BT`);
+
     this.state = {
       langs: [
         { uri: require(`src/assets/img/flags/flag_be.png`), name: `Vlaams` },
@@ -17,6 +21,10 @@ export default class Swiping extends Component {
         { uri: require(`src/assets/img/flags/flag_deu.png`), name: `Deutsch` },
       ],
     };
+  }
+
+  componentDidMount() {
+    BluetoothCP.getNearbyPeers(user => console.log(user));
   }
 
   _renderControl() {
