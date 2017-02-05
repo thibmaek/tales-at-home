@@ -3,34 +3,33 @@
 
  export default StyleSheet.create({
    container: {
-     flexDirection: `column`,
-     flex: 1,
+     flex: 1, flexDirection: `column`,
    },
    loginContainer: {
-     flexDirection: `column`,
      flex: 1,
+     flexDirection: `column`,
      alignItems: `center`,
    },
-   loginTopContainer: {
-     flexDirection: `column`,
-     flex: 1,
-     alignItems: `center`,
-     justifyContent: `center`,
+   loginTitleContainer: {
+     flex: 1, alignItems: `center`,
    },
    title: {
-     marginBottom: 75,
+     marginBottom: 75, marginTop: 40,
      ...globalStyle,
-     ...fontIsTitle, fontSize: 50, fontWeight: `bold`,
+     ...fontIsTitle, fontSize: 16, fontWeight: `normal`, letterSpacing: 2,
      color: white, backgroundColor: `transparent`,
+   },
+   loginFormContainer: {
+     flexDirection: `column`,
+     alignItems: `center`,
    },
    inputContainer: {
      width: 280,
-     marginBottom: 20,
+     marginBottom: 35,
      borderBottomColor: white, borderBottomWidth: 1, borderStyle: `solid`,
    },
    input: {
      height: 30,
-     marginTop: 30,
      ...globalStyle,
      color: white,
    },
@@ -45,11 +44,12 @@
      color: accentBlue,
    },
    anonLogin: {
-     marginBottom: 50,
+     flex: 1, justifyContent: `flex-end`,
      backgroundColor: `transparent`,
      borderBottomColor: white, borderBottomWidth: 0.5, borderStyle: `solid`,
    },
    underlineLink: {
+     marginBottom: 50,
      ...globalStyle,
      ...fontIsLabel, fontWeight: `normal`, fontSize: 11,
      color: white,

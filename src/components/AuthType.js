@@ -35,8 +35,10 @@ export default class AuthType extends Component {
     return (
       <LinearGradient colors={[`#008EFF`, `#00C8FF`]}  style={s.container}>
         <View style={s.loginContainer}>
-          <View style={s.loginTopContainer}>
-            <Text style={s.title}>{ capString(this.props.title) }</Text>
+          <View style={s.loginTitleContainer}>
+            <Text style={s.title}>{ this.props.title.toUpperCase() }</Text>
+          </View>
+          <View style={s.loginFormContainer}>
             <View style={s.inputContainer}>
               <TextInput
                 style={s.input}
@@ -56,7 +58,7 @@ export default class AuthType extends Component {
                 onChangeText={password => this.setState({ password })}
               />
             </View>
-            <View style={s.buttonContainer}>
+            <View>
               <Button
                 style={s.button}
                 textStyle={s.buttonText}
@@ -68,7 +70,7 @@ export default class AuthType extends Component {
           </View>
           <View style={s.anonLogin}>
             <Text style={s.underlineLink} onPress={() => this._handleLogin(`anon`)}>
-              Inloggen zonder account
+              Doorgaan zonder account
             </Text>
           </View>
         </View>
