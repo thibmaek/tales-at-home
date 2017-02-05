@@ -2,9 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import { Flag } from 'src/components/';
+import { CustomButton, Flag } from 'src/components/';
 
 import s from 'src/assets/styles/containers/sessions/Swiping';
+import upperCase from 'src/lib/upperCaseString';
 
 export default class Swiping extends Component {
   constructor(props, context) {
@@ -18,17 +19,22 @@ export default class Swiping extends Component {
     };
   }
 
-  _handleLangSelected() {
-
-  }
-
   _renderControl() {
     switch (this.props.step) {
     case `swipe`:
       return (
         <View style={s.swipe}>
           <Text style={s.swipeTitle}>{this.props.selected.name}</Text>
-          <Flag uri={this.props.selected.uri} subStyle={s.swipeImage} />
+          <Flag
+            uri={this.props.selected.uri}
+            subStyle={s.swipeImage}
+          />
+          <Text style={s.swipeAction}>{upperCase(`Swipe omhoog!`)}</Text>
+          <CustomButton
+            type='submitButton'
+            content='Mijn keuze veranderen'
+            onPress={() => Actions.swipeInitial({ direction: `leftToRight` })}
+          />
         </View>
       );
     default:

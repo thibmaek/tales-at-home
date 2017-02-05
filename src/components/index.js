@@ -2,6 +2,7 @@ import ActionButton from 'src/components/ActionButton';
 import Alert from 'src/components/Alert';
 import AuthType from 'src/components/AuthType';
 import Card from 'src/components/Card';
+import CustomButton from 'src/components/CustomButton';
 import FamilyItem from 'src/components/FamilyItem';
 import Flag from 'src/components/Flag';
 import NavigationBar from 'src/components/NavigationBar';
@@ -15,6 +16,7 @@ export {
   Alert,
   AuthType,
   Card,
+  CustomButton,
   FamilyItem,
   Flag,
   NavigationBar,

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {
   shadowColor,
-  globalStyle, fontIsSubHeader, fontIsTitle,
+  globalStyle, fontIsSubHeader,
   white, seeThroughBlack,
 } from 'src/assets/styles/vars';
 
@@ -47,6 +47,11 @@ export default StyleSheet.create({
   swipeImage: {
     width: 200, height: 200,
     borderRadius: 100,
+  },
+  swipeAction: {
+    marginTop: 35,
+    ...globalStyle, fontWeight: `bold`,
+    color: white, backgroundColor: `transparent`,
   },
   dimmer: {
     width: 1024, height: 768,
