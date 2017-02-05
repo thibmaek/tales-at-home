@@ -19,8 +19,8 @@ const Card = ({ title, meta, content, action }) => (
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  meta: PropTypes.string,
-  content: PropTypes.string,
+  meta: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
   action: PropTypes.string,
 };
 

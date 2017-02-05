@@ -4,20 +4,20 @@ import { View, StatusBar } from 'react-native';
 import { Database } from 'src/config/firebase';
 
 import { Loading, Families, Results } from 'src/containers/';
-import { NavigationBar, Sidebar, ActionButton, SessionItem } from 'src/components/';
+import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
-import { familyMembers, notes } from 'src/assets/mockedData';
+import { familyMembers } from 'src/assets/mockedData';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.familyRef = Database.ref(`/families/-KblImH1pkb5Ew9-Qg_h`);
+    this.familyRef = Database.ref(`/families`);
     this.sessionRef = Database.ref(`/sessions`);
     this.state = {
       families: null,
-      sessions: null,
+      sessionOptions: null,
     };
   }
 
@@ -40,12 +40,12 @@ export default class Dashboard extends Component {
   _getSessionList(ref) {
     ref.once(`value`)
       .then(snapshot => {
-        const sessions = [];
+        const sessionOptions = [];
         snapshot.forEach(data => {
-          sessions.push(data.val());
+          sessionOptions.push(data.val());
         });
 
-        this.setState({ sessions });
+        this.setState({ sessionOptions });
       });
   }
 
@@ -54,20 +54,15 @@ export default class Dashboard extends Component {
   }
 
   _renderView() {
-    const { families, sessions } = this.state;
+    const { families, sessionOptions } = this.state;
 
     return (
       <View style={s.view}>
         <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
           <Families families={families} />
         </Sidebar>
-        <Results familyMembers={familyMembers} notes={notes} />
-        <ActionButton type='add'>
-          {sessions
-            ? sessions.map(session => <SessionItem key={session.key} {...session} />)
-            : null
-          }
-        </ActionButton>
+        <Results familyMembers={familyMembers} />
+        <ActionMenu sessionOptions={sessionOptions} />
       </View>
     );
   }

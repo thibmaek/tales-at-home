@@ -1,19 +1,15 @@
 import { StyleSheet } from 'react-native';
 import {
   white, lightBlack, black, lightGray,
-  globalStyle, fontIsTitle,
-  } from 'src/assets/styles/vars';
-
-  // Order: flex, margin, padding, fonts, colors, rest…
+  globalStyle, fontIsLabel,
+} from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
     flex: 1, flexDirection: `row`,
     marginTop: 10, marginBottom: 10,
     backgroundColor: white,
-    borderColor: lightGray,
-    borderWidth: 1,
-    borderRadius: 5,
+    borderColor: lightGray, borderWidth: 1, borderRadius: 5,
   },
   imageContainer: {
     width: 140,
@@ -27,20 +23,11 @@ export default StyleSheet.create({
     backgroundColor: white,
   },
   title: {
-    ...globalStyle,
-    ...fontIsTitle,
-    textAlign: `left`,
-    fontSize: 14,
-    fontWeight: `bold`,
+    ...globalStyle, ...fontIsLabel, textAlign: `left`,
     color: lightBlack,
   },
   description: {
-    ...globalStyle,
-    ...fontIsTitle,
-    textAlign: `left`,
-    fontSize: 11,
-    lineHeight: 16,
-    fontWeight: `normal`,
+    ...globalStyle, textAlign: `left`, fontSize: 11, lineHeight: 16, fontWeight: `normal`,
     color: black,
   },
 });

@@ -8,7 +8,7 @@ import cross from 'src/assets/img/icons/cross@2x.png';
 const _renderNote = () => (
   <View style={s.container}>
     <View style={s.titleContainer}>
-      <TextInput style={s.title} placeholder='Sessie #5' />
+      <TextInput style={s.title} placeholder='Sessie #' />
       <Image style={s.cross} source={cross} />
     </View>
     <View style={s.contentContainer}>

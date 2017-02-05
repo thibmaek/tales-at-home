@@ -1,5 +1,5 @@
  import { StyleSheet } from 'react-native';
- import { globalStyle, white, accentBlue, fontIsTitle, fontIsLabel } from 'src/assets/styles/vars';
+ import { globalStyle, white, accentBlue } from 'src/assets/styles/vars';
 
  export default StyleSheet.create({
    container: {
@@ -15,8 +15,7 @@
    },
    title: {
      marginBottom: 75, marginTop: 40,
-     ...globalStyle,
-     ...fontIsTitle, fontSize: 16, fontWeight: `normal`, letterSpacing: 2,
+     ...globalStyle, fontSize: 16, letterSpacing: 2, textAlign: `center`,
      color: white, backgroundColor: `transparent`,
    },
    loginFormContainer: {
@@ -50,8 +49,7 @@
    },
    underlineLink: {
      marginBottom: 50,
-     ...globalStyle,
-     ...fontIsLabel, fontWeight: `normal`, fontSize: 11,
+     ...globalStyle, fontSize: 11,
      color: white,
    },
  });

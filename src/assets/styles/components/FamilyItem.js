@@ -17,8 +17,7 @@ export default StyleSheet.create({
   },
   label: {
     flex: 1,
-    ...globalStyle,
-    ...fontIsSubHeader,
+    ...globalStyle, ...fontIsSubHeader,
   },
   name: {
     flex: 1,

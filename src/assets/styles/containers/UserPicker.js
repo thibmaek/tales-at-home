@@ -3,7 +3,10 @@ import { StyleSheet } from 'react-native';
 import { accentYellow, lightBlue } from 'src/assets/styles/vars';
 
 const sharedContainerRules = {
-  flex: 1, justifyContent: `space-around`, flexDirection: `row`, alignItems: `center`,
+  flex: 1,
+  justifyContent: `space-around`,
+  flexDirection: `row`,
+  alignItems: `center`,
 };
 
 export default StyleSheet.create({
