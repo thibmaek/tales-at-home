@@ -65,7 +65,7 @@ export default class ActionMenu extends Component {
 
         {this.state.displaySessionOptions
           ? <View>
-              <SessionOptionList sessionVar={this.props.sessionOptions} />
+              <SessionOptionList sessionOptions={this.props.sessionOptions} />
             </View>
           : null
         }

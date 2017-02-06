@@ -14,7 +14,7 @@ const SessionOptions = () => (
         <Image style={s.cross} source={cross} />
       </View>
       <View style={s.contentContainer}>
-        {this.props.sessionVar.map(session =>
+        {this.props.sessionOptions.map(session =>
           <SessionOption key={session.key} {...session} />)}
       </View>
     </View>
