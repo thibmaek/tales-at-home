@@ -53,6 +53,6 @@ export default class AddNote extends Component {
   }
 
   static propTypes = {
-    onClose: PropTypes.func,
+    onClose: PropTypes.func.isRequired,
   }
 }
