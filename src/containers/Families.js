@@ -20,17 +20,13 @@ export default class Families extends Component {
     this.setState({ active });
   }
 
-  _setActive(key) {
-    console.log(key);
-  }
-
   render() {
     return (
       <ListView
         dataSource={this.ds.cloneWithRows(this.state.active)}
         renderRow={family => (
           <TouchableHighlight
-            onPress={() => this._setActive(family.key)}
+            onPress={() => this.props.didSelectFamily(family.key)}
             underlayColor={highLightNeutral}>
             <FamilyItem key={family.key} {...family} />
           </TouchableHighlight>
@@ -41,5 +37,6 @@ export default class Families extends Component {
 
   static propTypes = {
     families: PropTypes.any.isRequired,
+    didSelectFamily: PropTypes.func.isRequired,
   }
 }

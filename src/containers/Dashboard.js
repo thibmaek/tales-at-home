@@ -34,7 +34,7 @@ export default class Dashboard extends Component {
         families.push({ ...data.val(), key: data.key });
       });
 
-      this.setState({ families, selectedFamily: families[0] });
+      this.setState({ selectedFamily: families[0].key, families });
     });
   }
 
@@ -50,6 +50,10 @@ export default class Dashboard extends Component {
       });
   }
 
+  _setSelectedFamily(selectedFamily) {
+    this.setState({ selectedFamily });
+  }
+
   _renderLoading() {
     return (<Loading title='Families aan het ophalen…' />);
   }
@@ -63,19 +67,22 @@ export default class Dashboard extends Component {
 
     return (
       !this.props.addFamily
-        ? <Sidebar action={NEUTRAL_TYPE}><Families families={this.state.families} /></Sidebar>
+        ? <Sidebar action={NEUTRAL_TYPE}>
+            <Families
+              families={this.state.families}
+              didSelectFamily={key => this._setSelectedFamily(key)}
+            />
+          </Sidebar>
         : <Sidebar><NewFamily /></Sidebar>
     );
   }
 
   _renderView() {
-    const { notes, members } = this.state.selectedFamily;
-
     return (
       <View style={s.view}>
         {this._renderSidebar()}
         {this.props.dimmed ? <View style={s.dimmed}></View> : null}
-        <Results notes={notes} members={members} />
+        <Results selectedFamily={this.state.selectedFamily} />
         <ActionMenu sessionOptions={this.state.sessionOptions} />
       </View>
     );
