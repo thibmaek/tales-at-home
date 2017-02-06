@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
 
-import { CustomButton, AddNote } from 'src/components/';
+import { CustomButton, AddNote, SessionOptionList } from 'src/components/';
 
 import s from 'src/assets/styles/components/ActionMenu';
 
@@ -23,14 +23,14 @@ export default class ActionMenu extends Component {
     });
   }
 
-  _toggleSessionOptions() {
+  _handleToggleSessionOptionList() {
     this.setState({
       displayMenuOptions: false,
       displaySessionOptions: !this.state.displaySessionOptions,
     });
   }
 
-  _toggleAddNote() {
+  _handleToggleNote() {
     this.setState({
       displayMenuOptions: false,
       displayActionButton: false,
@@ -38,39 +38,57 @@ export default class ActionMenu extends Component {
     });
   }
 
-  _closeAddNote() {
+  _handleCloseNote() {
     this.setState({
       displayActionButton: true,
       displayNoteInput: !this.state.displayNoteInput,
     });
   }
 
+  _handleCloseSessionList() {
+    this.setState({
+      displayActionButton: true,
+      displaySessionOptions: !this.state.displaySessionOptions,
+    });
+  }
+
   render() {
+    const { sessionOptions } = this.props;
+    const {
+      displayMenuOptions, displayNoteInput, displayActionButton, displaySessionOptions,
+    } = this.state;
+
     return (
       <View style={s.actionMenuContainer}>
-        {this.state.displayMenuOptions
+        {displayMenuOptions
           ? <View>
-              <CustomButton type='menuButton' content='nieuwe sessie starten'
-                onPress={() => this._toggleSessionOptions()} />
+              {sessionOptions
+                ? <CustomButton type='menuButton' content='nieuwe sessie starten'
+                    onPress={() => this._handleToggleSessionOptionList()} />
+                : null
+              }
               <CustomButton type='menuButton' content='notitie toevoegen'
-                onPress={() => this._toggleAddNote()} />
+                onPress={() => this._handleToggleNote()} />
             </View>
           : null
         }
 
-        {this.state.displayNoteInput
-          ? <View><AddNote onClose={() => this._closeAddNote()} /></View>
+        {displayNoteInput
+          ? <View><AddNote onClose={() => this._handleCloseNote()} /></View>
           : null
         }
 
-        {this.state.displaySessionOptions
+        {sessionOptions && displaySessionOptions
           ? <View>
-              {/* <SessionOptions sessionOptions={this.props.sessionOptions} /> */}
+              <SessionOptionList
+                sessionOptions={sessionOptions}
+                onClose={() => this._handleCloseSessionList()}
+              />
             </View>
           : null
         }
 
-        {this.state.displayActionButton
+        {displayActionButton
           ? <View>
               <CustomButton type='add' content='+' onPress={() => this._toggleMenuOptions()} />
             </View>
@@ -82,6 +100,5 @@ export default class ActionMenu extends Component {
 
   static propTypes = {
     sessionOptions: PropTypes.array,
-    type: PropTypes.string,
   }
 }
