@@ -8,7 +8,6 @@ import { Loading, Families, Results, NewFamily } from 'src/containers/';
 import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
-import { familyMembers } from 'src/assets/mockedData';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
@@ -19,6 +18,7 @@ export default class Dashboard extends Component {
     this.state = {
       families: null,
       sessionOptions: null,
+      selectedFamily: null,
     };
   }
 
@@ -31,10 +31,10 @@ export default class Dashboard extends Component {
     ref.on(`value`, snapshot => {
       const families = [];
       snapshot.forEach(data => {
-        families.push(data.val());
+        families.push({ ...data.val(), key: data.key });
       });
 
-      this.setState({ families });
+      this.setState({ families, selectedFamily: families[0] });
     });
   }
 
@@ -43,7 +43,7 @@ export default class Dashboard extends Component {
       .then(snapshot => {
         const sessionOptions = [];
         snapshot.forEach(data => {
-          sessionOptions.push(data.val());
+          sessionOptions.push({ ...data.val(), key: data.key });
         });
 
         this.setState({ sessionOptions });
@@ -69,11 +69,13 @@ export default class Dashboard extends Component {
   }
 
   _renderView() {
+    const { notes, members } = this.state.selectedFamily;
+
     return (
       <View style={s.view}>
         {this._renderSidebar()}
         {this.props.dimmed ? <View style={s.dimmed}></View> : null}
-        <Results familyMembers={familyMembers} />
+        <Results notes={notes} members={members} />
         <ActionMenu sessionOptions={this.state.sessionOptions} />
       </View>
     );

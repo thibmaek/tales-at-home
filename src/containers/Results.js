@@ -17,8 +17,8 @@ export default class Results extends Component {
     return (
       <View style={s.container}>
         <View style={s.familyMembers}>
-          {this.props.familyMembers.map(member =>
-            <View style={familyMember.container} key={member.key}>
+          {this.props.members.map(member =>
+            <View style={familyMember.container} key={member.name}>
               {member.avatar
                 ? <Image style={familyMember.avatar} source={{ uri: member.avatar }} />
                 : <View style={familyMember.noAvatar}>
@@ -43,7 +43,7 @@ export default class Results extends Component {
   }
 
   static propTypes = {
-    familyMembers: PropTypes.array.isRequired,
+    members: PropTypes.array.isRequired,
     notes: PropTypes.array,
   }
 }
