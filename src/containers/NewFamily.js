@@ -22,7 +22,7 @@ export default class NewFamily extends Component {
       isAddingMember: false,
     };
   }
-  
+
   _openAddMember() {
     this.setState({
       isAddingMember: true,
@@ -32,7 +32,7 @@ export default class NewFamily extends Component {
   _handleAddMember() {
     const { members, name, role, prefLanguage } = this.state;
 
-    if (name != null, role != null, prefLanguage != null) {
+    if (name && role && prefLanguage) {
       members.push({ name, role, prefLanguage });
       this.setState({ members, name: null, role: null, prefLanguage: null, isAddingMember: false });
     }
@@ -41,7 +41,7 @@ export default class NewFamily extends Component {
   _handleAddFamily() {
     const { members, familyName, description } = this.state;
 
-    if (members != null, familyName != null, description != null) {
+    if (members && familyName && description) {
       this.familyRef.push({
         active: true,
         key: hash(Date.now()),
