@@ -12,8 +12,7 @@ export default StyleSheet.create({
     borderColor: lightGray, borderWidth: 1, borderRadius: 5,
   },
   imageContainer: {
-    width: 140,
-    height: 70,
+    width: 140, height: 70,
     backgroundColor: black,
   },
   textContainer: {

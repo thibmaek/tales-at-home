@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
 
-import { CustomButton, AddNote } from 'src/components/';
+import { CustomButton, AddNote, SessionOptionList } from 'src/components/';
 
 import s from 'src/assets/styles/components/ActionMenu';
 
@@ -65,7 +65,7 @@ export default class ActionMenu extends Component {
 
         {this.state.displaySessionOptions
           ? <View>
-              {/* <SessionOptions sessionOptions={this.props.sessionOptions} /> */}
+              <SessionOptionList sessionVar={this.props.sessionOptions} />
             </View>
           : null
         }
