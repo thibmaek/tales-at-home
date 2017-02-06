@@ -32,8 +32,6 @@ export default class SessionOptionList extends Component {
     const { displaySessionPicker, displaySessionDetails,
     selectedSessionTitle, selectedSessionDescription } = this.state;
 
-    console.log({ sessionOptions });
-
     return (
       <View>
         <View style={s.sessionOptionContainer}>

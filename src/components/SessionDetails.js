@@ -15,7 +15,6 @@ const SessionDetails = ({ title, description }) => (
       <TextInput
         style={s.input}
         placeholder='Kies een situatie'
-        keyboardType='email-address'
         returnKeyType='next'
         placeholderTextColor={mediumGray}
         onChangeText={email => this.setState({ email })}

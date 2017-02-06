@@ -17,6 +17,7 @@ const SessionOption = ({ title, description, onPress }) => (
 );
 
 SessionOption.propTypes = {
+  image: PropTypes.string,
   onPress: PropTypes.func,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
