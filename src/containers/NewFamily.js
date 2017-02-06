@@ -14,11 +14,12 @@ import s from 'src/assets/styles/containers/NewFamily';
 export default class NewFamily extends Component {
   constructor(props, context) {
     super(props, context);
+
     this.familyRef = Database.ref(`/families`);
     this.state = {
+      members: [],
       familyName: null, description: null,
       name: null, role: null, prefLanguage: null,
-      members: [],
       isAddingMember: false,
     };
   }
@@ -41,7 +42,7 @@ export default class NewFamily extends Component {
   _handleAddFamily() {
     const { members, familyName, description } = this.state;
 
-    if (members && familyName && description) {
+    if (members.length > 0 && familyName && description) {
       this.familyRef.push({
         active: true,
         key: hash(Date.now()),

@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import { Database } from 'src/config/firebase';
 
 import { Loading, Families, Results, NewFamily } from 'src/containers/';
-import { NavigationBar, Sidebar, ActionMenu, SessionOption  } from 'src/components/';
+import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import { familyMembers } from 'src/assets/mockedData';
@@ -60,26 +60,21 @@ export default class Dashboard extends Component {
       text: `nieuw gezin aanmaken`,
       handler: Actions.dashboardScene_new,
     };
-    
+
     return (
       !this.props.addFamily
-      ? <Sidebar action={NEUTRAL_TYPE}><Families families={this.state.families} /></Sidebar>
-      : <Sidebar><NewFamily /></Sidebar>
+        ? <Sidebar action={NEUTRAL_TYPE}><Families families={this.state.families} /></Sidebar>
+        : <Sidebar><NewFamily /></Sidebar>
     );
   }
 
   _renderView() {
-    const { families, sessionOptions } = this.state;
-    
     return (
       <View style={s.view}>
-        {this._renderSidebar(true)}
+        {this._renderSidebar()}
         {this.props.dimmed ? <View style={s.dimmed}></View> : null}
-        <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
-          <Families families={families} />
-        </Sidebar>
         <Results familyMembers={familyMembers} />
-        <ActionMenu sessionOptions={sessionOptions} />
+        <ActionMenu sessionOptions={this.state.sessionOptions} />
       </View>
     );
   }
