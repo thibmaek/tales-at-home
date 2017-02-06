@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, StatusBar } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import { Database } from 'src/config/firebase';
 
-import { Loading, Families, Results } from 'src/containers/';
+import { Loading, Families, Results, NewFamily } from 'src/containers/';
 import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
-import { familyMembers } from 'src/assets/mockedData';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
@@ -18,6 +18,7 @@ export default class Dashboard extends Component {
     this.state = {
       families: null,
       sessionOptions: null,
+      selectedFamily: null,
     };
   }
 
@@ -30,10 +31,10 @@ export default class Dashboard extends Component {
     ref.on(`value`, snapshot => {
       const families = [];
       snapshot.forEach(data => {
-        families.push(data.val());
+        families.push({ ...data.val(), key: data.key });
       });
 
-      this.setState({ families });
+      this.setState({ families, selectedFamily: families[0] });
     });
   }
 
@@ -53,16 +54,29 @@ export default class Dashboard extends Component {
     return (<Loading title='Families aan het ophalen…' />);
   }
 
+  _renderSidebar() {
+    const NEUTRAL_TYPE = {
+      type: `neutral`,
+      text: `nieuw gezin aanmaken`,
+      handler: Actions.dashboardScene_new,
+    };
+
+    return (
+      !this.props.addFamily
+        ? <Sidebar action={NEUTRAL_TYPE}><Families families={this.state.families} /></Sidebar>
+        : <Sidebar><NewFamily /></Sidebar>
+    );
+  }
+
   _renderView() {
-    const { families, sessionOptions } = this.state;
+    const { notes, members } = this.state.selectedFamily;
 
     return (
       <View style={s.view}>
-        <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
-          <Families families={families} />
-        </Sidebar>
-        <Results familyMembers={familyMembers} />
-        <ActionMenu sessionOptions={sessionOptions} />
+        {this._renderSidebar()}
+        {this.props.dimmed ? <View style={s.dimmed}></View> : null}
+        <Results notes={notes} members={members} />
+        <ActionMenu sessionOptions={this.state.sessionOptions} />
       </View>
     );
   }
@@ -75,5 +89,10 @@ export default class Dashboard extends Component {
         { this.state.families ? this._renderView() : this._renderLoading() }
       </View>
     );
+  }
+
+  static propTypes = {
+    dimmed: PropTypes.bool,
+    addFamily: PropTypes.bool,
   }
 }
