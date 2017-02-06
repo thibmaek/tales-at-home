@@ -30,7 +30,7 @@ export default class Families extends Component {
         dataSource={this.ds.cloneWithRows(this.state.active)}
         renderRow={family => (
           <TouchableHighlight
-            onPress={this._setActive.bind(this, family.key)}
+            onPress={() => this._setActive(family.key)}
             underlayColor={highLightNeutral}>
             <FamilyItem key={family.key} {...family} />
           </TouchableHighlight>
