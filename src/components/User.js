@@ -10,13 +10,14 @@ const User = ({ name, imageURI }) => (
   <TouchableOpacity onPress={() => Auth.signOut().then(Actions.rootScene)}>
     <View style={s.container}>
       <Image source={imageURI} style={s.image} />
-      <Text style={s.text}>{name}</Text>
+      <Text style={s.text}>{ name ? name : `Gastgebruiker` }</Text>
     </View>
   </TouchableOpacity>
 );
 
 User.defaultProps = {
   imageURI: require(`src/assets/img/icons/defaultUser.png`),
+  name: `Gastgebruiker`,
 };
 
 User.propTypes = {

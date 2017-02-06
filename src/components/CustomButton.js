@@ -9,7 +9,7 @@ const CustomButton = ({ type, color, onPress, content }) => {
   case `add`:
     return (
       <Button style={s.circleButton} textStyle={s.buttonTextWhite}
-        onPress={onPress}>{content}</Button>
+        onPress={onPress}>{ content }</Button>
     );
   case `menuButton`:
     return (
@@ -34,7 +34,7 @@ const CustomButton = ({ type, color, onPress, content }) => {
   default:
     return (
       <Button style={s.circleButton} textStyle={s.circleButtonText}
-      onPress={onPress}>{content}</Button>
+        onPress={onPress}>{ content }</Button>
     );
   }
 };
@@ -42,8 +42,8 @@ const CustomButton = ({ type, color, onPress, content }) => {
 CustomButton.propTypes = {
   type: PropTypes.string,
   color: PropTypes.string,
-  onPress: PropTypes.func,
-  content: PropTypes.string,
+  onPress: PropTypes.func.isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default CustomButton;

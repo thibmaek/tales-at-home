@@ -1,8 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {
-  white, buttonShadowColor, blackDim, black, accentYellow,
-  globalStyle, fontIsTitle,
-  } from 'src/assets/styles/vars';
+  white, buttonShadowColor, blackDim, black, accentYellow, globalStyle,
+} from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
@@ -13,41 +12,29 @@ export default StyleSheet.create({
     backgroundColor: blackDim,
   },
   alertContainer: {
-    position: `relative`,
     flexDirection: `column`, alignItems: `center`, justifyContent: `center`,
-    borderRadius: 5,
+    position: `relative`,
     backgroundColor: white,
+    borderRadius: 5,
   },
   cross: {
-    width: 15,
-    height: 15,
-    position: `absolute`,
-    top: 18,
-    right: 18,
+    width: 15, height: 15,
+    position: `absolute`, top: 18, right: 18,
     zIndex: 2,
   },
   title: {
     width: 420,
-    marginTop: 20,
-    marginBottom: 20,
-    ...globalStyle,
-    ...fontIsTitle,
-    fontSize: 20,
-    fontWeight: `bold`,
+    marginTop: 20, marginBottom: 20,
+    ...globalStyle, fontSize: 20, fontWeight: `bold`,
     color: black,
   },
   message: {
     maxWidth: 300,
-    ...globalStyle,
-    ...fontIsTitle,
-    textAlign: `center`,
-    fontSize: 14,
-    lineHeight: 18,
+    ...globalStyle, textAlign: `center`, fontSize: 14, lineHeight: 18,
   },
   button: {
-    height: 40,
-    width: 150,
     alignSelf: `center`,
+    height: 40, width: 150,
     marginTop: 25, marginBottom: 20,
     backgroundColor: accentYellow,
     borderWidth: 0, borderRadius: 50,
@@ -55,8 +42,7 @@ export default StyleSheet.create({
     shadowOffset: { width: 0, height: 14 }, shadowRadius: 14,
   },
   buttonText: {
-    ...globalStyle,
-    fontWeight: `bold`,
+    ...globalStyle, fontWeight: `bold`,
     color: white,
   },
 });

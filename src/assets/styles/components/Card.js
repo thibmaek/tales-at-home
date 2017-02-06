@@ -1,9 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {
-  globalStyle,
-  white, mediumGray, lightBlack,
-  fontIsSubHeader,
-} from 'src/assets/styles/vars';
+import { globalStyle, white, mediumGray, lightBlack } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
@@ -20,16 +16,14 @@ export default StyleSheet.create({
   },
   title: {
     ...globalStyle,
-    ...fontIsSubHeader,
+    fontSize: 14, fontWeight: `bold`,
     paddingLeft: 20, paddingRight: 20, paddingTop: 20,
     borderRadius: 10,
-    fontSize: 14,
   },
   meta: {
-    ...globalStyle,
     paddingLeft: 20, paddingRight: 20, paddingBottom: 3,
     marginTop: 5,
-    fontSize: 11,
+    ...globalStyle, fontSize: 11,
     color: mediumGray,
   },
   contentScrollView: {
@@ -37,10 +31,8 @@ export default StyleSheet.create({
     paddingTop: 23,
   },
   content: {
-    ...globalStyle,
     paddingLeft: 30, paddingRight: 20,
-    fontSize: 14,
-    lineHeight: 18,
+    ...globalStyle, fontSize: 14, lineHeight: 18,
     color: lightBlack,
   },
   buttonText: {
@@ -48,9 +40,9 @@ export default StyleSheet.create({
     fontWeight: `bold`,
   },
   button: {
+    backgroundColor: white,
     borderWidth: 0,
     shadowColor: white, shadowOpacity: 1, shadowRadius: 10,
     shadowOffset: { width: 0, height: - 25 },
-    backgroundColor: white,
   },
 });

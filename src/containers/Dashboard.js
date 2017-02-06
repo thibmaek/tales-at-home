@@ -5,10 +5,10 @@ import { Actions } from 'react-native-router-flux';
 import { Database } from 'src/config/firebase';
 
 import { Loading, Families, Results, NewFamily } from 'src/containers/';
-import { NavigationBar, Sidebar, ActionButton, SessionItem } from 'src/components/';
+import { NavigationBar, Sidebar, ActionMenu, SessionOption  } from 'src/components/';
 
 import s from 'src/assets/styles/containers/Dashboard';
-import { familyMembers, notes } from 'src/assets/mockedData';
+import { familyMembers } from 'src/assets/mockedData';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
@@ -18,7 +18,7 @@ export default class Dashboard extends Component {
     this.sessionRef = Database.ref(`/sessions`);
     this.state = {
       families: null,
-      sessions: null,
+      sessionOptions: null,
     };
   }
 
@@ -41,12 +41,12 @@ export default class Dashboard extends Component {
   _getSessionList(ref) {
     ref.once(`value`)
       .then(snapshot => {
-        const sessions = [];
+        const sessionOptions = [];
         snapshot.forEach(data => {
-          sessions.push(data.val());
+          sessionOptions.push(data.val());
         });
 
-        this.setState({ sessions });
+        this.setState({ sessionOptions });
       });
   }
 
@@ -60,7 +60,7 @@ export default class Dashboard extends Component {
       text: `nieuw gezin aanmaken`,
       handler: Actions.dashboardScene_new,
     };
-
+    
     return (
       !this.props.addFamily
       ? <Sidebar action={NEUTRAL_TYPE}><Families families={this.state.families} /></Sidebar>
@@ -69,17 +69,17 @@ export default class Dashboard extends Component {
   }
 
   _renderView() {
+    const { families, sessionOptions } = this.state;
+    
     return (
       <View style={s.view}>
         {this._renderSidebar(true)}
         {this.props.dimmed ? <View style={s.dimmed}></View> : null}
-        <Results familyMembers={familyMembers} notes={notes} />
-        <ActionButton type='add'>
-          {this.state.sessions
-            ? this.state.sessions.map(session => <SessionItem key={session.key} {...session} />)
-            : null
-          }
-        </ActionButton>
+        <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
+          <Families families={families} />
+        </Sidebar>
+        <Results familyMembers={familyMembers} />
+        <ActionMenu sessionOptions={sessionOptions} />
       </View>
     );
   }

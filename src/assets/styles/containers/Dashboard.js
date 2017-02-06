@@ -3,9 +3,7 @@ import { seeThroughBlack } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
-    flexDirection: `column`,
-    flex: 1,
-    justifyContent: `flex-start`,
+    flexDirection: `column`, flex: 1, justifyContent: `flex-start`,
     backgroundColor: `rgba(248, 248, 248, 1)`,
   },
   view: {
@@ -19,7 +17,7 @@ export default StyleSheet.create({
     backgroundColor: seeThroughBlack,
   },
   actionButton: {
-    zIndex: 3,
     position: `absolute`,
+    zIndex: 3,
   },
 });

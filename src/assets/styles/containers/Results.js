@@ -31,7 +31,6 @@ export const familyMember = {
   name: {
     ...globalStyle,
     ...fontIsSubHeader,
-    fontWeight: `bold`,
     textAlign: `center`,
   },
 };
