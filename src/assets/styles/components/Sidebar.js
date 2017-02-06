@@ -3,6 +3,7 @@ import { globalStyle, accentBlue, white, shadowColorGray } from 'src/assets/styl
 
 export default StyleSheet.create({
   sidebar: {
+    width: 276,
     zIndex: 99,
     backgroundColor: white,
     shadowColor: shadowColorGray,

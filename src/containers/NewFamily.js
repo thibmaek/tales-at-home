@@ -1,66 +1,120 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput } from 'react-native';
-import Button from 'apsl-react-native-button';
+import { FamilyMember, CustomButton } from 'src/components/';
 
+import { Actions } from 'react-native-router-flux';
 import { Database } from 'src/config/firebase';
-import hash from 'src/lib/generateIdFromTime';
 
-import { FamilyMember } from 'src/components/';
+import capString from 'src/lib/capitalizeString';
+import upperCaseString from 'src/lib/upperCaseString';
+import hash from 'src/lib/generateIdFromTime';
 
 import s from 'src/assets/styles/containers/NewFamily';
 
 export default class NewFamily extends Component {
   constructor(props, context) {
     super(props, context);
-
     this.familyRef = Database.ref(`/families`);
     this.state = {
+      familyName: null, description: null,
+      name: null, role: null, prefLanguage: null,
       members: [],
+      isAddingMember: false,
     };
+  }
+  
+  _openAddMember() {
+    this.setState({
+      isAddingMember: true,
+    });
   }
 
   _handleAddMember() {
+    const { members, name, role, prefLanguage } = this.state;
 
+    if (name != null, role != null, prefLanguage != null) {
+      members.push({ name, role, prefLanguage });
+      this.setState({ members, name: null, role: null, prefLanguage: null, isAddingMember: false });
+    }
   }
 
   _handleAddFamily() {
-    this.familyRef.push({
-      active: true,
-      key: hash(Date.now()),
-      name: ``,
-      members: [{}, {}],
-    }).catch(e => console.error(e));
+    const { members, familyName, description } = this.state;
+
+    if (members != null, familyName != null, description != null) {
+      this.familyRef.push({
+        active: true,
+        key: hash(Date.now()),
+        name: familyName,
+        description,
+        members,
+      }).then(Actions.dashboardScene)
+        .catch(e => console.error(e));
+    }
   }
 
   render() {
     return (
-      <View style={s.container}>
-        <Text style={s.header}>Nieuw gezin aanmaken</Text>
-        <View style={s.details}>
-          <Text style={s.headerDetails}>DETAILS VAN HET GEZIN</Text>
-          <View style={s.detailInputs}>
-            <TextInput style={s.input} placeholder='Familienaam…' />
-            <TextInput style={s.input} placeholder='Notitietekst…' />
+      <View style={s.familyContainer}>
+        <Text style={s.headerTitle}>{capString(`Nieuw gezin aanmaken`)}</Text>
+        <View style={s.genInfoContainer}>
+          <Text style={s.subTitle}>{upperCaseString(`Details van het gezin`)}</Text>
+          <View>
+            <TextInput style={s.textInput} multiline={true}
+              numberOfLines={1} placeholder='Familienaam'
+              onChangeText={familyName => this.setState({ familyName })} />
+            <TextInput style={s.textBox} multiline={true}
+              numberOfLines={4} placeholder='Algemene beschrijving van de familie'
+              onChangeText={description => this.setState({ description })} />
           </View>
         </View>
-        <View style={s.members}>
-          <Text style={s.headerMembers}>Gezinsleden</Text>
-          <View style={s.memberList}>
-            {this.state.members
-              ? this.state.members.map(member => <FamilyMember key={member.name} {...member} />)
-              : null
+        <View style={s.famMembersContainer}>
+          <Text style={s.subTitle}>{upperCaseString(`Gezinsleden`)}</Text>
+          <View style={s.famMembersContent}>
+            <View style={s.addMemberContainer}>
+              <View>
+                <CustomButton type='addMemberSmall' content='+'
+                  onPress={() => this._openAddMember()} />
+              </View>
+              <View>
+                <Text style={s.newMemberText}>Nieuw gezinslid</Text>
+              </View>
+            </View>
+            {this.state.isAddingMember ?
+              <View style={s.addMemberFormContainer}>
+                <View style={s.addPhotoContainer}>
+                  <CustomButton style={s.addButton} type='addMemberBig' content='+' />
+                </View>
+                <View>
+                  <TextInput style={s.textInput} multiline={true}
+                    numberOfLines={1} placeholder='Voornaam'
+                    onChangeText={name => this.setState({ name })} />
+                  <TextInput style={s.textInput} multiline={true}
+                    numberOfLines={1} placeholder='Gezinsrelatie'
+                    onChangeText={role => this.setState({ role })} />
+                  <TextInput style={s.textInput} multiline={true}
+                    numberOfLines={1} placeholder='Taal voorkeur'
+                    onChangeText={prefLanguage => this.setState({ prefLanguage })} />
+                </View>
+              </View>
+            :
+              <View>
+                {this.state.members
+                  ? this.state.members.map(member => <FamilyMember key={member.name} {...member} />)
+                  : null
+                }
+              </View>
             }
-            <Button
-              style={s.addMemberButton}
-              textStyle={s.addMemberButtonText}
-              onPress={this._handleAddMember}
-            >
-              +
-            </Button>
-            {/* { isAddingMember ? <MemberAdd /> null } */}
+
           </View>
         </View>
-        <Button style={s.addButton} onPress={() => this._handleAddFamily()}>Gezin toevoegen</Button>
+        {this.state.isAddingMember ?
+          <CustomButton type='submitButton' color='green' content='Gezinslid toevoegen'
+            onPress={() => this._handleAddMember()} />
+        :
+          <CustomButton type='submitButton' color='blue' content='Gezin toevoegen'
+            onPress={() => this._handleAddFamily()} />
+        }
       </View>
     );
   }

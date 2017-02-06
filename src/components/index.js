@@ -9,6 +9,7 @@ import Note from 'src/components/Note';
 import SessionItem from 'src/components/SessionItem';
 import Sidebar from 'src/components/Sidebar';
 import User from 'src/components/User';
+import CustomButton from 'src/components/CustomButton';
 
 export {
   ActionButton,
@@ -22,4 +23,5 @@ export {
   SessionItem,
   Sidebar,
   User,
+  CustomButton,
 };

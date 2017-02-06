@@ -20,7 +20,7 @@ User.defaultProps = {
 };
 
 User.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   imageURI: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
