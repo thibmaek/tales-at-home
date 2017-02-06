@@ -42,7 +42,7 @@ export default class Dashboard extends Component {
       .then(snapshot => {
         const sessionOptions = [];
         snapshot.forEach(data => {
-          sessionOptions.push(data.val());
+          sessionOptions.push({ ...data.val(), key: data.key });
         });
 
         this.setState({ sessionOptions });
