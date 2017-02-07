@@ -9,6 +9,7 @@ import FamilyMember from 'src/components/FamilyMember';
 import NavigationBar from 'src/components/NavigationBar';
 import Note from 'src/components/Note';
 import Sidebar from 'src/components/Sidebar';
+import SessionDetails from 'src/components/SessionDetails';
 import SessionOptionList from 'src/components/SessionOptionList';
 import SessionOption from 'src/components/SessionOption';
 import User from 'src/components/User';
@@ -24,6 +25,7 @@ export {
   FamilyMember,
   NavigationBar,
   Note,
+  SessionDetails,
   SessionOptionList,
   SessionOption,
   Sidebar,
