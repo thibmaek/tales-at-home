@@ -53,7 +53,6 @@ export default class ActionMenu extends Component {
   }
 
   render() {
-    const { sessionOptions } = this.props;
     const {
       displayMenuOptions, displayNoteInput, displayActionButton, displaySessionOptions,
     } = this.state;
@@ -62,11 +61,8 @@ export default class ActionMenu extends Component {
       <View style={s.actionMenuContainer}>
         {displayMenuOptions
           ? <View>
-              {sessionOptions
-                ? <CustomButton type='menuButton' content='nieuwe sessie starten'
-                    onPress={() => this._handleToggleSessionOptionList()} />
-                : null
-              }
+              <CustomButton type='menuButton' content='nieuwe sessie starten'
+                  onPress={() => this._handleToggleSessionOptionList()} />
               <CustomButton type='menuButton' content='notitie toevoegen'
                 onPress={() => this._handleToggleNote()} />
             </View>
@@ -80,12 +76,9 @@ export default class ActionMenu extends Component {
           : null
         }
 
-        {sessionOptions && displaySessionOptions
+        {displaySessionOptions
           ? <View>
-              <SessionOptionList
-                sessionOptions={sessionOptions}
-                onClose={() => this._handleCloseSessionList()}
-              />
+              <SessionOptionList onClose={() => this._handleCloseSessionList()} />
             </View>
           : null
         }
@@ -102,6 +95,5 @@ export default class ActionMenu extends Component {
 
   static propTypes = {
     selectedFamily: PropTypes.string.isRequired,
-    sessionOptions: PropTypes.array,
   }
 }
