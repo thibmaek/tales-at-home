@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import {
-  white, buttonShadowColor, blackDim, black, accentYellow, globalStyle,
+  white, buttonShadowColor, seeThroughBlack, black, accentYellow, globalStyle,
 } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
@@ -8,8 +8,9 @@ export default StyleSheet.create({
     width: 1024, height: 768,
     flex: 1, justifyContent: `center`, alignItems: `center`,
     position: `absolute`,
+    right: - 20, // HACK: hardcoded op user
     zIndex: 5,
-    backgroundColor: blackDim,
+    backgroundColor: seeThroughBlack,
   },
   alertContainer: {
     flexDirection: `column`, alignItems: `center`, justifyContent: `center`,
@@ -25,7 +26,7 @@ export default StyleSheet.create({
   title: {
     width: 420,
     marginTop: 20, marginBottom: 20,
-    ...globalStyle, fontSize: 20, fontWeight: `bold`,
+    ...globalStyle, fontSize: 20, fontWeight: `bold`, textAlign: `center`,
     color: black,
   },
   message: {
