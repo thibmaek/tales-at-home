@@ -11,7 +11,6 @@ export default StyleSheet.create({
   textButton: {
     marginTop: 20, marginBottom: 20,
     ...globalStyle,
-    ...fontIsLabel,
     fontSize: 12, textAlign: `center`,
     color: mediumGray,
   },
@@ -25,21 +24,18 @@ export default StyleSheet.create({
   input: {
     height: 30,
     ...globalStyle,
-    ...fontIsLabel,
     fontSize: 11, fontWeight: `normal`,
     color: mediumGray,
   },
   label: {
     marginBottom: 20, marginTop: 10,
     ...globalStyle,
-    ...fontIsLabel,
     fontSize: 12, fontWeight: `bold`, textAlign: `center`,
     color: mediumGray,
   },
   code: {
     marginBottom: 15,
     ...globalStyle,
-    ...fontIsLabel,
     fontSize: 50, fontWeight: `bold`, textAlign: `center`,
     color: lightBlack,
   },

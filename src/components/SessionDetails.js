@@ -56,7 +56,7 @@ export default class SessionDetails extends Component {
             <View>
               <View>
                 <Text style={s.label}>{`Deelnemerscode`.toUpperCase()}</Text>
-                <Text style={s.code}>{fourDigitPin()}</Text>
+                <Text style={s.code}>{fourDigitPin(0, 9, 4)}</Text>
               </View>
               <CustomButton style={s.button}
               type={button} content='Beginnen' onPress={() => this._handleToggleResults()} />
@@ -67,7 +67,7 @@ export default class SessionDetails extends Component {
   }
 
   static propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
   }
 }
