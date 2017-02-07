@@ -13,18 +13,16 @@ export default class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.familyRef = Database.ref(`/families`);
-    this.sessionRef = Database.ref(`/sessions`);
+    this.ref = Database.ref(`/families`);
     this.state = {};
   }
 
   componentDidMount() {
-    this._getFamilies(this.familyRef);
-    this._getSessionList(this.sessionRef);
+    this._getFamilies();
   }
 
-  _getFamilies(ref) {
-    ref.once(`value`)
+  _getFamilies() {
+    this.ref.once(`value`)
       .then(snap => {
         const families = [];
         snap.forEach(data => {
@@ -37,19 +35,6 @@ export default class Dashboard extends Component {
           : selectedFamily = families[0].key;
 
         this.setState({ families, selectedFamily });
-      })
-      .catch(e => console.error(e));
-  }
-
-  _getSessionList(ref) {
-    ref.once(`value`)
-      .then(snap => {
-        const sessionOptions = [];
-        snap.forEach(data => {
-          sessionOptions.push({ ...data.val(), key: data.key });
-        });
-
-        this.setState({ sessionOptions });
       })
       .catch(e => console.error(e));
   }
@@ -87,7 +72,7 @@ export default class Dashboard extends Component {
         { this._renderSidebar() }
         { this.props.dimmed ? <View style={s.dimmed}></View> : null }
         <Results selectedFamily={selectedFamily} />
-        <ActionMenu sessionOptions={this.state.sessionOptions} selectedFamily={selectedFamily} />
+        <ActionMenu selectedFamily={selectedFamily} />
       </View>
     );
   }
