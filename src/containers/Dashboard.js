@@ -77,6 +77,7 @@ export default class Dashboard extends Component {
         ? <Sidebar action={NEUTRAL_TYPE}>
             <Families
               families={this.state.families}
+              selectedFamily={this.state.selectedFamily}
               didSelectFamily={key => this._setSelectedFamily(key)}
             />
           </Sidebar>
@@ -86,12 +87,11 @@ export default class Dashboard extends Component {
 
   _renderView() {
     const { members, notes } = this.state;
-    console.log(members);
     return (
       <View style={s.view}>
-        {this._renderSidebar()}
-        {this.props.dimmed ? <View style={s.dimmed}></View> : null}
-        {members ? <Results members={members} notes={notes} /> : null}
+        { this._renderSidebar() }
+        { this.props.dimmed ? <View style={s.dimmed}></View> : null }
+        { members ? <Results members={members} notes={notes} /> : null }
         <ActionMenu sessionOptions={this.state.sessionOptions} />
       </View>
     );

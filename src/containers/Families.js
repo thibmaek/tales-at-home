@@ -20,6 +20,8 @@ export default class Families extends Component {
     this.setState({ active });
   }
 
+  shouldHighlight = key => key === this.props.selectedFamily ? true : false
+
   render() {
     return (
       <ListView
@@ -29,7 +31,11 @@ export default class Families extends Component {
             onPress={() => this.props.didSelectFamily(family.key)}
             underlayColor={highLightNeutral}
           >
-            <FamilyItem key={family.key} {...family} />
+            <FamilyItem
+              key={family.key}
+              shouldHighlight={this.shouldHighlight(family.key)}
+              {...family}
+            />
           </TouchableHighlight>
         )}
       />
@@ -38,6 +44,7 @@ export default class Families extends Component {
 
   static propTypes = {
     families: PropTypes.any.isRequired,
+    selectedFamily: PropTypes.string,
     didSelectFamily: PropTypes.func.isRequired,
   }
 }
