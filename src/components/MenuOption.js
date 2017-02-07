@@ -2,9 +2,9 @@ import React, { PropTypes } from 'react';
 import { View } from 'react-native';
 import Button from 'apsl-react-native-button';
 
-import s from 'src/assets/styles/components/MenuOption';
-
 import capString from 'src/lib/capitalizeString';
+
+import s from 'src/assets/styles/components/MenuOption';
 
 const MenuOption = ({ action }) => (
   <View>

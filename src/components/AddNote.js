@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 
-import { Database } from 'src/config/firebase';
-
 import { CustomButton } from 'src/components/';
 
+import { Database } from 'src/config/firebase';
 import hash from 'src/lib/generateIdFromTime';
 
 import s from 'src/assets/styles/components/AddNote';

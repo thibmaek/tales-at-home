@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 import Button from 'apsl-react-native-button';
-import s from 'src/assets/styles/components/Buttons';
 
 import capString from 'src/lib/capitalizeString';
+
+import s from 'src/assets/styles/components/Buttons';
 
 const CustomButton = ({ type, color, onPress, content }) => {
   switch (type) {

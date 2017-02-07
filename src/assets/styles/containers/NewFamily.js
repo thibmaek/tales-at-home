@@ -8,10 +8,13 @@ export default StyleSheet.create({
     borderTopWidth: 3, borderTopColor: accentBlue,
   },
   headerTitle: {
-    ...globalStyle, fontWeight: `bold`, textAlign: `center`,
+    ...globalStyle,
+    fontWeight: `bold`,
+    textAlign: `center`,
   },
   subTitle: {
-    fontFamily: `Bariol`, fontWeight: `bold`, color: darkGray, fontSize: 12,
+    fontFamily: `Bariol`, fontWeight: `bold`, fontSize: 12,
+    color: darkGray,
   },
   genInfoContainer: {
     marginTop: 20,
@@ -21,14 +24,14 @@ export default StyleSheet.create({
     marginTop: 40,
   },
   textInput: {
-    marginTop: 15, paddingBottom: 5,
     height: 25,
+    marginTop: 15, paddingBottom: 5,
     ...globalStyle, fontSize: 14,
     borderBottomWidth: 1, borderBottomColor: darkGray,
   },
   textBox: {
-    marginTop: 15, paddingBottom: 5,
     height: 60,
+    marginTop: 15, paddingBottom: 5,
     ...globalStyle, fontSize: 14,
     borderBottomWidth: 1, borderBottomColor: darkGray,
   },
@@ -40,8 +43,9 @@ export default StyleSheet.create({
     flexDirection: `row`,
   },
   newMemberText: {
-    ...globalStyle, color: darkGray, fontSize: 14,
     paddingTop: 10,
+    ...globalStyle, fontSize: 14,
+    color: darkGray,
   },
   addMemberFormContainer: {
     padding: 20,

@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 
-import getNameInitials from 'src/lib/getNameInitials';
-
 import { Card } from 'src/components/';
+
+import getNameInitials from 'src/lib/getNameInitials';
 
 import { s, familyMember } from 'src/assets/styles/containers/Results';
 

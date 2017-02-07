@@ -1,11 +1,12 @@
 import React, { PropTypes, Component } from 'react';
 import { View, Text, TouchableWithoutFeedback, TextInput } from 'react-native';
 
+import { CustomButton, SessionOption } from 'src/components/';
+
+import generatePin from 'src/lib/generatePin';
+
 import s from 'src/assets/styles/components/SessionDetails';
 import { mediumGray } from 'src/assets/styles/vars';
-
-import { CustomButton, SessionOption } from 'src/components/';
-import generatePin from 'src/lib/generatePin';
 
 export default class SessionDetails extends Component {
   constructor(props, context) {

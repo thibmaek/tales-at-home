@@ -7,7 +7,6 @@ import avatar from 'src/assets/img/icons/avatar_blue@2x.png';
 export default class FamilyItem extends Component {
   constructor(props, context) {
     super(props, context);
-    console.log(props);
   }
 
   setNativeProps(nativeProps) {

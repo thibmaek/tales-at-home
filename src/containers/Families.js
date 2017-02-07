@@ -9,10 +9,7 @@ export default class Families extends Component {
   constructor(props, context) {
     super(props, context);
     this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      active: null,
-      archived: null,
-    };
+    this.state = {};
   }
 
   componentWillMount() {

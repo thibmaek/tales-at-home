@@ -1,12 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-
 import LinearGradient from 'react-native-linear-gradient';
 import Button from 'apsl-react-native-button';
 
 import { Auth } from 'src/config/firebase';
-
 import capString from 'src/lib/capitalizeString';
 
 import { white } from 'src/assets/styles/vars';

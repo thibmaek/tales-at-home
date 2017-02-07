@@ -1,8 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 
-import { SessionOption } from 'src/components/';
-import { SessionDetails } from 'src/components/';
+import { SessionOption, SessionDetails } from 'src/components/';
 
 import s from 'src/assets/styles/components/SessionOptionList';
 import cross from 'src/assets/img/icons/cross@2x.png';
