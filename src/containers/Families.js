@@ -27,7 +27,8 @@ export default class Families extends Component {
         renderRow={family => (
           <TouchableHighlight
             onPress={() => this.props.didSelectFamily(family.key)}
-            underlayColor={highLightNeutral}>
+            underlayColor={highLightNeutral}
+          >
             <FamilyItem key={family.key} {...family} />
           </TouchableHighlight>
         )}

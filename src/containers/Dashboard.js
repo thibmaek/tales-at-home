@@ -15,11 +15,7 @@ export default class Dashboard extends Component {
 
     this.familyRef = Database.ref(`/families`);
     this.sessionRef = Database.ref(`/sessions`);
-    this.state = {
-      families: null,
-      sessionOptions: null,
-      selectedFamily: null,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -28,21 +24,28 @@ export default class Dashboard extends Component {
   }
 
   _getFamilies(ref) {
-    ref.on(`value`, snapshot => {
+    ref.once(`value`).then(snap => {
       const families = [];
-      snapshot.forEach(data => {
+      snap.forEach(data => {
         families.push({ ...data.val(), key: data.key });
       });
 
-      this.setState({ selectedFamily: families[0].key, families });
+      const selectedFamily = families[0].key;
+      const fam = families.filter(f => f.key === selectedFamily)[0];
+
+      this.setState({
+        families, selectedFamily,
+        members: fam.members,
+        notes: fam.notes,
+      });
     });
   }
 
   _getSessionList(ref) {
     ref.once(`value`)
-      .then(snapshot => {
+      .then(snap => {
         const sessionOptions = [];
-        snapshot.forEach(data => {
+        snap.forEach(data => {
           sessionOptions.push({ ...data.val(), key: data.key });
         });
 
@@ -51,12 +54,16 @@ export default class Dashboard extends Component {
   }
 
   _setSelectedFamily(selectedFamily) {
-    this.setState({ selectedFamily });
+    const fam = this.state.families.filter(f => f.key === selectedFamily)[0];
+
+    this.setState({
+      selectedFamily,
+      members: fam.members,
+      notes: fam.notes,
+    });
   }
 
-  _renderLoading() {
-    return (<Loading title='Families aan het ophalen…' />);
-  }
+  _renderLoading = () => <Loading title='Families aan het ophalen…' />
 
   _renderSidebar() {
     const NEUTRAL_TYPE = {
@@ -78,11 +85,13 @@ export default class Dashboard extends Component {
   }
 
   _renderView() {
+    const { members, notes } = this.state;
+    console.log(members);
     return (
       <View style={s.view}>
         {this._renderSidebar()}
         {this.props.dimmed ? <View style={s.dimmed}></View> : null}
-        <Results selectedFamily={this.state.selectedFamily} />
+        {members ? <Results members={members} notes={notes} /> : null}
         <ActionMenu sessionOptions={this.state.sessionOptions} />
       </View>
     );
@@ -93,7 +102,7 @@ export default class Dashboard extends Component {
       <View style={s.container}>
         <StatusBar hidden={true} />
         <NavigationBar title='Dashboard' />
-        { this.state.families ? this._renderView() : this._renderLoading() }
+        { this.state.families  ? this._renderView() : this._renderLoading() }
       </View>
     );
   }
