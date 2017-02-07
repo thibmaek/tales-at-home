@@ -10,7 +10,6 @@ import { s, familyMember } from 'src/assets/styles/containers/Results';
 export default class Results extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {};
   }
 
   render() {
@@ -31,13 +30,13 @@ export default class Results extends Component {
               <Text style={familyMember.language}>{member.lang}</Text>
             </View>
           )}
+          {this.props.notes
+            ? <ScrollView style={s.notes} horizontal={true} alwaysBounceHorizontal={true}>
+                {this.state.map(note => <Card key={note.key} action='Bewerken' {...note} />)}
+              </ScrollView>
+            : null
+          }
         </View>
-        {this.props.notes
-          ? <ScrollView style={s.notes} horizontal={true} alwaysBounceHorizontal={true}>
-              {this.props.notes.map(note => <Card key={note.key} action='Bewerken' {...note} />)}
-            </ScrollView>
-          : null
-        }
       </View>
     );
   }

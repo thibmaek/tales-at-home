@@ -20,9 +20,7 @@ export default class Families extends Component {
     this.setState({ active });
   }
 
-  _setActive(key) {
-    console.log(key);
-  }
+  shouldHighlight = key => key === this.props.selectedFamily ? true : false
 
   render() {
     return (
@@ -30,9 +28,14 @@ export default class Families extends Component {
         dataSource={this.ds.cloneWithRows(this.state.active)}
         renderRow={family => (
           <TouchableHighlight
-            onPress={() => this._setActive(family.key)}
-            underlayColor={highLightNeutral}>
-            <FamilyItem key={family.key} {...family} />
+            onPress={() => this.props.didSelectFamily(family.key)}
+            underlayColor={highLightNeutral}
+          >
+            <FamilyItem
+              key={family.key}
+              shouldHighlight={this.shouldHighlight(family.key)}
+              {...family}
+            />
           </TouchableHighlight>
         )}
       />
@@ -41,5 +44,7 @@ export default class Families extends Component {
 
   static propTypes = {
     families: PropTypes.any.isRequired,
+    selectedFamily: PropTypes.string,
+    didSelectFamily: PropTypes.func.isRequired,
   }
 }
