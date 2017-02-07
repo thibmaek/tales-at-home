@@ -1,57 +1,58 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import { CustomButton } from 'src/components/';
 
 import { Database } from 'src/config/firebase';
-import hash from 'src/lib/generateIdFromTime';
 
 import s from 'src/assets/styles/components/AddNote';
 import cross from 'src/assets/img/icons/cross@2x.png';
 
-export default class AddNote extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      title: null,
-      content: null,
-    };
-  }
+let TITLE = ``;
+let CONTENT = ``;
 
-  _addNoteToFamily(familyId, title, content) {
-    Database.ref(`families/ + ${familyId} + notes/`).push({
-      key: hash(Date.now()),
-      title: title,
-      content: content,
+const addNoteToFamily = (id, title, content) => {
+  if (title && content) {
+    Database.ref(`/families/${id}/notes`).push({
+      meta: `${new Date()}`,
+      title,
+      content,
     });
+    Actions.refresh();
   }
+};
 
-  render() {
-    return (
-      <View>
-        <View style={s.addNoteContainer}>
-          <View style={s.headerBar}>
-            <TextInput style={s.title} placeholder='Sessie #5' />
-            <TouchableOpacity onPress={this.props.onClose}>
-              <Image style={s.cross} source={cross} />
-            </TouchableOpacity>
-          </View>
-          <View style={s.contentContainer}>
-            <TextInput
-              style={s.content}
-              multiline={true}
-              numberOfLines={4}
-              placeholder='Schrijf hier je notitie…'
-            />
-          </View>
-        </View>
-        <CustomButton type='submitButton' content='notitie toevoegen'
-          onPress={() => this._addNoteToFamily(`-KblImH1pkb5Ew9-Qg_h`, `test`, `contest`)} />
+const AddNote = ({ id, onClose }) => (
+  <View>
+    <View style={s.addNoteContainer}>
+      <View style={s.headerBar}>
+        <TextInput style={s.title} placeholder='Sessie #…' onChangeText={text => TITLE = text} />
+        <TouchableOpacity onPress={onClose}>
+          <Image style={s.cross} source={cross} />
+        </TouchableOpacity>
       </View>
-    );
-  }
+      <View style={s.contentContainer}>
+        <TextInput
+          style={s.content}
+          multiline={true}
+          numberOfLines={4}
+          placeholder='Schrijf hier je notitie…'
+          onChangeText={text => CONTENT = text}
+        />
+      </View>
+    </View>
+    <CustomButton
+      type='submitButton'
+      content='notitie toevoegen'
+      onPress={() => addNoteToFamily(id, TITLE, CONTENT)}
+    />
+  </View>
+);
 
-  static propTypes = {
-    onClose: PropTypes.func.isRequired,
-  }
-}
+AddNote.propTypes = {
+  id: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
+export default AddNote;

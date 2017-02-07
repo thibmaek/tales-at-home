@@ -24,26 +24,21 @@ export default class Dashboard extends Component {
   }
 
   _getFamilies(ref) {
-    ref.once(`value`).then(snap => {
-      const families = [];
-      snap.forEach(data => {
-        families.push({ ...data.val(), key: data.key });
-      });
+    ref.once(`value`)
+      .then(snap => {
+        const families = [];
+        snap.forEach(data => {
+          families.push({ ...data.val(), key: data.key });
+        });
 
-      let selectedFamily = null;
+        let selectedFamily = null;
+        this.props.selectedFamily
+          ? selectedFamily = this.props.selectedFamily
+          : selectedFamily = families[0].key;
 
-      this.props.selectedFamily
-        ? selectedFamily = this.props.selectedFamily
-        : selectedFamily = families[0].key;
-
-      const fam = families.filter(f => f.key === selectedFamily)[0];
-
-      this.setState({
-        families, selectedFamily,
-        members: fam.members,
-        notes: fam.notes,
-      });
-    });
+        this.setState({ families, selectedFamily });
+      })
+      .catch(e => console.error(e));
   }
 
   _getSessionList(ref) {
@@ -55,17 +50,12 @@ export default class Dashboard extends Component {
         });
 
         this.setState({ sessionOptions });
-      });
+      })
+      .catch(e => console.error(e));
   }
 
   _setSelectedFamily(selectedFamily) {
-    const fam = this.state.families.filter(f => f.key === selectedFamily)[0];
-
-    this.setState({
-      selectedFamily,
-      members: fam.members,
-      notes: fam.notes,
-    });
+    this.setState({ selectedFamily });
   }
 
   _renderLoading = () => <Loading title='Families aan het ophalen…' />
@@ -91,13 +81,13 @@ export default class Dashboard extends Component {
   }
 
   _renderView() {
-    const { members, notes } = this.state;
+    const { selectedFamily } = this.state;
     return (
       <View style={s.view}>
         { this._renderSidebar() }
         { this.props.dimmed ? <View style={s.dimmed}></View> : null }
-        { members ? <Results members={members} notes={notes} /> : null }
-        <ActionMenu sessionOptions={this.state.sessionOptions} />
+        <Results selectedFamily={selectedFamily} />
+        <ActionMenu sessionOptions={this.state.sessionOptions} selectedFamily={selectedFamily} />
       </View>
     );
   }
