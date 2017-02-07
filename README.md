@@ -9,9 +9,9 @@
 
 ## Installing
 1. `npm (or yarn) install`
-2. `npm run start:ipad` to launch a packaging server and open a debugger instance on _0.0.0.0:8081_
+2. `npm run start:ipad` to launch a packaging server and open a debugger instance on _0.0.0.0:8081/debugger-ui_
   - Alternatively run `npm run start` to just start the packing server
-  - For Nuclide just run `Nuclide React Native: Start Debugging` in the command palette.
+  - For Nuclide just run `Nuclide React Native: Start Packager` in the command palette.
 3. Edit the `src` folder only.
 
 ## Management
@@ -28,13 +28,28 @@
 	* …the props are within 100 chars line-length
 	* …callbacks are lambdas/immediate returns
 * For each new component put the component itself in `src/containers` or `src/components` and its style in `src/assets/styles/containers` or `src/assets/styles/components`, avoid inline styles.
-* Only absolute imports
-* Import style objects/StyleSheets as `s`:
-`import s from 'src/assets/styles/components/Navigation'`
+* For imports:
+  * Only absolute imports
+  * Import style objects/StyleSheets as `s`:
+  `import s from 'src/assets/styles/components/Navigation'`
+  * Order:
+    ```
+    import react
+    import react native
+    import 3rd party libs
+
+    import components
+
+    import config
+    import helpers,…
+
+    import styles
+    import assets
+    ```
 * When creating a style object or StyleSheet, put your related styles on 1 line (if eslint allows it) when having multiple styling rules:
 ```js
 {
-  // Order: flex, margin, padding, fonts, colors, rest…
+  // Order: positional(flex, width & height, margin, padding), fonts, colors, rest…
   flexDirection: 'row', flex: 1, justifyContent: 'center',
   margin: 30,
   padding: 3,
