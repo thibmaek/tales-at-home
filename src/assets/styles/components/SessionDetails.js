@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {
-  mediumGray, lightBlack, globalStyle, fontIsLabel,
-} from 'src/assets/styles/vars';
+import { mediumGray, lightBlack, globalStyle } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
