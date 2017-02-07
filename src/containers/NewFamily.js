@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+
 import { FamilyMember, CustomButton } from 'src/components/';
 
-import { Actions } from 'react-native-router-flux';
 import { Database } from 'src/config/firebase';
-
 import capString from 'src/lib/capitalizeString';
 import upperCaseString from 'src/lib/upperCaseString';
-import hash from 'src/lib/generateIdFromTime';
 
 import s from 'src/assets/styles/containers/NewFamily';
 
@@ -18,9 +17,6 @@ export default class NewFamily extends Component {
     this.familyRef = Database.ref(`/families`);
     this.state = {
       members: [],
-      familyName: null, description: null,
-      name: null, role: null, prefLanguage: null,
-      isAddingMember: false,
     };
   }
 
@@ -45,11 +41,10 @@ export default class NewFamily extends Component {
     if (members.length > 0 && familyName && description) {
       this.familyRef.push({
         active: true,
-        key: hash(Date.now()),
         name: familyName,
         description,
         members,
-      }).then(Actions.dashboardScene)
+      }).then(f => Actions.dashboardScene({ selectedFamily: f.key }))
         .catch(e => console.error(e));
     }
   }

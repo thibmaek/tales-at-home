@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { View, StatusBar } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import { Database } from 'src/config/firebase';
-
 import { Loading, Families, Results, NewFamily } from 'src/containers/';
 import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
+
+import { Database } from 'src/config/firebase';
 
 import s from 'src/assets/styles/containers/Dashboard';
 
@@ -30,7 +30,12 @@ export default class Dashboard extends Component {
         families.push({ ...data.val(), key: data.key });
       });
 
-      const selectedFamily = families[0].key;
+      let selectedFamily = null;
+
+      this.props.selectedFamily
+        ? selectedFamily = this.props.selectedFamily
+        : selectedFamily = families[0].key;
+
       const fam = families.filter(f => f.key === selectedFamily)[0];
 
       this.setState({
@@ -108,6 +113,7 @@ export default class Dashboard extends Component {
   }
 
   static propTypes = {
+    selectedFamily: PropTypes.string,
     dimmed: PropTypes.bool,
     addFamily: PropTypes.bool,
   }
