@@ -34,6 +34,6 @@ export default StyleSheet.create({
     width: 687, minHeight: 150,
     paddingBottom: 20, paddingLeft: 20, paddingRight: 20, paddingTop: 20,
     ...globalStyle, textAlign: `left`, fontSize: 14, lineHeight: 18, textAlignVertical: `top`,
-    color: lightGray,
+    color: lightBlack,
   },
 });

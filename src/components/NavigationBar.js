@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 
-import { Auth } from 'src/config/firebase';
-
 import { User } from 'src/components/';
+
+import { Auth } from 'src/config/firebase';
 
 import s from 'src/assets/styles/components/NavigationBar';
 

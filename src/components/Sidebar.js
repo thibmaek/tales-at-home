@@ -10,7 +10,9 @@ const Sidebar = ({ children, action }) => (
   <View style={s.sidebar}>
     {children}
     {action
-      ? <Button style={s.buttonBg} textStyle={s.buttonText}>{capString(action.text)}</Button>
+      ? <Button style={s.buttonBg} textStyle={s.buttonText} onPress={action.handler}>
+          { capString(action.text) }
+        </Button>
       : null
     }
   </View>

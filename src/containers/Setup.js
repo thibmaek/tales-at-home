@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { View, StatusBar } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import { Auth } from 'src/config/firebase';
-
 import { AuthType } from 'src/components/';
+
+import { Auth } from 'src/config/firebase';
 
 import s from 'src/assets/styles/containers/Setup';
 

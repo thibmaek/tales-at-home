@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 import {
-  globalStyle, white, black, accentRed, accentGreen, buttonShadowColor,
+  globalStyle,
+  white, black, accentRed, accentBlue, accentGreen, darkGray,
+  buttonShadowColor,
 } from 'src/assets/styles/vars';
 
 const globalRoundedButtonStyle = {
@@ -20,6 +22,15 @@ export default StyleSheet.create({
     ...globalRoundedButtonStyle,
     backgroundColor: accentGreen,
   },
+  roundedButtonBlue: {
+    ...globalRoundedButtonStyle,
+    backgroundColor: accentBlue,
+  },
+  disabledSubmitButton: {
+    ...globalRoundedButtonStyle,
+    shadowOpacity: 0,
+    backgroundColor: darkGray,
+  },
   circleButton: {
     alignSelf: `flex-end`,
     width: 35, height: 35,
@@ -28,17 +39,27 @@ export default StyleSheet.create({
     shadowColor: buttonShadowColor, shadowOpacity: .3,
     shadowOffset: { width: 0, height: 3 }, shadowRadius: 3,
   },
+  addButtonSmall: {
+    width: 35, height: 35,
+    marginRight: 10,
+    borderStyle: `dotted`, borderColor: darkGray,
+  },
 
+  addButtonBig: {
+    width: 98, height: 98,
+    borderStyle: `dotted`, borderColor: darkGray,
+  },
+  addButtonText: {
+    ...globalStyle,
+  },
   circleButtonText: {
     ...globalStyle, fontWeight: `bold`,
     color: white,
   },
-
   buttonTextWhite: {
     ...globalStyle,
     color: white,
   },
-
   buttonTextBlack: {
     ...globalStyle,
     color: black,

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, StatusBar } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+
+import { Loading, Families, Results, NewFamily } from 'src/containers/';
+import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 
 import { Database } from 'src/config/firebase';
 
-import { Loading, Families, Results } from 'src/containers/';
-import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
-
 import s from 'src/assets/styles/containers/Dashboard';
-import { familyMembers } from 'src/assets/mockedData';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
@@ -15,10 +15,7 @@ export default class Dashboard extends Component {
 
     this.familyRef = Database.ref(`/families`);
     this.sessionRef = Database.ref(`/sessions`);
-    this.state = {
-      families: null,
-      sessionOptions: null,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -27,42 +24,70 @@ export default class Dashboard extends Component {
   }
 
   _getFamilies(ref) {
-    ref.on(`value`, snapshot => {
-      const families = [];
-      snapshot.forEach(data => {
-        families.push(data.val());
-      });
+    ref.once(`value`)
+      .then(snap => {
+        const families = [];
+        snap.forEach(data => {
+          families.push({ ...data.val(), key: data.key });
+        });
 
-      this.setState({ families });
-    });
+        let selectedFamily = null;
+        this.props.selectedFamily
+          ? selectedFamily = this.props.selectedFamily
+          : selectedFamily = families[0].key;
+
+        this.setState({ families, selectedFamily });
+      })
+      .catch(e => console.error(e));
   }
 
   _getSessionList(ref) {
     ref.once(`value`)
-      .then(snapshot => {
+      .then(snap => {
         const sessionOptions = [];
-        snapshot.forEach(data => {
-          sessionOptions.push(data.val());
+        snap.forEach(data => {
+          sessionOptions.push({ ...data.val(), key: data.key });
         });
 
         this.setState({ sessionOptions });
-      });
+      })
+      .catch(e => console.error(e));
   }
 
-  _renderLoading() {
-    return (<Loading title='Families aan het ophalen…' />);
+  _setSelectedFamily(selectedFamily) {
+    this.setState({ selectedFamily });
+  }
+
+  _renderLoading = () => <Loading title='Families aan het ophalen…' />
+
+  _renderSidebar() {
+    const NEUTRAL_TYPE = {
+      type: `neutral`,
+      text: `nieuw gezin aanmaken`,
+      handler: Actions.dashboardScene_new,
+    };
+
+    return (
+      !this.props.addFamily
+        ? <Sidebar action={NEUTRAL_TYPE}>
+            <Families
+              families={this.state.families}
+              selectedFamily={this.state.selectedFamily}
+              didSelectFamily={key => this._setSelectedFamily(key)}
+            />
+          </Sidebar>
+        : <Sidebar><NewFamily /></Sidebar>
+    );
   }
 
   _renderView() {
-    const { families, sessionOptions } = this.state;
-
+    const { selectedFamily } = this.state;
     return (
       <View style={s.view}>
-        <Sidebar action={{ type: `Neutral`, text: `nieuw gezin aanmaken` }}>
-          <Families families={families} />
-        </Sidebar>
-        <Results familyMembers={familyMembers} />
-        <ActionMenu sessionOptions={sessionOptions} />
+        { this._renderSidebar() }
+        { this.props.dimmed ? <View style={s.dimmed}></View> : null }
+        <Results selectedFamily={selectedFamily} />
+        <ActionMenu sessionOptions={this.state.sessionOptions} selectedFamily={selectedFamily} />
       </View>
     );
   }
@@ -72,8 +97,14 @@ export default class Dashboard extends Component {
       <View style={s.container}>
         <StatusBar hidden={true} />
         <NavigationBar title='Dashboard' />
-        { this.state.families ? this._renderView() : this._renderLoading() }
+        { this.state.families  ? this._renderView() : this._renderLoading() }
       </View>
     );
+  }
+
+  static propTypes = {
+    selectedFamily: PropTypes.string,
+    dimmed: PropTypes.bool,
+    addFamily: PropTypes.bool,
   }
 }

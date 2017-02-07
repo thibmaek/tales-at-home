@@ -74,7 +74,9 @@ export default class ActionMenu extends Component {
         }
 
         {displayNoteInput
-          ? <View><AddNote onClose={() => this._handleCloseNote()} /></View>
+          ? <View>
+              <AddNote onClose={() => this._handleCloseNote()} id={this.props.selectedFamily} />
+            </View>
           : null
         }
 
@@ -99,6 +101,7 @@ export default class ActionMenu extends Component {
   }
 
   static propTypes = {
+    selectedFamily: PropTypes.string.isRequired,
     sessionOptions: PropTypes.array,
   }
 }
