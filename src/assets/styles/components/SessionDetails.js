@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import {
-  mediumGray, globalStyle, fontIsLabel,
+  mediumGray, lightBlack, globalStyle, fontIsLabel,
 } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
@@ -28,5 +28,19 @@ export default StyleSheet.create({
     ...fontIsLabel,
     fontSize: 11, fontWeight: `normal`,
     color: mediumGray,
+  },
+  label: {
+    marginBottom: 20, marginTop: 10,
+    ...globalStyle,
+    ...fontIsLabel,
+    fontSize: 12, fontWeight: `bold`, textAlign: `center`,
+    color: mediumGray,
+  },
+  code: {
+    marginBottom: 15,
+    ...globalStyle,
+    ...fontIsLabel,
+    fontSize: 50, fontWeight: `bold`, textAlign: `center`,
+    color: lightBlack,
   },
 });
