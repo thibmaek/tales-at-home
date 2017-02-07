@@ -26,6 +26,11 @@ export default StyleSheet.create({
     ...globalRoundedButtonStyle,
     backgroundColor: accentBlue,
   },
+  disabledSubmitButton: {
+    ...globalRoundedButtonStyle,
+    shadowOpacity: 0,
+    backgroundColor: darkGray,
+  },
   circleButton: {
     alignSelf: `flex-end`,
     width: 35, height: 35,

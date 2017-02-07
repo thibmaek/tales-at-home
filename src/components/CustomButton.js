@@ -21,6 +21,11 @@ const CustomButton = ({ type, color, onPress, content }) => {
       <Button style={color === `green` ? s.roundedButtonGreen : s.roundedButtonBlue}
         textStyle={s.buttonTextWhite} onPress={onPress}>{capString(content)}</Button>
     );
+  case `disabledSubmitButton`:
+    return (
+      <Button style={s.disabledSubmitButton}
+        textStyle={s.buttonTextWhite} onPress={onPress}>{capString(content)}</Button>
+    );
   case `addMemberSmall`:
     return (
       <Button style={s.addButtonSmall} textStyle={s.addButtonText}
