@@ -81,7 +81,7 @@ export default class Dashboard extends Component {
     return (
       <View style={s.container}>
         <StatusBar hidden={true} />
-        <NavigationBar title='Dashboard' />
+        <NavigationBar title='Dashboard' action='SEARCH' />
         { this.state.families  ? this._renderView() : this._renderLoading() }
       </View>
     );
