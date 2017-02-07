@@ -3,5 +3,5 @@ export default (min, max, amount) => {
 
   for (let i = 0;i < amount;i ++)
     pin += Math.floor((Math.random() * (max - min + 1)) + min);
-  return pin;
+  return parseInt(pin);
 };
