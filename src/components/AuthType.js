@@ -15,10 +15,7 @@ const AUTH_LOGIN = { action: `inloggen`, title: `aanmelden`, method: `login` };
 export default class AuthType extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {
-      email: null,
-      password: null,
-    };
+    this.state = {};
   }
 
   _handleSubmit(type) {
