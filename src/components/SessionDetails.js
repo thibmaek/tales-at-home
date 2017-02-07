@@ -5,7 +5,7 @@ import s from 'src/assets/styles/components/SessionDetails';
 import { mediumGray } from 'src/assets/styles/vars';
 
 import { CustomButton, SessionOption } from 'src/components/';
-import fourDigitPin from 'src/lib/fourDigitPin';
+import generatePin from 'src/lib/generatePin';
 
 export default class SessionDetails extends Component {
   constructor(props, context) {
@@ -56,7 +56,7 @@ export default class SessionDetails extends Component {
             <View>
               <View>
                 <Text style={s.label}>{`Deelnemerscode`.toUpperCase()}</Text>
-                <Text style={s.code}>{fourDigitPin(0, 9, 4)}</Text>
+                <Text style={s.code}>{generatePin(0, 9, 4)}</Text>
               </View>
               <CustomButton style={s.button}
               type={button} content='Beginnen' onPress={() => this._handleToggleResults()} />
