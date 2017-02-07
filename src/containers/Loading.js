@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
+import { Preloader } from 'src/components/';
+
 import s from 'src/assets/styles/containers/Loading';
 import loadingCharBlue from 'src/assets/img/chars/loadingChar.png';
 
@@ -10,7 +12,10 @@ const Loading = ({ character, title }) => (
       style={s.loadingChar}
       source={character === `blue` ? loadingCharBlue : null}
     />
-    <Text style={s.loadingText}>{ title ? title : `` }</Text>
+    <View style={s.isLoading}>
+      <Preloader size={32} />
+      <Text style={s.loadingText}>{ title ? title : `` }</Text>
+    </View>
   </View>
 );
 

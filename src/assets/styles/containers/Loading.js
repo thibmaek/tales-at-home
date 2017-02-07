@@ -12,8 +12,12 @@ export default StyleSheet.create({
     width: 256,
     height: 256,
   },
-  loadingText: {
+  isLoading: {
+    flexDirection: `row`,
     marginTop: 40,
+  },
+  loadingText: {
+    marginLeft: 20,
     ...globalStyle, ...fontIsTitle, fontWeight: `bold`,
   },
 });
