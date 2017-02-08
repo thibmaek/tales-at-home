@@ -12,8 +12,7 @@ export default StyleSheet.create({
     borderRadius: 2.5,
   },
   text: {
-    ...globalStyle,
-    ...fontIsLabel,
+    ...globalStyle, ...fontIsLabel,
     color: mediumGray,
   },
 });

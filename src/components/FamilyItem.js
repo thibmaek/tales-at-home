@@ -14,12 +14,16 @@ export default class FamilyItem extends Component {
   }
 
   render() {
+    const { name, shouldHighlight } = this.props;
     return (
-      <View style={s.container} ref={component => this._root = component}>
+      <View
+        ref={component => this._root = component}
+        style={shouldHighlight ? s.highlightedContainer : s.container}
+      >
         <Image source={avatar} style={s.image} />
         <View style={s.textContainer}>
           <Text style={s.label}>Familie</Text>
-          <Text style={s.name}>{ this.props.name }</Text>
+          <Text style={s.name}>{ name }</Text>
         </View>
       </View>
     );
@@ -27,5 +31,6 @@ export default class FamilyItem extends Component {
 
   static propTypes = {
     name: PropTypes.string.isRequired,
+    shouldHighlight: PropTypes.bool,
   }
 }

@@ -1,10 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, fontIsSubHeader, darkGray } from 'src/assets/styles/vars';
+import { globalStyle, highLightNeutral, fontIsSubHeader, darkGray } from 'src/assets/styles/vars';
+
+const container = {
+  flex: 1, flexDirection: `row`,
+  paddingLeft: 30, paddingRight: 130, paddingBottom: 18, paddingTop: 18,
+};
 
 export default StyleSheet.create({
-  container: {
-    flex: 1, flexDirection: `row`,
-    paddingLeft: 30, paddingRight: 130, paddingBottom: 18, paddingTop: 18,
+  container,
+  highlightedContainer: {
+    ...container,
+    backgroundColor: highLightNeutral,
   },
   image: {
     flexGrow: 1,
@@ -17,8 +23,7 @@ export default StyleSheet.create({
   },
   label: {
     flex: 1,
-    ...globalStyle,
-    ...fontIsSubHeader,
+    ...globalStyle, ...fontIsSubHeader,
   },
   name: {
     flex: 1,

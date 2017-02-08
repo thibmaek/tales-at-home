@@ -10,7 +10,8 @@ const App = () => (
   <Router hideNavBar={true}>
     <Scene key='rootScene' component={UserPicker} />
     <Scene key='setupScene' component={Setup} hideNavBar={false} title='Aanmelden' navBar={NavigationBar} />
-    <Scene key='dashboardScene' component={Dashboard} title='Dashboard' />
+    <Scene key='dashboardScene' component={Dashboard} title='Dashboard' type='reset' />
+    <Scene key='dashboardScene_new' component={Dashboard} title='Nieuw gezin aanmaken' type='replace' addFamily={true} dimmed={true} />
     <Scene key='sessionScenes' initial={true}>
       <Scene key='sessionSwiping' initial={true}>
         <Scene key='swipeInitial' component={Swiping} step='select' />

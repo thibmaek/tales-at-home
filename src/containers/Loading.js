@@ -1,25 +1,22 @@
 import React, { PropTypes } from 'react';
 import { View, Text, Image } from 'react-native';
 
-import s from 'src/assets/styles/containers/Loading';
-import loadingCharBlue from 'src/assets/img/chars/loadingChar.png';
+import { Preloader } from 'src/components/';
 
-const Loading = ({ character, title }) => (
+import s from 'src/assets/styles/containers/Loading';
+import loadingChar from 'src/assets/img/chars/loadingChar.png';
+
+const Loading = ({ title }) => (
   <View style={s.loadingView}>
-    <Image
-      style={s.loadingChar}
-      source={character === `blue` ? loadingCharBlue : null}
-    />
-    <Text style={s.loadingText}>{ title ? title : `` }</Text>
+    <Image style={s.loadingChar} source={loadingChar} />
+    <View style={s.isLoading}>
+      <Preloader size={32} />
+      <Text style={s.loadingText}>{ title ? title : `` }</Text>
+    </View>
   </View>
 );
 
-Loading.defaultProps = {
-  character: `blue`,
-};
-
 Loading.propTypes = {
-  character: PropTypes.string,
   title: PropTypes.string,
 };
 
