@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { ListView, TouchableHighlight } from 'react-native';
-
+import { ListView, TouchableHighlight, TouchableOpacity, View, Text } from 'react-native';
+import { SwipeListView } from 'react-native-swipe-list-view';
+import { Database } from 'src/config/firebase';
 import { FamilyItem } from 'src/components/';
 
+import s from 'src/assets/styles/components/FamilyItem';
 import { highLightNeutral } from 'src/assets/styles/vars';
 
 export default class Families extends Component {
@@ -17,12 +19,22 @@ export default class Families extends Component {
     this.setState({ active });
   }
 
+  _archiveFamily(FamilyId, secId, rowId, rowMap) {
+    Database.ref(`/families/${FamilyId}`)
+      .update({ active: false })
+      .then(() => {
+        rowMap[`${secId}${rowId}`].closeRow();
+        this.setState({
+          active: this.state.active.filter(family => family.key !== FamilyId),
+        });
+      }).catch(e => e);
+  }
+
   shouldHighlight = key => key === this.props.selectedFamily ? true : false
 
   render() {
     return (
-      <ListView
-        dataSource={this.ds.cloneWithRows(this.state.active)}
+      <SwipeListView dataSource={this.ds.cloneWithRows(this.state.active)}
         renderRow={family => (
           <TouchableHighlight
             onPress={() => this.props.didSelectFamily(family.key)}
@@ -35,6 +47,16 @@ export default class Families extends Component {
             />
           </TouchableHighlight>
         )}
+        renderHiddenRow={(family, secId, rowId, rowMap) => (
+          <View style={s.archiveRow}>
+            <TouchableOpacity style={s.archiveButton}
+              onPress={() => this._archiveFamily(family.key, secId, rowId, rowMap)} >
+              <Text style={s.buttonText}>Archive</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+        disableRightSwipe
+        rightOpenValue={- 75}
       />
     );
   }
@@ -45,3 +67,20 @@ export default class Families extends Component {
     didSelectFamily: PropTypes.func.isRequired,
   }
 }
+
+
+{/* <ListView
+  dataSource={this.ds.cloneWithRows(this.state.active)}
+  renderRow={family => (
+    <TouchableHighlight
+      onPress={() => this.props.didSelectFamily(family.key)}
+      underlayColor={highLightNeutral}
+    >
+      <FamilyItem
+        key={family.key}
+        shouldHighlight={this.shouldHighlight(family.key)}
+        {...family}
+      />
+    </TouchableHighlight>
+  )}
+/> */}
