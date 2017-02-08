@@ -44,7 +44,6 @@ export default StyleSheet.create({
     marginRight: 10,
     borderStyle: `dotted`, borderColor: darkGray,
   },
-
   addButtonBig: {
     width: 98, height: 98,
     borderStyle: `dotted`, borderColor: darkGray,
