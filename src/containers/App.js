@@ -5,8 +5,6 @@ import { Dashboard, Setup, UserPicker } from 'src/containers/';
 import { Swiping } from 'src/containers/sessions/';
 import { NavigationBar } from 'src/components/';
 
-import { Dashboard, Setup, UserPicker } from 'src/containers/';
-
 /* eslint-disable max-len*/
 const App = () => (
   <Router hideNavBar={true}>
