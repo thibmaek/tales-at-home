@@ -1,12 +1,21 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, fontIsHeader, white, lightGray, shadowColor } from 'src/assets/styles/vars';
+import { globalStyle, fontIsHeader,
+  white, lightGray, shadowColor } from 'src/assets/styles/vars';
+
+const navbar = {
+  flexDirection: `row`, alignItems: `center`,
+  height: 50,
+  paddingLeft: 20,
+  zIndex: 2,
+};
 
 export default StyleSheet.create({
+  transparentNavbar: {
+    ...navbar,
+    backgroundColor: `transparent`,
+  },
   navbar: {
-    flexDirection: `row`, alignItems: `center`,
-    height: 50,
-    paddingLeft: 20, paddingRight: 20,
-    zIndex: 2,
+    ...navbar,
     backgroundColor: white,
     shadowColor, shadowRadius: 4, shadowOffset: { width: 2 }, shadowOpacity: .09,
   },
@@ -14,6 +23,9 @@ export default StyleSheet.create({
     flexDirection: `row`,
     flex: 2,
     justifyContent: `space-around`,
+  },
+  navigationAction: {
+    marginRight: 20,
   },
   title: {
     flex: 1,
