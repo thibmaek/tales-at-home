@@ -22,12 +22,13 @@ export default StyleSheet.create({
     backgroundColor: lightBlue,
   },
   professionalInnerContainer: {
+    paddingBottom: 80,
     flexDirection: `column`,
     alignItems: `center`,
     justifyContent: `center`,
   },
-  professionalChar: {
-    marginBottom: 30,
+  char: {
+    marginBottom: 110,
   },
   familyContainer: {
     flex: 1, justifyContent: `flex-end`,
@@ -36,14 +37,12 @@ export default StyleSheet.create({
   },
   familyInnerContainer: {
     flexDirection: `column`,
+    paddingBottom: 80,
     alignItems: `center`,
     justifyContent: `center`,
   },
   charsContainer: {
     ...sharedContainerRules,
     alignItems: `flex-start`,
-  },
-  button: {
-    marginBottom: 80, marginTop: 80,
   },
 });
