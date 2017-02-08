@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, fontIsHeader, white, lightGray, shadowColor } from 'src/assets/styles/vars';
+import { globalStyle, fontIsHeader,
+  white, lightGray, shadowColor } from 'src/assets/styles/vars';
 
 const navbar = {
   flexDirection: `row`, alignItems: `center`,
   height: 50,
-  paddingLeft: 20, paddingRight: 20,
+  paddingLeft: 20,
   zIndex: 2,
 };
 
