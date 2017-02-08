@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -27,6 +26,7 @@
 		AAFA2A337C614255AACE27E5 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7F5CF5657845349BA71B7E /* libBVLinearGradient.a */; };
 		C386D61D1E3D07BD003F0580 /* Bariol_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C386D61B1E3D07BD003F0580 /* Bariol_Bold.ttf */; };
 		C386D61E1E3D07BD003F0580 /* Bariol_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C386D61C1E3D07BD003F0580 /* Bariol_Regular.ttf */; };
+		DEC40C855059409A924FEEB2 /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4BE5BF53644B38880C5873 /* libLottieReactNative.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +248,8 @@
 		8B7F5CF5657845349BA71B7E /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		C386D61B1E3D07BD003F0580 /* Bariol_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Bold.ttf; sourceTree = "<group>"; };
 		C386D61C1E3D07BD003F0580 /* Bariol_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol_Regular.ttf; sourceTree = "<group>"; };
+		E6B4DF2AC88F4D9686F0B01E /* LottieReactNative.xcodeproj */ = {isa = PBXFileReference; name = "LottieReactNative.xcodeproj"; path = "../node_modules/lottie-react-native/lib/ios/LottieReactNative.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		0C4BE5BF53644B38880C5873 /* libLottieReactNative.a */ = {isa = PBXFileReference; name = "libLottieReactNative.a"; path = "libLottieReactNative.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				AAFA2A337C614255AACE27E5 /* libBVLinearGradient.a in Frameworks */,
+				DEC40C855059409A924FEEB2 /* libLottieReactNative.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +423,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				61F52B2871954DCCBF6B288F /* BVLinearGradient.xcodeproj */,
+				E6B4DF2AC88F4D9686F0B01E /* LottieReactNative.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -865,6 +869,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/talesathome.app/talesathome";
@@ -881,6 +886,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
