@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { View, Text, TouchableWithoutFeedback, TextInput } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import { CustomButton, SessionOption } from 'src/components/';
 
@@ -23,9 +24,7 @@ export default class SessionDetails extends Component {
     });
   }
 
-  _handleToggleResults() {
-
-  }
+  _handleToggleResults = () => Actions.sessionSwiping();
 
   render() {
     const { title, description } = this.props;

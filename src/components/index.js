@@ -6,6 +6,7 @@ import Card from 'src/components/Card';
 import CustomButton from 'src/components/CustomButton';
 import FamilyItem from 'src/components/FamilyItem';
 import FamilyMember from 'src/components/FamilyMember';
+import Flag from 'src/components/Flag';
 import NavigationBar from 'src/components/NavigationBar';
 import Note from 'src/components/Note';
 import Preloader from 'src/components/Preloader';
@@ -24,6 +25,7 @@ export {
   CustomButton,
   FamilyItem,
   FamilyMember,
+  Flag,
   NavigationBar,
   Note,
   Preloader,

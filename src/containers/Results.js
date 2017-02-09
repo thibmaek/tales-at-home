@@ -59,12 +59,12 @@ export default class Results extends Component {
               ? <Image style={familyMember.avatar} source={{ uri: member.avatar }} />
               : <View style={familyMember.noAvatar}>
                   <Text style={familyMember.initials}>
-                    {getNameInitials(member.name)}
+                    { getNameInitials(member.name) }
                   </Text>
                 </View>
             }
-            <Text style={familyMember.name}>{member.name}</Text>
-            <Text style={familyMember.language}>{member.lang}</Text>
+            <Text style={familyMember.name}>{ member.name }</Text>
+            <Text style={familyMember.language}>{ member.prefLanguage }</Text>
           </View>
         )}
       </View>
