@@ -15,7 +15,6 @@ export default class Dashboard extends Component {
 
     this.ref = Database.ref(`/families`);
     this.state = {
-      families: ``,
       search: ``,
     };
   }
@@ -52,10 +51,8 @@ export default class Dashboard extends Component {
 
   _updateSearch(search) {
     this.setState({
-      families: this.state.families.filter(
-        family => {
-          return family.name.toLowerCase().indexOf(search.toLowerCase()) !== - 1;
-        }
+      families: this.state.families.filter(family =>
+        family.name.toLowerCase().indexOf(search.toLowerCase()) !== - 1
       ),
       search,
     });
