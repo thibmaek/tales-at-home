@@ -58,8 +58,11 @@ export default class SessionDetails extends Component {
                 <Text style={s.label}>{`Deelnemerscode`.toUpperCase()}</Text>
                 <Text style={s.code}>{generatePin(0, 9, 4)}</Text>
               </View>
-              <CustomButton style={s.button}
-              type={button} content='Beginnen' onPress={() => this._handleToggleResults()} />
+              <CustomButton
+                style={s.button}
+                type={button} content='Resultaten bekijken'
+                onPress={() => this._handleToggleResults()}
+              />
             </View>
         }
       </View>

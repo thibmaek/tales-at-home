@@ -26,7 +26,7 @@ const UserPicker = () => (
           <View style={s.familyInnerContainer}>
             <Image source={familyChars} style={s.char} />
             <CustomButton style={s.button} type='submitButton' content='Ik ben een gezinslid'
-            onPress={() => Actions.connectionScene} />
+            onPress={() => Actions.connectionScene()} />
           </View>
         </TouchableWithoutFeedback>
       </View>
