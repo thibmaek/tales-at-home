@@ -9,7 +9,7 @@ import { NavigationBar } from 'src/components/';
 const App = () => (
   <Router hideNavBar={true}>
     <Scene key='rootScene' component={UserPicker} initial={true} />
-    <Scene key='connectionScene' component={Connect} title='Connecteren' navBar={NavigationBar} navigate='BACK' />
+    <Scene key='connectionScene' component={Connect} title='Connecteren' hideNavBar={false} navBar={NavigationBar} navigate='BACK' />
     <Scene key='setupScene' component={Setup} hideNavBar={false} title='Registreren' navBar={NavigationBar} navigate='BACK' />
     <Scene key='dashboardScene' component={Dashboard} title='Dashboard' type='reset' />
     <Scene key='dashboardScene_new' component={Dashboard} title='Nieuw gezin aanmaken' type='replace' addFamily={true} dimmed={true} />

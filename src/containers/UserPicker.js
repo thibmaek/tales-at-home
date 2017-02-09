@@ -28,7 +28,7 @@ const UserPicker = () => (
           <View style={s.familyInnerContainer}>
             <Image source={familyChars} style={s.char} />
             <DynamicButton touchable='highlight' style={s.button}
-              textStyle={s.buttonText} action={() => Actions.connectionScene}
+              textStyle={s.buttonText} action={() => Actions.connectionScene()}
             >
               Ik ben een gezinslid
             </DynamicButton>
