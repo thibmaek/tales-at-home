@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import DynamicButton from 'rndynamicbutton';
 
 import { FamilyMember } from 'src/components/';
-import DynamicButton from 'rndynamicbutton';
 
 import { Database } from 'src/config/firebase';
 import capString from 'src/lib/capitalizeString';
@@ -71,13 +71,14 @@ export default class NewFamily extends Component {
             <View style={s.addMemberContainer}>
               <View>
                   <DynamicButton
-                      touchable='highlight'
-                      style={s.rectangleButton}
-                      shadow={false}
-                      textStyle={s.buttonText}
-                      action={() => this._openAddMember()}>
-                      +
-                    </DynamicButton>
+                    touchable='highlight'
+                    style={s.rectangleButton}
+                    shadow={false}
+                    textStyle={s.buttonText}
+                    action={() => this._openAddMember()}
+                  >
+                    +
+                  </DynamicButton>
               </View>
               <View>
                 <Text style={s.newMemberText}>Nieuw gezinslid</Text>
@@ -91,7 +92,7 @@ export default class NewFamily extends Component {
                     shadow={false}
                     style={s.addButton}
                     textStyle={s.buttonText}
-                    action={undefined}>
+                  >
                     +
                   </DynamicButton>
                 </View>

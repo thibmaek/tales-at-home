@@ -25,11 +25,7 @@ const _renderNote = () => (
 const Note = ({ type, buttonContent }) => (
   <View style={s.optionButtonContainer}>
     {type === `button`
-      ? <DynamicButton
-          touchable='highlight'
-          style={s.optionButton}
-          textStyle={s.buttonText}
-          action={undefined}>
+      ? <DynamicButton touchable='highlight' textStyle={s.buttonText}>
           { buttonContent }
         </DynamicButton>
       : _renderNote()

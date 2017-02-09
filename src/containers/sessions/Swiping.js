@@ -2,9 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import BluetoothCP from 'react-native-bluetooth-cross-platform';
+import DynamicButton from 'rndynamicbutton';
 
 import { Flag } from 'src/components/';
-import DynamicButton from 'rndynamicbutton';
 
 import s from 'src/assets/styles/containers/sessions/Swiping';
 import upperCase from 'src/lib/upperCaseString';

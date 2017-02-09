@@ -11,16 +11,14 @@ export default StyleSheet.create({
     backgroundColor: white,
   },
   buttonText: {
-    ...globalStyle,
-    fontSize: 14,
+    ...globalStyle, fontSize: 14,
     color: black,
   },
   addButton: {
     backgroundColor: accentRed,
   },
   addButtonText: {
-    ...globalStyle,
-    ...fontIsLabel,
+    ...globalStyle, ...fontIsLabel,
     color: white,
   },
 });

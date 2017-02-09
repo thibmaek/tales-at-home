@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-
 import DynamicButton from 'rndynamicbutton';
 
 import { Database } from 'src/config/firebase';

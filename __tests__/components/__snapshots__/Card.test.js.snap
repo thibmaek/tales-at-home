@@ -87,7 +87,6 @@ exports[`Card <Prop:action> 1`] = `
       } />
   </ScrollView>
   <DynamicButton
-    action={undefined}
     style={
       Object {
         "backgroundColor": "rgba(255, 255, 255, 1)",

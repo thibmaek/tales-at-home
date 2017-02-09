@@ -14,11 +14,7 @@ const Card = ({ title, meta, content, action }) => (
       <Text style={s.content} selectable={true}>{ content }</Text>
     </ScrollView>
     { action ?
-      <DynamicButton
-        touchable='highlight'
-        style={s.button}
-        textStyle={s.buttonText}
-        action={undefined}>
+      <DynamicButton touchable='highlight' style={s.button} textStyle={s.buttonText}>
         { action }
       </DynamicButton>
       : null }

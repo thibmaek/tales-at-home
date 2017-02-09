@@ -17,7 +17,7 @@ const UserPicker = () => (
           <View style={s.professionalInnerContainer}>
             <Image source={professionalChar} style={s.char} />
             <DynamicButton touchable='highlight' style={s.button} textStyle={s.buttonText}
-            shadow={true} action={() => Actions.setupScene({ authType: AUTH_REGISTER })}>
+              action={() => Actions.setupScene({ authType: AUTH_REGISTER })}>
               Ik ben een professional
             </DynamicButton>
           </View>
@@ -27,8 +27,8 @@ const UserPicker = () => (
         <TouchableWithoutFeedback onPress={() => Actions.connectionScene}>
           <View style={s.familyInnerContainer}>
             <Image source={familyChars} style={s.char} />
-            <DynamicButton touchable='highlight' style={s.button} shadow={true}
-            textStyle={s.buttonText} action={() => Actions.connectionScene}>
+            <DynamicButton touchable='highlight' style={s.button}
+              textStyle={s.buttonText} action={() => Actions.connectionScene}>
               Ik ben een gezinslid
             </DynamicButton>
           </View>

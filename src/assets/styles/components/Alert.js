@@ -39,8 +39,7 @@ export default StyleSheet.create({
     backgroundColor: accentYellow,
   },
   buttonText: {
-    ...globalStyle,
-    ...fontIsLabel,
+    ...globalStyle, ...fontIsLabel,
     color: white,
   },
 });

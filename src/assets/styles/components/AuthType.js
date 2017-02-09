@@ -36,8 +36,7 @@
      backgroundColor: white,
    },
    buttonText: {
-     ...globalStyle,
-     ...fontIsLabel,
+     ...globalStyle, ...fontIsLabel,
      color: accentBlue,
    },
    anonLogin: {
@@ -47,8 +46,7 @@
    },
    textLink: {
      marginTop: 20,
-     ...globalStyle,
-     ...fontIsLabel, fontWeight: `normal`, fontSize: 14,
+     ...globalStyle, ...fontIsLabel, fontWeight: `normal`, fontSize: 14,
      backgroundColor: `transparent`,
      color: white,
    },

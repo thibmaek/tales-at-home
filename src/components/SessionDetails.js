@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { View, Text, TouchableWithoutFeedback, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import DynamicButton from 'rndynamicbutton';
+
 import { SessionOption } from 'src/components/';
 
 import generatePin from 'src/lib/generatePin';
@@ -63,7 +64,7 @@ export default class SessionDetails extends Component {
                 <Text style={s.code}>{generatePin(0, 9, 4)}</Text>
               </View>
               <DynamicButton
-                touchable='highlight'
+                touchable='disabled'
                 style={s.button}
                 textStyle={s.buttonText}
                 action={() => this._handleToggleResults()}>
