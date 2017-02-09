@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle,
+import { globalStyle, fontIsSubHeader,
   highLightNeutral, white, accentYellow, darkGray,
-  fontIsSubHeader } from 'src/assets/styles/vars';
+} from 'src/assets/styles/vars';
 
 const container = {
   flex: 1, flexDirection: `row`,
@@ -41,7 +41,7 @@ export default StyleSheet.create({
   archiveButton: {
     alignItems: `center`, justifyContent: `center`,
     position: `absolute`, top: 0, right: 0, bottom: 0,
-    width: 75,
+    width: 85,
   },
   buttonText: {
     ...globalStyle,

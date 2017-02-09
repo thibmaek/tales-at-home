@@ -1,15 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import { ListView, TouchableHighlight, TouchableOpacity, View, Text } from 'react-native';
+import { ListView, TouchableHighlight, View, Text } from 'react-native';
 import { SwipeListView } from 'react-native-swipe-list-view';
 import { Database } from 'src/config/firebase';
 import { FamilyItem } from 'src/components/';
 
 import s from 'src/assets/styles/components/FamilyItem';
-import { highLightNeutral } from 'src/assets/styles/vars';
+import { accentYellow, highLightNeutral } from 'src/assets/styles/vars';
 
 export default class Families extends Component {
   constructor(props, context) {
     super(props, context);
+    this.ref = Database.ref(`families`);
     this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {};
   }
@@ -19,15 +20,16 @@ export default class Families extends Component {
     this.setState({ active });
   }
 
-  _archiveFamily(FamilyId, secId, rowId, rowMap) {
-    Database.ref(`/families/${FamilyId}`)
+  _archiveFamily(key, secId, rowId, rowMap) {
+    this.ref.child(`${key}`)
       .update({ active: false })
       .then(() => {
         rowMap[`${secId}${rowId}`].closeRow();
         this.setState({
-          active: this.state.active.filter(family => family.key !== FamilyId),
+          active: this.state.active.filter(family => family.key !== key),
         });
-      }).catch(e => e);
+      })
+      .catch(e => console.error(e));
   }
 
   shouldHighlight = key => key === this.props.selectedFamily ? true : false
@@ -49,14 +51,14 @@ export default class Families extends Component {
         )}
         renderHiddenRow={(family, secId, rowId, rowMap) => (
           <View style={s.archiveRow}>
-            <TouchableOpacity style={s.archiveButton}
+            <TouchableHighlight style={s.archiveButton} underlayColor={accentYellow}
               onPress={() => this._archiveFamily(family.key, secId, rowId, rowMap)} >
-              <Text style={s.buttonText}>Archive</Text>
-            </TouchableOpacity>
+              <Text style={s.buttonText}>Archiveren</Text>
+            </TouchableHighlight>
           </View>
         )}
         disableRightSwipe
-        rightOpenValue={- 75}
+        rightOpenValue={- 85}
       />
     );
   }
@@ -67,20 +69,3 @@ export default class Families extends Component {
     didSelectFamily: PropTypes.func.isRequired,
   }
 }
-
-
-{/* <ListView
-  dataSource={this.ds.cloneWithRows(this.state.active)}
-  renderRow={family => (
-    <TouchableHighlight
-      onPress={() => this.props.didSelectFamily(family.key)}
-      underlayColor={highLightNeutral}
-    >
-      <FamilyItem
-        key={family.key}
-        shouldHighlight={this.shouldHighlight(family.key)}
-        {...family}
-      />
-    </TouchableHighlight>
-  )}
-/> */}
