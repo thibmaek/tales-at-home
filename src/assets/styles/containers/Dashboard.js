@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { seeThroughBlack } from 'src/assets/styles/vars';
+import { globalStyle, seeThroughBlack, lightGray } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
@@ -19,5 +19,13 @@ export default StyleSheet.create({
   actionButton: {
     position: `absolute`,
     zIndex: 3,
+  },
+  searchContainer: {
+    padding: 20,
+  },
+  input: {
+    height: 40,
+    ...globalStyle,
+    color: lightGray,
   },
 });

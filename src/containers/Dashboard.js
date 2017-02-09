@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import { Loading, Families, Results, NewFamily } from 'src/containers/';
@@ -14,11 +14,17 @@ export default class Dashboard extends Component {
     super(props, context);
 
     this.ref = Database.ref(`/families`);
-    this.state = {};
+    this.state = {
+      search: ``,
+    };
   }
 
   componentDidMount() {
     this._getFamilies();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ families: nextProps.families === this.state.families });
   }
 
   _getFamilies() {
@@ -43,6 +49,22 @@ export default class Dashboard extends Component {
     this.setState({ selectedFamily });
   }
 
+  _updateSearch() {
+    //this.setState({ search: e.target.value });
+    // let { families } = this.state;
+    // //const { search } = this.state;
+    //
+    // families = families.filter(
+    //   family => {
+    //     return family.name.indexOf(`bijl`) !== - 1;
+    //   }
+    // );
+    //
+    // this.setState({ families: [{ name: `hannes` }] });
+    // this.forceUpdate();
+    //Actions.dashboardScene();
+  }
+
   _renderLoading = () => <Loading title='Families aan het ophalen…' />
 
   _renderSidebar() {
@@ -55,6 +77,12 @@ export default class Dashboard extends Component {
     return (
       !this.props.addFamily
         ? <Sidebar action={NEUTRAL_TYPE}>
+            <View style={s.searchContainer}>
+              <TextInput style={s.input} placeholder='Zoek een gezin'
+                value={this.state.search}
+                //onChange={search => this.setState({ search })}
+                onFocus={() => this._updateSearch()} />
+            </View>
             <Families
               families={this.state.families}
               selectedFamily={this.state.selectedFamily}
@@ -82,7 +110,7 @@ export default class Dashboard extends Component {
       <View style={s.container}>
         <StatusBar hidden={true} />
         <NavigationBar title='Dashboard' action='SEARCH' />
-        { this.state.families  ? this._renderView() : this._renderLoading() }
+        { this.state.families ? this._renderView() : this._renderLoading() }
       </View>
     );
   }
