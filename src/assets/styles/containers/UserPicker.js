@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
-import { accentYellow, lightBlue } from 'src/assets/styles/vars';
+import { accentYellow, lightBlue,
+  accentBlue, white, globalStyle, fontIsLabel } from 'src/assets/styles/vars';
 
 const sharedContainerRules = {
   flex: 1,
@@ -44,5 +45,13 @@ export default StyleSheet.create({
   charsContainer: {
     ...sharedContainerRules,
     alignItems: `flex-start`,
+  },
+  button: {
+    backgroundColor: accentBlue,
+  },
+  buttonText: {
+    ...globalStyle,
+    ...fontIsLabel,
+    color: white,
   },
 });

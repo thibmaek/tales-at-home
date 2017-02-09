@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 import Card from 'src/components/Card';
 
-jest.mock(`apsl-react-native-button`, () => `Button`);
+jest.mock(`rndynamicbutton`, () => `DynamicButton`);
 
 describe(`Component: <Card>`, () => {
 

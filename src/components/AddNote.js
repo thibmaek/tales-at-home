@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import { CustomButton } from 'src/components/';
+import DynamicButton from 'rndynamicbutton';
 
 import { Database } from 'src/config/firebase';
 
@@ -24,7 +24,7 @@ const addNoteToFamily = (id, title, content) => {
 };
 
 const AddNote = ({ id, onClose }) => (
-  <View>
+  <View style={s.container}>
     <View style={s.addNoteContainer}>
       <View style={s.headerBar}>
         <TextInput style={s.title} placeholder='Sessie #…' onChangeText={text => TITLE = text} />
@@ -42,11 +42,13 @@ const AddNote = ({ id, onClose }) => (
         />
       </View>
     </View>
-    <CustomButton
-      type='submitButton'
-      content='notitie toevoegen'
-      onPress={() => addNoteToFamily(id, TITLE, CONTENT)}
-    />
+    <DynamicButton
+      touchable='highlight'
+      style={s.button}
+      textStyle={s.buttonText}
+      action={() => addNoteToFamily(id, TITLE, CONTENT)}>
+      notitie toevoegen
+    </DynamicButton>
   </View>
 );
 

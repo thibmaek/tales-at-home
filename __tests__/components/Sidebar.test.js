@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 import Sidebar from 'src/components/Sidebar';
 import Card from 'src/components/Card';
 
-jest.mock(`apsl-react-native-button`, () => `Button`);
+jest.mock(`rndynamicbutton`, () => `DynamicButton`);
 
 describe(`Component: <Sidebar>`, () => {
 

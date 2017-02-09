@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View } from 'react-native';
-import Button from 'apsl-react-native-button';
+import DynamicButton from 'rndynamicbutton';
 
 import capString from 'src/lib/capitalizeString';
 
@@ -10,9 +10,13 @@ const Sidebar = ({ children, action }) => (
   <View style={s.sidebar}>
     {children}
     {action
-      ? <Button style={s.buttonBg} textStyle={s.buttonText} onPress={action.handler}>
+      ? <DynamicButton
+          touchable='highlight'
+          style={s.buttonBg}
+          textStyle={s.buttonText}
+          action={action.handler}>
           { capString(action.text) }
-        </Button>
+        </DynamicButton>
       : null
     }
   </View>

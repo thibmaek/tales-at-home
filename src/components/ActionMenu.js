@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
 
-import { CustomButton, AddNote, SessionOptionList } from 'src/components/';
+import { AddNote, SessionOptionList } from 'src/components/';
+import DynamicButton from 'rndynamicbutton';
 
 import s from 'src/assets/styles/components/ActionMenu';
 
@@ -61,10 +62,24 @@ export default class ActionMenu extends Component {
       <View style={s.actionMenuContainer}>
         {displayMenuOptions
           ? <View>
-              <CustomButton type='menuButton' content='nieuwe sessie starten'
-                  onPress={() => this._handleToggleSessionOptionList()} />
-              <CustomButton type='menuButton' content='notitie toevoegen'
-                onPress={() => this._handleToggleNote()} />
+              <View>
+                <DynamicButton
+                  touchable='highlight'
+                  style={s.button}
+                  textStyle={s.buttonText}
+                  action={() => this._handleToggleSessionOptionList()}>
+                  nieuwe sessie starten
+                </DynamicButton>
+              </View>
+              <View>
+                <DynamicButton
+                  touchable='highlight'
+                  style={s.button}
+                  textStyle={s.buttonText}
+                  action={() => this._handleToggleNote()}>
+                  notitie toevoegen
+                </DynamicButton>
+              </View>
             </View>
           : null
         }
@@ -85,7 +100,13 @@ export default class ActionMenu extends Component {
 
         {displayActionButton
           ? <View>
-              <CustomButton type='add' content='+' onPress={() => this._toggleMenuOptions()} />
+              <DynamicButton
+                touchable='highlight'
+                style={s.addButton}
+                textStyle={s.addButtonText}
+                action={() => this._toggleMenuOptions()}>
+                +
+              </DynamicButton>
             </View>
           : null
         }

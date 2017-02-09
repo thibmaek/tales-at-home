@@ -33,13 +33,11 @@
      color: white,
    },
    button: {
-     width: 280,
      backgroundColor: white,
-     borderWidth: 0, borderRadius: 50,
    },
    buttonText: {
      ...globalStyle,
-     fontWeight: `bold`,
+     ...fontIsLabel,
      color: accentBlue,
    },
    anonLogin: {

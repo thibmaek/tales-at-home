@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { mediumGray, lightBlack, globalStyle } from 'src/assets/styles/vars';
+import { mediumGray, lightBlack, accentGreen, white,
+  globalStyle, fontIsLabel } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
@@ -14,6 +15,12 @@ export default StyleSheet.create({
   },
   button: {
     marginBottom: 20,
+    backgroundColor: accentGreen,
+  },
+  buttonText: {
+    ...globalStyle,
+    ...fontIsLabel,
+    color: white,
   },
   inputContainer: {
     flex: 1,

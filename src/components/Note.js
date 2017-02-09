@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, TextInput, Image } from 'react-native';
-import Button from 'apsl-react-native-button';
+import DynamicButton from 'rndynamicbutton';
 
 import s from 'src/assets/styles/components/Note';
 import cross from 'src/assets/img/icons/cross@2x.png';
@@ -25,7 +25,13 @@ const _renderNote = () => (
 const Note = ({ type, buttonContent }) => (
   <View style={s.optionButtonContainer}>
     {type === `button`
-      ? <Button style={s.optionButton} textStyle={s.buttonText}>{ buttonContent }</Button>
+      ? <DynamicButton
+          touchable='highlight'
+          style={s.optionButton}
+          textStyle={s.buttonText}
+          action={undefined}>
+          { buttonContent }
+        </DynamicButton>
       : _renderNote()
     }
   </View>

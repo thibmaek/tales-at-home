@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {
-  white, buttonShadowColor, seeThroughBlack, black, accentYellow, globalStyle,
+  white, seeThroughBlack, black, accentYellow,
+  globalStyle, fontIsLabel,
 } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
@@ -34,16 +35,12 @@ export default StyleSheet.create({
     ...globalStyle, textAlign: `center`, fontSize: 14, lineHeight: 18,
   },
   button: {
-    alignSelf: `center`,
-    height: 40, width: 150,
     marginTop: 25, marginBottom: 20,
     backgroundColor: accentYellow,
-    borderWidth: 0, borderRadius: 50,
-    shadowColor: buttonShadowColor, shadowOpacity: .2,
-    shadowOffset: { width: 0, height: 14 }, shadowRadius: 14,
   },
   buttonText: {
-    ...globalStyle, fontWeight: `bold`,
+    ...globalStyle,
+    ...fontIsLabel,
     color: white,
   },
 });
