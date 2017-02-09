@@ -12,12 +12,7 @@ export default StyleSheet.create({
     backgroundColor: blackDim,
   },
   optionButton: {
-    height: 35,
-    paddingLeft: 20, paddingRight: 20,
-    borderWidth: 0, borderRadius: 50,
     backgroundColor: white,
-    shadowColor: buttonShadowColor, shadowOpacity: .2,
-    shadowOffset: { width: 0, height: 14 }, shadowRadius: 14,
   },
   container: {
     marginBottom: 10,

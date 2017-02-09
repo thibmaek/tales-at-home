@@ -1,8 +1,8 @@
 {
-	"name": "talesathome",
+  "name": "talesathome",
   "version": "0.0.1",
   "private": true,
-	"scripts": {
+  "scripts": {
     "precommit": "npm run lint && npm run test:update",
     "prepush": "npm t",
     "start:packager": "node node_modules/react-native/local-cli/cli.js start",
@@ -14,7 +14,7 @@
     "lint": "eslint src/",
     "list:simulators": "xcrun simctl list devices"
   },
-	"dependencies": {
+  "dependencies": {
 		"apsl-react-native-button": "^3.0.2",
 		"firebase": "^3.6.7",
 		"react": "~15.4.0-rc.4",
@@ -22,7 +22,8 @@
 		"react-native-bluetooth-cross-platform": "^0.0.8",
 		"react-native-linear-gradient": "^2.0.0",
 		"react-native-router-flux": "^3.37.0",
-    "react-native-swipe-list-view": "^0.3.3"
+    "react-native-swipe-list-view": "^0.3.3",
+    "rndynamicbutton": "^0.1.5"
 	},
 	"devDependencies": {
     "babel-jest": "18.0.0",
@@ -34,7 +35,7 @@
     "jest": "18.1.0",
     "react-test-renderer": "~15.4.0-rc.4"
   },
-	"jest": {
+  "jest": {
     "preset": "react-native",
     "notify": true,
     "setupTestFrameworkScriptFile": "./__tests__/jestSetup.js",

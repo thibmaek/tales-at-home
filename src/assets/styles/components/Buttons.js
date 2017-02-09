@@ -7,6 +7,7 @@ import {
 
 const globalRoundedButtonStyle = {
   height: 35,
+  minWidth: 180,
   paddingLeft: 20, paddingRight: 20,
   backgroundColor: white,
   borderWidth: 0, borderRadius: 50,

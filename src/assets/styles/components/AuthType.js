@@ -33,13 +33,10 @@
      color: white,
    },
    button: {
-     width: 280,
      backgroundColor: white,
-     borderWidth: 0, borderRadius: 50,
    },
    buttonText: {
-     ...globalStyle,
-     fontWeight: `bold`,
+     ...globalStyle, ...fontIsLabel,
      color: accentBlue,
    },
    anonLogin: {
@@ -49,8 +46,7 @@
    },
    textLink: {
      marginTop: 20,
-     ...globalStyle,
-     ...fontIsLabel, fontWeight: `normal`, fontSize: 14,
+     ...globalStyle, ...fontIsLabel, fontWeight: `normal`, fontSize: 14,
      backgroundColor: `transparent`,
      color: white,
    },

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View } from 'react-native';
-import Button from 'apsl-react-native-button';
+import DynamicButton from 'rndynamicbutton';
 
 import capString from 'src/lib/capitalizeString';
 
@@ -8,7 +8,9 @@ import s from 'src/assets/styles/components/MenuOption';
 
 const MenuOption = ({ action }) => (
   <View>
-    <Button style={s.button}>{ capString(action) }</Button>
+    <DynamicButton touchable='highlight' style={s.button} textStyle={s.buttonText}>
+      { capString(action) }
+    </DynamicButton>
   </View>
 );
 

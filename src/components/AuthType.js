@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import LinearGradient from 'react-native-linear-gradient';
-import Button from 'apsl-react-native-button';
+import DynamicButton from 'rndynamicbutton';
 
 import { Auth } from 'src/config/firebase';
 import capString from 'src/lib/capitalizeString';
@@ -68,21 +68,21 @@ export default class AuthType extends Component {
             </View>
             <View>
               {this.props.action === `inloggen` ?
-                <Button
+                <DynamicButton
+                  touchable='highlight'
                   style={s.button}
                   textStyle={s.buttonText}
-                  onPress={() => this._handleSubmit(`login`)}
-                >
+                  action={() => this._handleSubmit(`login`)}>
                   { capString(this.props.action) }
-                </Button>
+                </DynamicButton>
                 :
-                <Button
+                <DynamicButton
+                  touchable='highlight'
                   style={s.button}
                   textStyle={s.buttonText}
-                  onPress={() => this._handleSubmit(`register`)}
-                >
+                  action={() => this._handleSubmit(`register`)}>
                   { capString(this.props.action) }
-                </Button>
+                </DynamicButton>
               }
 
             </View>

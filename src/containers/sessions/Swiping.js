@@ -2,8 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import BluetoothCP from 'react-native-bluetooth-cross-platform';
+import DynamicButton from 'rndynamicbutton';
 
-import { CustomButton, Flag } from 'src/components/';
+import { Flag } from 'src/components/';
 
 import s from 'src/assets/styles/containers/sessions/Swiping';
 import upperCase from 'src/lib/upperCaseString';
@@ -38,11 +39,13 @@ export default class Swiping extends Component {
             subStyle={s.swipeImage}
           />
           <Text style={s.swipeAction}>{upperCase(`Swipe omhoog!`)}</Text>
-          <CustomButton
-            type='submitButton'
-            content='Mijn keuze veranderen'
-            onPress={() => Actions.swipeInitial({ direction: `leftToRight` })}
-          />
+          <DynamicButton
+            touchable='highlight'
+            style={s.button}
+            textStyle={s.buttonText}
+            action={() => Actions.swipeInitial({ direction: `leftToRight` })}>
+            Mijn keuze veranderen
+          </DynamicButton>
         </View>
       );
     default:

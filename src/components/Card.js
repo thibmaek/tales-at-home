@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { View, Text, ScrollView } from 'react-native';
-import Button from 'apsl-react-native-button';
+import DynamicButton from 'rndynamicbutton';
 
 import s from 'src/assets/styles/components/Card';
 
@@ -13,7 +13,11 @@ const Card = ({ title, meta, content, action }) => (
     <ScrollView style={s.contentScrollView}>
       <Text style={s.content} selectable={true}>{ content }</Text>
     </ScrollView>
-    { action ? <Button style={s.button} textStyle={s.buttonText}>{ action }</Button> : null }
+    { action ?
+      <DynamicButton touchable='highlight' style={s.button} textStyle={s.buttonText}>
+        { action }
+      </DynamicButton>
+      : null }
   </View>
 );
 

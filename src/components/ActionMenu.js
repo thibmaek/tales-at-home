@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
+import DynamicButton from 'rndynamicbutton';
 
-import { CustomButton, AddNote, SessionOptionList } from 'src/components/';
+import { AddNote, SessionOptionList } from 'src/components/';
 
 import s from 'src/assets/styles/components/ActionMenu';
 
@@ -18,7 +19,6 @@ export default class ActionMenu extends Component {
 
   _toggleMenuOptions() {
     this.setState({
-      isOpen: !this.state.isOpen,
       displayMenuOptions: !this.state.displayMenuOptions,
     });
   }
@@ -61,32 +61,45 @@ export default class ActionMenu extends Component {
       <View style={s.actionMenuContainer}>
         {displayMenuOptions
           ? <View>
-              <CustomButton type='menuButton' content='nieuwe sessie starten'
-                  onPress={() => this._handleToggleSessionOptionList()} />
-              <CustomButton type='menuButton' content='notitie toevoegen'
-                onPress={() => this._handleToggleNote()} />
+              <DynamicButton
+                touchable='highlight'
+                style={s.button}
+                textStyle={s.buttonText}
+                action={() => this._handleToggleSessionOptionList()}
+              >
+                Nieuwe sessie starten
+              </DynamicButton>
+              <DynamicButton
+                touchable='highlight'
+                style={s.button}
+                textStyle={s.buttonText}
+                action={() => this._handleToggleNote()}
+              >
+                Notitie toevoegen
+              </DynamicButton>
             </View>
           : null
         }
 
         {displayNoteInput
-          ? <View>
-              <AddNote onClose={() => this._handleCloseNote()} id={this.props.selectedFamily} />
-            </View>
+          ? <AddNote onClose={() => this._handleCloseNote()} id={this.props.selectedFamily} />
           : null
         }
 
         {displaySessionOptions
-          ? <View>
-              <SessionOptionList onClose={() => this._handleCloseSessionList()} />
-            </View>
+          ? <SessionOptionList onClose={() => this._handleCloseSessionList()} />
           : null
         }
 
         {displayActionButton
-          ? <View>
-              <CustomButton type='add' content='+' onPress={() => this._toggleMenuOptions()} />
-            </View>
+          ? <DynamicButton
+              touchable='highlight'
+              style={s.addButton}
+              textStyle={s.addButtonText}
+              action={() => this._toggleMenuOptions()}
+            >
+              +
+            </DynamicButton>
           : null
         }
       </View>

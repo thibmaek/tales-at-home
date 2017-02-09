@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, white, mediumGray, lightBlack } from 'src/assets/styles/vars';
+import { globalStyle, fontIsLabel, white, mediumGray, lightBlack } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
@@ -35,14 +35,11 @@ export default StyleSheet.create({
     ...globalStyle, fontSize: 14, lineHeight: 18,
     color: lightBlack,
   },
-  buttonText: {
-    ...globalStyle,
-    fontWeight: `bold`,
-  },
   button: {
     backgroundColor: white,
-    borderWidth: 0,
-    shadowColor: white, shadowOpacity: 1, shadowRadius: 10,
-    shadowOffset: { width: 0, height: - 25 },
+  },
+  buttonText: {
+    ...globalStyle,
+    ...fontIsLabel,
   },
 });

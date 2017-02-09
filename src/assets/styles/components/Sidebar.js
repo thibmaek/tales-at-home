@@ -10,7 +10,6 @@ export default StyleSheet.create({
   },
   buttonBg: {
     height: 50,
-    marginBottom: 0,
     backgroundColor: accentBlue,
     borderRadius: 0, borderColor: 0,
   },
