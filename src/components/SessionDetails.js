@@ -63,12 +63,8 @@ export default class SessionDetails extends Component {
                 <Text style={s.label}>{`Deelnemerscode`.toUpperCase()}</Text>
                 <Text style={s.code}>{generatePin(0, 9, 4)}</Text>
               </View>
-              <DynamicButton
-                touchable='disabled'
-                style={s.button}
-                textStyle={s.buttonText}
-                action={() => this._handleToggleResults()}>
-                Beginnen
+              <DynamicButton touchable='disabled' style={s.button} textStyle={s.buttonText}>
+                Resultaten bekijken
               </DynamicButton>
             </View>
         }
