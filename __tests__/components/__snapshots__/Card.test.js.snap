@@ -86,30 +86,23 @@ exports[`Card <Prop:action> 1`] = `
         }
       } />
   </ScrollView>
-  <Button
+  <DynamicButton
     style={
       Object {
         "backgroundColor": "rgba(255, 255, 255, 1)",
-        "borderWidth": 0,
-        "shadowColor": "rgba(255, 255, 255, 1)",
-        "shadowOffset": Object {
-          "height": -25,
-          "width": 0,
-        },
-        "shadowOpacity": 1,
-        "shadowRadius": 10,
       }
     }
     textStyle={
       Object {
         "color": "rgba(74, 74, 74, 1)",
         "fontFamily": "Bariol",
-        "fontSize": 16,
+        "fontSize": 14,
         "fontWeight": "bold",
       }
-    }>
+    }
+    touchable="highlight">
     Snapshot action
-  </Button>
+  </DynamicButton>
 </View>
 `;
 

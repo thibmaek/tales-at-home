@@ -3,7 +3,6 @@ import AddNote from 'src/components/AddNote';
 import Alert from 'src/components/Alert';
 import AuthType from 'src/components/AuthType';
 import Card from 'src/components/Card';
-import CustomButton from 'src/components/CustomButton';
 import FamilyItem from 'src/components/FamilyItem';
 import FamilyMember from 'src/components/FamilyMember';
 import Flag from 'src/components/Flag';
@@ -22,7 +21,6 @@ export {
   Alert,
   AuthType,
   Card,
-  CustomButton,
   FamilyItem,
   FamilyMember,
   Flag,
