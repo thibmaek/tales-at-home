@@ -15,6 +15,7 @@ export default class Dashboard extends Component {
 
     this.ref = Database.ref(`/families`);
     this.state = {
+      families: ``,
       search: ``,
     };
   }
@@ -49,20 +50,15 @@ export default class Dashboard extends Component {
     this.setState({ selectedFamily });
   }
 
-  _updateSearch() {
-    //this.setState({ search: e.target.value });
-    // let { families } = this.state;
-    // //const { search } = this.state;
-    //
-    // families = families.filter(
-    //   family => {
-    //     return family.name.indexOf(`bijl`) !== - 1;
-    //   }
-    // );
-    //
-    // this.setState({ families: [{ name: `hannes` }] });
-    // this.forceUpdate();
-    //Actions.dashboardScene();
+  _updateSearch(search) {
+    this.setState({
+      families: this.state.families.filter(
+        family => {
+          return family.name.toLowerCase().indexOf(search.toLowerCase()) !== - 1;
+        }
+      ),
+      search,
+    });
   }
 
   _renderLoading = () => <Loading title='Families aan het ophalen…' />
@@ -80,8 +76,8 @@ export default class Dashboard extends Component {
             <View style={s.searchContainer}>
               <TextInput style={s.input} placeholder='Zoek een gezin'
                 value={this.state.search}
-                //onChange={search => this.setState({ search })}
-                onFocus={() => this._updateSearch()} />
+                onChangeText={search => this._updateSearch(search)}
+              />
             </View>
             <Families
               families={this.state.families}
