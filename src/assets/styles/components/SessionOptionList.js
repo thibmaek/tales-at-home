@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { white, globalStyle, fontIsTitle } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   sessionOptionContainer: {
     paddingBottom: 10, paddingTop: 20, paddingLeft: 20, paddingRight: 20,
     marginBottom: 10,
@@ -9,7 +12,6 @@ export default StyleSheet.create({
     backgroundColor: white,
   },
   headerBar: {
-    flex: 1,
     flexDirection: `row`,
     justifyContent: `space-between`,
   },

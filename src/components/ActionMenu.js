@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View } from 'react-native';
+import { View, TouchableHighlight, Text } from 'react-native';
 import DynamicButton from 'rndynamicbutton';
 
 import { AddNote, SessionOptionList } from 'src/components/';
@@ -60,7 +60,7 @@ export default class ActionMenu extends Component {
     return (
       <View style={s.actionMenuContainer}>
         {displayMenuOptions
-          ? <View>
+          ? <View style={s.actionInnerMenuContainer}>
               <DynamicButton
                 touchable='highlight'
                 style={s.button}
@@ -92,14 +92,11 @@ export default class ActionMenu extends Component {
         }
 
         {displayActionButton
-          ? <DynamicButton
-              touchable='highlight'
+          ? <TouchableHighlight
               style={s.addButton}
-              textStyle={s.addButtonText}
-              action={() => this._toggleMenuOptions()}
-            >
-              +
-            </DynamicButton>
+              onPress={() => this._toggleMenuOptions()}>
+               <Text style={s.addButtonText}>+</Text>
+            </TouchableHighlight>
           : null
         }
       </View>
