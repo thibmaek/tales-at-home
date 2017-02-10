@@ -20,22 +20,22 @@ export default class AuthType extends Component {
 
   _handleSubmit(type) {
     const { email, password } = this.state;
-    switch (type) {
-    case `login`:
-      return (
+
+    if (type === `anon`) Auth.signInAnonymously().catch(e => console.error(e.message));
+
+    if (email && password) {
+      switch (type) {
+      case `login`:
         Auth.signInWithEmailAndPassword(email, password)
-          .catch(e => console.error(e.message))
-      );
-    case `anon`:
-      return (
-        Auth.signInAnonymously()
-          .catch(e => console.error(e.message))
-      );
-    default:
-      return (
-          Auth.createUserWithEmailAndPassword(email, password)
-            .catch(e => console.error(e.message))
-      );
+          .catch(e => this.setState({ warning: e.message }));
+        break;
+      case `register`:
+        Auth.createUserWithEmailAndPassword(email, password)
+          .catch(e => this.setState({ warning: e.message }));
+        break;
+      default:
+        return;
+      }
     }
   }
 
@@ -66,6 +66,7 @@ export default class AuthType extends Component {
                 onChangeText={password => this.setState({ password })}
               />
             </View>
+            { this.state.warning ? <Text style={s.warning}>{ this.state.warning }</Text> : null }
             <View>
               {this.props.action === `inloggen` ?
                 <DynamicButton
