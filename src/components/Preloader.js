@@ -1,29 +1,39 @@
-import React, { PropTypes } from 'react';
-import { Image } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { Animated } from 'react-native';
+import Animation from 'lottie-react-native';
 
-import preloader32 from 'src/assets/img/loaders/preloader_32x32.gif';
-import preloader64 from 'src/assets/img/loaders/preloader_64x64.gif';
-import preloader128 from 'src/assets/img/loaders/preloader_128x128.gif';
+import PreloaderData from 'src/assets/animations/Preloader.json';
 
-const Preloader = ({ size }) => {
-  switch (size) {
-  case 32:
-    return (<Image source={preloader32} />);
-  case 64:
-    return (<Image source={preloader64} />);
-  case 128:
-    return (<Image source={preloader128} />);
-  default:
-    return (<Image source={preloader32} />);
+export default class Preloader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      progress: new Animated.Value(0),
+    };
   }
-};
 
-Preloader.defaultProps = {
-  size: 64,
-};
+  componentDidMount() {
+    Animated.timing(this.state.progress, {
+      toValue: 1,
+      duration: 5000,
+    }).start();
+  }
 
-Preloader.propTypes = {
-  size: PropTypes.number.isRequired,
-};
+  render() {
+    return (
+      <Animation
+        style={{ width: this.props.size, height: this.props.size }}
+        source={PreloaderData}
+        progress={this.state.progress}
+      />
+    );
+  }
 
-export default Preloader;
+  static defaultProps = {
+    size: 64,
+  };
+
+  static propTypes = {
+    size: PropTypes.number.isRequired,
+  };
+}
