@@ -14,8 +14,8 @@ export default StyleSheet.create({
   button: {
     paddingLeft: 20, paddingRight: 20,
     marginBottom: 10,
-    borderRadius: 50,
     backgroundColor: white,
+    borderRadius: 50,
   },
   buttonText: {
     ...globalStyle, fontSize: 14,
@@ -25,8 +25,8 @@ export default StyleSheet.create({
   addButton: {
     justifyContent: `center`, alignItems: `center`,
     maxHeight: 40, maxWidth: 40, width: 40, height: 40,
-    borderRadius: 50,
     backgroundColor: accentRed,
+    borderRadius: 50,
   },
   addButtonText: {
     ...globalStyle, ...fontIsSubHeader,
