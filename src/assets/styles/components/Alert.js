@@ -4,14 +4,22 @@ import {
   globalStyle, fontIsLabel,
 } from 'src/assets/styles/vars';
 
+const globalContainer = {
+  width: 1024, height: 768,
+  flex: 1, justifyContent: `center`, alignItems: `center`,
+  position: `absolute`,
+  zIndex: 10,
+  backgroundColor: seeThroughBlack,
+};
+
 export default StyleSheet.create({
-  container: {
-    width: 1024, height: 768,
-    flex: 1, justifyContent: `center`, alignItems: `center`,
-    position: `absolute`,
+  containerLeft: {
+    ...globalContainer,
+    left: 0,
+  },
+  containerRight: {
+    ...globalContainer,
     right: 0,
-    zIndex: 5,
-    backgroundColor: seeThroughBlack,
   },
   alertContainer: {
     flexDirection: `column`, alignItems: `center`, justifyContent: `center`,
