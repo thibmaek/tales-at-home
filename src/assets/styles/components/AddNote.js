@@ -5,8 +5,7 @@ import {
 } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
-  container: {
-  },
+
   addNoteContainer: {
     marginBottom: 20,
     flex: 1,
