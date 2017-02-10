@@ -15,4 +15,7 @@ export default StyleSheet.create({
     ...globalStyle, ...fontIsLabel,
     color: mediumGray,
   },
+  alert: {
+    right: 0,
+  },
 });

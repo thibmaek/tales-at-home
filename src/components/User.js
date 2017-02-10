@@ -31,8 +31,8 @@ export default class User extends Component {
     return (
       <TouchableOpacity onPress={() => this._toggleAlert()}>
         {this.state.displayAlert
-          ? <Alert title='Uitloggen' action={LOGOUT_ACTION}>
-              Door af te melden heb je geen toengang tot alle huidige sessies & resultaten.
+          ? <Alert title='Uitloggen' action={LOGOUT_ACTION} style={s.alert}>
+              Door af te melden heb je geen toegang tot alle huidige sessies & resultaten.
               Ben je zeker dat je wilt doorgaan?
             </Alert>
           : null

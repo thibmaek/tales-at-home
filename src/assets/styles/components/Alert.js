@@ -9,8 +9,7 @@ export default StyleSheet.create({
     width: 1024, height: 768,
     flex: 1, justifyContent: `center`, alignItems: `center`,
     position: `absolute`,
-    right: 0,
-    zIndex: 5,
+    zIndex: 10,
     backgroundColor: seeThroughBlack,
   },
   alertContainer: {
