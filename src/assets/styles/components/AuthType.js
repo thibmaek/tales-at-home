@@ -55,4 +55,9 @@
      ...globalStyle, fontSize: 11, textDecorationLine: `underline`,
      backgroundColor: `transparent`, color: white,
    },
+   warning: {
+     marginTop: 20, marginBottom: 20,
+     ...globalStyle, ...fontIsLabel,
+     color: white, backgroundColor: `transparent`,
+   },
  });
