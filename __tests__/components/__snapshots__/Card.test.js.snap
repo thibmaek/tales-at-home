@@ -61,31 +61,26 @@ exports[`Card <Prop:action> 1`] = `
         }
       } />
   </View>
-  <ScrollView
-    style={
-      Object {
-        "marginRight": 10,
-        "marginTop": 60,
-        "paddingTop": 23,
-      }
-    }>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      selectable={true}
-      style={
-        Object {
-          "color": "rgba(76, 76, 76, 1)",
-          "fontFamily": "Bariol",
-          "fontSize": 14,
-          "fontWeight": "normal",
-          "lineHeight": 18,
-          "paddingLeft": 30,
-          "paddingRight": 20,
-        }
-      } />
-  </ScrollView>
+  <RCTScrollView>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        selectable={true}
+        style={
+          Object {
+            "color": "rgba(76, 76, 76, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 18,
+            "paddingLeft": 30,
+            "paddingRight": 20,
+          }
+        } />
+    </View>
+  </RCTScrollView>
   <DynamicButton
     style={
       Object {
@@ -169,33 +164,28 @@ exports[`Card <Prop:content> 1`] = `
         }
       } />
   </View>
-  <ScrollView
-    style={
-      Object {
-        "marginRight": 10,
-        "marginTop": 60,
-        "paddingTop": 23,
-      }
-    }>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      selectable={true}
-      style={
-        Object {
-          "color": "rgba(76, 76, 76, 1)",
-          "fontFamily": "Bariol",
-          "fontSize": 14,
-          "fontWeight": "normal",
-          "lineHeight": 18,
-          "paddingLeft": 30,
-          "paddingRight": 20,
-        }
-      }>
-      Snapshot content
-    </Text>
-  </ScrollView>
+  <RCTScrollView>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        selectable={true}
+        style={
+          Object {
+            "color": "rgba(76, 76, 76, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 18,
+            "paddingLeft": 30,
+            "paddingRight": 20,
+          }
+        }>
+        Snapshot content
+      </Text>
+    </View>
+  </RCTScrollView>
 </View>
 `;
 
@@ -264,31 +254,26 @@ exports[`Card <Prop:meta> 1`] = `
       Snapshot meta
     </Text>
   </View>
-  <ScrollView
-    style={
-      Object {
-        "marginRight": 10,
-        "marginTop": 60,
-        "paddingTop": 23,
-      }
-    }>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      selectable={true}
-      style={
-        Object {
-          "color": "rgba(76, 76, 76, 1)",
-          "fontFamily": "Bariol",
-          "fontSize": 14,
-          "fontWeight": "normal",
-          "lineHeight": 18,
-          "paddingLeft": 30,
-          "paddingRight": 20,
-        }
-      } />
-  </ScrollView>
+  <RCTScrollView>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        selectable={true}
+        style={
+          Object {
+            "color": "rgba(76, 76, 76, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 18,
+            "paddingLeft": 30,
+            "paddingRight": 20,
+          }
+        } />
+    </View>
+  </RCTScrollView>
 </View>
 `;
 
@@ -357,31 +342,26 @@ exports[`Card <Prop:title> 1`] = `
         }
       } />
   </View>
-  <ScrollView
-    style={
-      Object {
-        "marginRight": 10,
-        "marginTop": 60,
-        "paddingTop": 23,
-      }
-    }>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      selectable={true}
-      style={
-        Object {
-          "color": "rgba(76, 76, 76, 1)",
-          "fontFamily": "Bariol",
-          "fontSize": 14,
-          "fontWeight": "normal",
-          "lineHeight": 18,
-          "paddingLeft": 30,
-          "paddingRight": 20,
-        }
-      } />
-  </ScrollView>
+  <RCTScrollView>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        selectable={true}
+        style={
+          Object {
+            "color": "rgba(76, 76, 76, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 18,
+            "paddingLeft": 30,
+            "paddingRight": 20,
+          }
+        } />
+    </View>
+  </RCTScrollView>
 </View>
 `;
 
@@ -448,31 +428,26 @@ exports[`Card 1`] = `
         }
       } />
   </View>
-  <ScrollView
-    style={
-      Object {
-        "marginRight": 10,
-        "marginTop": 60,
-        "paddingTop": 23,
-      }
-    }>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      selectable={true}
-      style={
-        Object {
-          "color": "rgba(76, 76, 76, 1)",
-          "fontFamily": "Bariol",
-          "fontSize": 14,
-          "fontWeight": "normal",
-          "lineHeight": 18,
-          "paddingLeft": 30,
-          "paddingRight": 20,
-        }
-      } />
-  </ScrollView>
+  <RCTScrollView>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        selectable={true}
+        style={
+          Object {
+            "color": "rgba(76, 76, 76, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 18,
+            "paddingLeft": 30,
+            "paddingRight": 20,
+          }
+        } />
+    </View>
+  </RCTScrollView>
 </View>
 `;
 
@@ -539,30 +514,25 @@ exports[`Card: Wrapping 1`] = `
         }
       } />
   </View>
-  <ScrollView
-    style={
-      Object {
-        "marginRight": 10,
-        "marginTop": 60,
-        "paddingTop": 23,
-      }
-    }>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      selectable={true}
-      style={
-        Object {
-          "color": "rgba(76, 76, 76, 1)",
-          "fontFamily": "Bariol",
-          "fontSize": 14,
-          "fontWeight": "normal",
-          "lineHeight": 18,
-          "paddingLeft": 30,
-          "paddingRight": 20,
-        }
-      } />
-  </ScrollView>
+  <RCTScrollView>
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        selectable={true}
+        style={
+          Object {
+            "color": "rgba(76, 76, 76, 1)",
+            "fontFamily": "Bariol",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "lineHeight": 18,
+            "paddingLeft": 30,
+            "paddingRight": 20,
+          }
+        } />
+    </View>
+  </RCTScrollView>
 </View>
 `;
