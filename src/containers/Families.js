@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ListView, TouchableHighlight, View, Text } from 'react-native';
+import { ListView, TouchableHighlight, TouchableOpacity, View, Text } from 'react-native';
 import { SwipeListView } from 'react-native-swipe-list-view';
 import { Database } from 'src/config/firebase';
 import { FamilyItem, Alert } from 'src/components/';
@@ -7,18 +7,19 @@ import { FamilyItem, Alert } from 'src/components/';
 import s from 'src/assets/styles/components/FamilyItem';
 import { accentYellow, highLightNeutral } from 'src/assets/styles/vars';
 
-const ARCHIVE_ACTION = {
-  title: `Archiveer familie`,
-  func: () => this._archiveFamily(),
-};
-
 export default class Families extends Component {
   constructor(props, context) {
     super(props, context);
+
     this.ref = Database.ref(`families`);
     this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
       showArchiveAlert: false,
+    };
+
+    this.ARCHIVE_ACTION = {
+      title: `Archiveer familie`,
+      func: () => this._archiveFamily(),
     };
   }
 
@@ -27,7 +28,7 @@ export default class Families extends Component {
     this.setState({ active });
   }
 
-  _showAlert(key, secId, rowId, rowMap) {
+  _toggleAlert(key, secId, rowId, rowMap) {
     this.setState({
       showArchiveAlert: !this.state.showArchiveAlert,
       key,
@@ -55,9 +56,16 @@ export default class Families extends Component {
   shouldHighlight = key => key === this.props.selectedFamily ? true : false
 
   render() {
-    console.log(`test`);
     return (
       <View>
+        <TouchableOpacity onPress={() => this._toggleAlert()}>
+          {this.state.showArchiveAlert
+            ? <Alert title='Gezin archiveren?' action={this.ARCHIVE_ACTION} side='left'>
+                U kunt deze later steeds terugvinden onder 'gearchiveerde gezinnen'.
+              </Alert>
+            : null
+          }
+        </TouchableOpacity>
         <SwipeListView dataSource={this.ds.cloneWithRows(this.state.active)}
           renderRow={family => (
             <TouchableHighlight
@@ -74,7 +82,7 @@ export default class Families extends Component {
           renderHiddenRow={(family, secId, rowId, rowMap) => (
             <View style={s.archiveRow}>
               <TouchableHighlight style={s.archiveButton} underlayColor={accentYellow}
-                onPress={() => this._showAlert(family.key, secId, rowId, rowMap)}>
+                onPress={() => this._toggleAlert(family.key, secId, rowId, rowMap)}>
                 <Text style={s.buttonText}>Archiveren</Text>
               </TouchableHighlight>
             </View>
@@ -82,12 +90,6 @@ export default class Families extends Component {
           disableRightSwipe
           rightOpenValue={- 85}
         />
-        {this.state.showArchiveAlert
-          ? <Alert title='Gezin archiveren?' action={ARCHIVE_ACTION} style={s.alert}>
-              U kunt deze later steeds terugvinden onder 'gearchiveerde gezinnen'.
-            </Alert>
-          : null
-        }
       </View>
     );
   }

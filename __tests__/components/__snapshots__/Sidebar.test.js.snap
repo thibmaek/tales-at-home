@@ -10,7 +10,7 @@ exports[`Sidebar <Prop:title> 1`] = `
       },
       "shadowOpacity": 0.5,
       "width": 276,
-      "zIndex": 99,
+      "zIndex": 8,
     }
   }>
   <DynamicButton
@@ -50,7 +50,7 @@ exports[`Sidebar 1`] = `
       },
       "shadowOpacity": 0.5,
       "width": 276,
-      "zIndex": 99,
+      "zIndex": 8,
     }
   } />
 `;
@@ -67,7 +67,7 @@ exports[`Sidebar: Wrapping 1`] = `
       },
       "shadowOpacity": 0.5,
       "width": 276,
-      "zIndex": 99,
+      "zIndex": 8,
     }
   } />
 `;
@@ -84,7 +84,7 @@ exports[`Sidebar: Wrapping children 1`] = `
       },
       "shadowOpacity": 0.5,
       "width": 276,
-      "zIndex": 99,
+      "zIndex": 8,
     }
   }>
   <View

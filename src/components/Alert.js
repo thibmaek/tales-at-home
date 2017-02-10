@@ -5,8 +5,8 @@ import DynamicButton from 'rndynamicbutton';
 import s from 'src/assets/styles/components/Alert';
 import cross from 'src/assets/img/icons/cross@2x.png';
 
-const Alert = ({ action, title, children }) => (
-  <View style={s.container}>
+const Alert = ({ action, title, children, side }) => (
+  <View style={side === `left` ? s.containerLeft : s.containerRight}>
     <View style={s.alertContainer}>
       <Text style={s.title}>{ title }</Text>
       { children ? <Text style={s.message}>{ children }</Text> : null }
@@ -29,6 +29,7 @@ Alert.propTypes = {
   title: PropTypes.string.isRequired,
   action: PropTypes.object,
   children: PropTypes.string,
+  side: PropTypes.string,
 };
 
 export default Alert;
