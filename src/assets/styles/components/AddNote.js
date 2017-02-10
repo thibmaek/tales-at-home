@@ -7,6 +7,7 @@ import {
 export default StyleSheet.create({
   addNoteContainer: {
     marginBottom: 20,
+    flex: 1,
     backgroundColor: white,
     borderWidth: 0, borderRadius: 10,
     shadowColor: buttonShadowColor, shadowOpacity: .3,

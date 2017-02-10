@@ -53,7 +53,7 @@ export default class SessionOptionList extends Component {
     } = this.state;
 
     return (
-      <View>
+      <View style={s.container}>
           {sessionOptions
             ? <View style={s.sessionOptionContainer}>
                 <View style={s.headerBar}>
