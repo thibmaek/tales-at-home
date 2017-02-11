@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
 import {
-  globalStyle, fontIsSubHeader, white, lightGray, lightBlack, buttonShadowColor,
+  globalStyle, fontIsSubHeader, fontIsLabel,
+  white, lightGray, lightBlack, buttonShadowColor, accentGreen,
 } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   addNoteContainer: {
-    flex: 1,
     marginBottom: 20,
+    flex: 1,
     backgroundColor: white,
     borderWidth: 0, borderRadius: 10,
     shadowColor: buttonShadowColor, shadowOpacity: .3,
@@ -35,5 +36,12 @@ export default StyleSheet.create({
     paddingBottom: 20, paddingLeft: 20, paddingRight: 20, paddingTop: 20,
     ...globalStyle, textAlign: `left`, fontSize: 14, lineHeight: 18, textAlignVertical: `top`,
     color: lightBlack,
+  },
+  button: {
+    backgroundColor: accentGreen,
+  },
+  buttonText: {
+    ...globalStyle, ...fontIsLabel,
+    color: white,
   },
 });

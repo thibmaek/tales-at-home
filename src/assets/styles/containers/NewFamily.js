@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, accentBlue, darkGray } from 'src/assets/styles/vars';
+import {
+  globalStyle, fontIsLabel,
+  accentBlue, darkGray, white, mediumGray,
+} from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   familyContainer: {
@@ -50,5 +53,23 @@ export default StyleSheet.create({
   addMemberFormContainer: {
     padding: 20,
     borderWidth: 1, borderColor: darkGray, borderRadius: 5,
+  },
+  rectangleButton: {
+    backgroundColor: darkGray,
+  },
+  button: {
+    backgroundColor: accentBlue,
+  },
+  buttonText: {
+    ...globalStyle, ...fontIsLabel,
+    color: white,
+  },
+  textButton: {
+    flex: 1, alignItems: `center`, justifyContent: `flex-end`,
+    maxHeight: 40,
+  },
+  textButtonText: {
+    ...globalStyle, ...fontIsLabel, fontWeight: `normal`,
+    color: mediumGray,
   },
 });

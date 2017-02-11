@@ -1,4 +1,5 @@
 import App from 'src/containers/App';
+import Connect from 'src/containers/Connect';
 import Dashboard from 'src/containers/Dashboard';
 import Families from 'src/containers/Families';
 import Loading from 'src/containers/Loading';
@@ -9,6 +10,7 @@ import UserPicker from 'src/containers/UserPicker';
 
 export {
   App,
+  Connect,
   Dashboard,
   Families,
   Loading,

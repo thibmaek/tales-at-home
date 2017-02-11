@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
-
-import { accentYellow, lightBlue } from 'src/assets/styles/vars';
+import {
+  accentYellow, lightBlue, accentBlue, white, globalStyle, fontIsLabel,
+} from 'src/assets/styles/vars';
 
 const sharedContainerRules = {
   flex: 1,
@@ -22,12 +23,13 @@ export default StyleSheet.create({
     backgroundColor: lightBlue,
   },
   professionalInnerContainer: {
+    paddingBottom: 80,
     flexDirection: `column`,
     alignItems: `center`,
     justifyContent: `center`,
   },
-  professionalChar: {
-    marginBottom: 30,
+  char: {
+    marginBottom: 110,
   },
   familyContainer: {
     flex: 1, justifyContent: `flex-end`,
@@ -36,6 +38,7 @@ export default StyleSheet.create({
   },
   familyInnerContainer: {
     flexDirection: `column`,
+    paddingBottom: 80,
     alignItems: `center`,
     justifyContent: `center`,
   },
@@ -44,6 +47,10 @@ export default StyleSheet.create({
     alignItems: `flex-start`,
   },
   button: {
-    marginBottom: 80, marginTop: 80,
+    backgroundColor: accentBlue,
+  },
+  buttonText: {
+    ...globalStyle, ...fontIsLabel,
+    color: white,
   },
 });

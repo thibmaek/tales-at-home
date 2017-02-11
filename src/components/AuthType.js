@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import LinearGradient from 'react-native-linear-gradient';
-import Button from 'apsl-react-native-button';
+import DynamicButton from 'rndynamicbutton';
 
 import { Auth } from 'src/config/firebase';
 import capString from 'src/lib/capitalizeString';
@@ -20,22 +20,22 @@ export default class AuthType extends Component {
 
   _handleSubmit(type) {
     const { email, password } = this.state;
-    switch (type) {
-    case `login`:
-      return (
+
+    if (type === `anon`) Auth.signInAnonymously().catch(e => console.error(e.message));
+
+    if (email && password) {
+      switch (type) {
+      case `login`:
         Auth.signInWithEmailAndPassword(email, password)
-          .catch(e => console.error(e.message))
-      );
-    case `anon`:
-      return (
-        Auth.signInAnonymously()
-          .catch(e => console.error(e.message))
-      );
-    default:
-      return (
-          Auth.createUserWithEmailAndPassword(email, password)
-            .catch(e => console.error(e.message))
-      );
+          .catch(e => this.setState({ warning: e.message }));
+        break;
+      case `register`:
+        Auth.createUserWithEmailAndPassword(email, password)
+          .catch(e => this.setState({ warning: e.message }));
+        break;
+      default:
+        return;
+      }
     }
   }
 
@@ -66,23 +66,24 @@ export default class AuthType extends Component {
                 onChangeText={password => this.setState({ password })}
               />
             </View>
+            { this.state.warning ? <Text style={s.warning}>{ this.state.warning }</Text> : null }
             <View>
               {this.props.action === `inloggen` ?
-                <Button
+                <DynamicButton
+                  touchable='highlight'
                   style={s.button}
                   textStyle={s.buttonText}
-                  onPress={() => this._handleSubmit(`login`)}
-                >
+                  action={() => this._handleSubmit(`login`)}>
                   { capString(this.props.action) }
-                </Button>
+                </DynamicButton>
                 :
-                <Button
+                <DynamicButton
+                  touchable='highlight'
                   style={s.button}
                   textStyle={s.buttonText}
-                  onPress={() => this._handleSubmit(`register`)}
-                >
+                  action={() => this._handleSubmit(`register`)}>
                   { capString(this.props.action) }
-                </Button>
+                </DynamicButton>
               }
 
             </View>

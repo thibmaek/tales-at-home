@@ -33,13 +33,10 @@
      color: white,
    },
    button: {
-     width: 280,
      backgroundColor: white,
-     borderWidth: 0, borderRadius: 50,
    },
    buttonText: {
-     ...globalStyle,
-     fontWeight: `bold`,
+     ...globalStyle, ...fontIsLabel,
      color: accentBlue,
    },
    anonLogin: {
@@ -49,8 +46,7 @@
    },
    textLink: {
      marginTop: 20,
-     ...globalStyle,
-     ...fontIsLabel, fontWeight: `normal`, fontSize: 14,
+     ...globalStyle, ...fontIsLabel, fontWeight: `normal`, fontSize: 14,
      backgroundColor: `transparent`,
      color: white,
    },
@@ -58,5 +54,10 @@
      marginBottom: 50,
      ...globalStyle, fontSize: 11, textDecorationLine: `underline`,
      backgroundColor: `transparent`, color: white,
+   },
+   warning: {
+     marginTop: 20, marginBottom: 20,
+     ...globalStyle, ...fontIsLabel,
+     color: white, backgroundColor: `transparent`,
    },
  });

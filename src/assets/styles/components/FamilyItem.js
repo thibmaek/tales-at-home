@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, highLightNeutral, fontIsSubHeader, darkGray } from 'src/assets/styles/vars';
+import { globalStyle, fontIsSubHeader,
+  highLightNeutral, white, accentYellow, darkGray,
+} from 'src/assets/styles/vars';
 
 const container = {
   flex: 1, flexDirection: `row`,
   paddingLeft: 30, paddingRight: 130, paddingBottom: 18, paddingTop: 18,
+  backgroundColor: white,
 };
 
 export default StyleSheet.create({
@@ -29,5 +32,19 @@ export default StyleSheet.create({
     flex: 1,
     ...globalStyle,
     color: darkGray,
+  },
+  archiveRow: {
+    flex: 1,
+    paddingLeft: 15,
+    backgroundColor: accentYellow,
+  },
+  archiveButton: {
+    alignItems: `center`, justifyContent: `center`,
+    position: `absolute`, top: 0, right: 0, bottom: 0,
+    width: 85,
+  },
+  buttonText: {
+    ...globalStyle,
+    color: white,
   },
 });

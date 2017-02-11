@@ -10,18 +10,17 @@ exports[`Sidebar <Prop:title> 1`] = `
       },
       "shadowOpacity": 0.5,
       "width": 276,
-      "zIndex": 99,
+      "zIndex": 8,
     }
   }>
-  <Button
-    onPress={undefined}
+  <DynamicButton
+    action={undefined}
     style={
       Object {
         "backgroundColor": "rgba(0, 122, 255, 1)",
         "borderColor": 0,
         "borderRadius": 0,
         "height": 50,
-        "marginBottom": 0,
       }
     }
     textStyle={
@@ -32,9 +31,10 @@ exports[`Sidebar <Prop:title> 1`] = `
         "fontWeight": "normal",
         "textAlign": "center",
       }
-    }>
+    }
+    touchable="highlight">
     A snapshot action
-  </Button>
+  </DynamicButton>
 </View>
 `;
 
@@ -50,7 +50,7 @@ exports[`Sidebar 1`] = `
       },
       "shadowOpacity": 0.5,
       "width": 276,
-      "zIndex": 99,
+      "zIndex": 8,
     }
   } />
 `;
@@ -67,7 +67,7 @@ exports[`Sidebar: Wrapping 1`] = `
       },
       "shadowOpacity": 0.5,
       "width": 276,
-      "zIndex": 99,
+      "zIndex": 8,
     }
   } />
 `;
@@ -84,7 +84,7 @@ exports[`Sidebar: Wrapping children 1`] = `
       },
       "shadowOpacity": 0.5,
       "width": 276,
-      "zIndex": 99,
+      "zIndex": 8,
     }
   }>
   <View
@@ -149,31 +149,26 @@ exports[`Sidebar: Wrapping children 1`] = `
           }
         } />
     </View>
-    <ScrollView
-      style={
-        Object {
-          "marginRight": 10,
-          "marginTop": 60,
-          "paddingTop": 23,
-        }
-      }>
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-        selectable={true}
-        style={
-          Object {
-            "color": "rgba(76, 76, 76, 1)",
-            "fontFamily": "Bariol",
-            "fontSize": 14,
-            "fontWeight": "normal",
-            "lineHeight": 18,
-            "paddingLeft": 30,
-            "paddingRight": 20,
-          }
-        } />
-    </ScrollView>
+    <RCTScrollView>
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          selectable={true}
+          style={
+            Object {
+              "color": "rgba(76, 76, 76, 1)",
+              "fontFamily": "Bariol",
+              "fontSize": 14,
+              "fontWeight": "normal",
+              "lineHeight": 18,
+              "paddingLeft": 30,
+              "paddingRight": 20,
+            }
+          } />
+      </View>
+    </RCTScrollView>
   </View>
 </View>
 `;

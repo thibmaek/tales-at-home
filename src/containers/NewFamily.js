@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, TouchableHighlight } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import DynamicButton from 'rndynamicbutton';
 
-import { FamilyMember, CustomButton } from 'src/components/';
+import { FamilyMember } from 'src/components/';
 
 import { Database } from 'src/config/firebase';
 import capString from 'src/lib/capitalizeString';
@@ -69,8 +70,15 @@ export default class NewFamily extends Component {
           <View style={s.famMembersContent}>
             <View style={s.addMemberContainer}>
               <View>
-                <CustomButton type='addMemberSmall' content='+'
-                  onPress={() => this._openAddMember()} />
+                  <DynamicButton
+                    touchable='highlight'
+                    style={s.rectangleButton}
+                    shadow={false}
+                    textStyle={s.buttonText}
+                    action={() => this._openAddMember()}
+                  >
+                    +
+                  </DynamicButton>
               </View>
               <View>
                 <Text style={s.newMemberText}>Nieuw gezinslid</Text>
@@ -79,7 +87,14 @@ export default class NewFamily extends Component {
             {this.state.isAddingMember ?
               <View style={s.addMemberFormContainer}>
                 <View style={s.addPhotoContainer}>
-                  <CustomButton style={s.addButton} type='addMemberBig' content='+' />
+                  <DynamicButton
+                    touchable='highlight'
+                    shadow={false}
+                    style={s.addButton}
+                    textStyle={s.buttonText}
+                  >
+                    +
+                  </DynamicButton>
                 </View>
                 <View>
                   <TextInput style={s.textInput} multiline={true}
@@ -105,12 +120,27 @@ export default class NewFamily extends Component {
           </View>
         </View>
         {this.state.isAddingMember ?
-          <CustomButton type='submitButton' color='green' content='Gezinslid toevoegen'
-            onPress={() => this._handleAddMember()} />
+          <DynamicButton
+            touchable='highlight'
+            style={s.button}
+            textStyle={s.buttonText}
+            action={() => this._handleAddMember()}>
+            Gezinslid toevoegen
+          </DynamicButton>
         :
-          <CustomButton type='submitButton' color='blue' content='Gezin toevoegen'
-            onPress={() => this._handleAddFamily()} />
+          <DynamicButton
+            touchable='highlight'
+            style={s.button}
+            textStyle={s.buttonText}
+            action={() => this._handleAddFamily()}>
+            Gezin toevoegen
+          </DynamicButton>
         }
+        <TouchableHighlight
+          style={s.textButton}
+          onPress={Actions.dashboardScene}>
+           <Text style={s.textButtonText}>{upperCaseString(`annuleren`)}</Text>
+        </TouchableHighlight>
       </View>
     );
   }
