@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, accentBlue, fontIsLabel, darkGray, white } from 'src/assets/styles/vars';
+import { globalStyle, fontIsLabel,
+  accentBlue, darkGray, white, mediumGray } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   familyContainer: {
@@ -60,5 +61,14 @@ export default StyleSheet.create({
   buttonText: {
     ...globalStyle, ...fontIsLabel,
     color: white,
+  },
+  textButton: {
+    flex: 1, alignItems: `center`, justifyContent: `flex-end`,
+    maxHeight: 40,
+  },
+  textButtonText: {
+    ...globalStyle, ...fontIsLabel,
+    fontWeight: `normal`,
+    color: mediumGray,
   },
 });

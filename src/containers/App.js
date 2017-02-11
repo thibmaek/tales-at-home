@@ -12,7 +12,7 @@ const App = () => (
     <Scene key='connectionScene' component={Connect} title='Connecteren' hideNavBar={false} navBar={NavigationBar} navigate='BACK' />
     <Scene key='setupScene' component={Setup} hideNavBar={false} title='Registreren' navBar={NavigationBar} navigate='BACK' />
     <Scene key='dashboardScene' component={Dashboard} title='Dashboard' type='reset' />
-    <Scene key='dashboardScene_new' component={Dashboard} title='Nieuw gezin aanmaken' type='replace' addFamily={true} dimmed={true} />
+    <Scene key='dashboardScene_new' component={Dashboard} title='Nieuw gezin aanmaken' type='replace' addFamily={true} dimmed={false} />
     <Scene key='sessionSwiping'>
       <Scene key='swipeInitial' component={Swiping} step='select' />
       <Scene key='swipeUp' component={Swiping} step='swipe' />
