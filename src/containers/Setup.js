@@ -27,7 +27,7 @@ export default class Setup extends Component {
         <StatusBar hidden={true} />
         <View style={s.view}>
           <AuthType action={action}
-          title={title} actionTitle={actionTitle} {...this.props.authType} />
+            title={title} actionTitle={actionTitle} {...this.props.authType} />
         </View>
       </View>
     );

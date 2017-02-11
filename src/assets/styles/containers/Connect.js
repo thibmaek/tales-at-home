@@ -30,7 +30,6 @@ export default StyleSheet.create({
   },
   input: {
     height: 40,
-    ...globalStyle,
-    ...fontIsTitle,
+    ...globalStyle, ...fontIsTitle,
   },
 });

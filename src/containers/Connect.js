@@ -29,7 +29,7 @@ export default class Connect extends Component {
           <View style={s.inputContainer}>
             <TextInput
               style={s.input} keyboardType='numeric' placeholder='0000' returnKeyType='go'
-              maxLength={4}
+              maxLength={4} onSubmitEditing={pin => this._matchPin(parseInt(pin))}
               onChangeText={pin => this._matchPin(parseInt(pin))}
             />
           </View>

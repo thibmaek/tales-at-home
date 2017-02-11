@@ -139,7 +139,7 @@ export default class NewFamily extends Component {
         <TouchableHighlight
           style={s.textButton}
           onPress={Actions.dashboardScene}>
-           <Text style={s.textButtonText}>annuleren</Text>
+           <Text style={s.textButtonText}>{upperCaseString(`annuleren`)}</Text>
         </TouchableHighlight>
       </View>
     );

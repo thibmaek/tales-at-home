@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
-import { globalStyle, fontIsHeader, fontIsLabel,
-  white, lightGray, lightBlack, shadowColor } from 'src/assets/styles/vars';
+import {
+  globalStyle, fontIsHeader, fontIsLabel,
+  white, lightGray, lightBlack, shadowColor,
+} from 'src/assets/styles/vars';
 
 const navbar = {
   flexDirection: `row`, alignItems: `center`,
   height: 50,
-  paddingLeft: 20,
-  paddingRight: 20,
+  paddingRight: 20, paddingLeft: 20,
   zIndex: 2,
 };
 
@@ -35,7 +36,6 @@ export default StyleSheet.create({
     color: lightGray,
   },
   backTitle: {
-    //textAlign: `center`,
     ...globalStyle, ...fontIsLabel,
     color: lightBlack,
   },
