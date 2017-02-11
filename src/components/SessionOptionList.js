@@ -87,7 +87,6 @@ export default class SessionOptionList extends Component {
   }
 
   static propTypes = {
-    // sessionOptions: PropTypes.array.isRequired,
     onClose: PropTypes.func.isRequired,
   }
 }

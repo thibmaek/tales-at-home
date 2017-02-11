@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
-import { black, accentRed, white, globalStyle, fontIsSubHeader } from 'src/assets/styles/vars';
+import {
+  black, accentRed, white,
+  globalStyle, fontIsSubHeader,
+} from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   actionMenuContainer: {
