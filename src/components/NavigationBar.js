@@ -9,12 +9,18 @@ import upperCase from 'src/lib/upperCaseString';
 
 import s from 'src/assets/styles/components/NavigationBar';
 
-const _getAction = action => {
+const _getAction = (action, actionTitle) => {
   switch (action) {
   case `BACK`:
     return (
       <TouchableOpacity onPress={() => Actions.pop()}>
-        <Text style={s.navigationAction}>◀︎</Text>
+        <Text style={s.backTitle}>{ upperCase(actionTitle) }</Text>
+      </TouchableOpacity>
+    );
+  case `BACKTOROOT`:
+    return (
+      <TouchableOpacity onPress={() => Actions.rootScene()}>
+        <Text style={s.backTitle}>{ upperCase(actionTitle) }</Text>
       </TouchableOpacity>
     );
   case `REFRESH`:
@@ -30,14 +36,15 @@ const _getAction = action => {
   }
 };
 
-const NavigationBar = ({ transparent, navigate, title, action }) => (
+const NavigationBar = ({ transparent, title, action, actionTitle }) => (
   <View style={transparent ? s.transparentNavbar : s.navbar}>
     <View style={s.leftNav}>
-      { navigate ? _getAction(navigate) : null }
-      { title ? <Text style={s.title}>{ upperCase(title) }</Text> : null }
-      { action ? _getAction(action) : null }
+      { title === `Dashboard`
+        ? <Text style={s.title}>{ upperCase(title) }</Text>
+        : null }
+      { action ? _getAction(action, actionTitle) : null }
     </View>
-    { Auth.currentUser ? <User style={s.user} name={Auth.currentUser.email} /> : null }
+    { title === `Dashboard` ? <User style={s.user} name={Auth.currentUser.email} /> : null }
   </View>
 );
 
@@ -45,6 +52,7 @@ NavigationBar.propTypes = {
   transparent: PropTypes.bool,
   navigate: PropTypes.string,
   title: PropTypes.string,
+  actionTitle: PropTypes.string,
   action: PropTypes.string,
 };
 
