@@ -57,7 +57,7 @@ export default class Families extends Component {
 
   render() {
     return (
-      <View>
+      <View style={this.props.style}>
         <TouchableOpacity onPress={() => this._toggleAlert()}>
           {this.state.showArchiveAlert
             ? <Alert title='Gezin archiveren?' action={this.ARCHIVE_ACTION} side='left'>
@@ -95,6 +95,7 @@ export default class Families extends Component {
   }
 
   static propTypes = {
+    style: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
     families: PropTypes.any.isRequired,
     selectedFamily: PropTypes.string,
     didSelectFamily: PropTypes.func.isRequired,
