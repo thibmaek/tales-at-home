@@ -1,13 +1,15 @@
 import { StyleSheet } from 'react-native';
-import { white, globalStyle, fontIsTitle } from 'src/assets/styles/vars';
+import { white, globalStyle, buttonShadowColor, fontIsTitle } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
+    marginBottom: 10,
+    shadowColor: buttonShadowColor, shadowOpacity: .1,
+    shadowOffset: { width: 0, height: 14 }, shadowRadius: 6,
   },
   sessionOptionContainer: {
     paddingBottom: 10, paddingTop: 20, paddingLeft: 20, paddingRight: 20,
-    marginBottom: 10,
     borderRadius: 6,
     backgroundColor: white,
   },
