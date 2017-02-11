@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, TouchableHighlight } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import DynamicButton from 'rndynamicbutton';
 
@@ -136,6 +136,11 @@ export default class NewFamily extends Component {
             Gezin toevoegen
           </DynamicButton>
         }
+        <TouchableHighlight
+          style={s.textButton}
+          onPress={Actions.dashboardScene}>
+           <Text style={s.textButtonText}>annuleren</Text>
+        </TouchableHighlight>
       </View>
     );
   }
