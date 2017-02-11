@@ -3,17 +3,22 @@ import { globalStyle, accentBlue, white, shadowColorGray } from 'src/assets/styl
 
 export default StyleSheet.create({
   sidebar: {
-    width: 276,
+    flexDirection: `column`, justifyContent: `space-around`,
+    minWidth: 276,
     zIndex: 8,
     backgroundColor: white,
     shadowColor: shadowColorGray, shadowOffset: { width: 2.5, height: 5 }, shadowOpacity: .5,
   },
+  children: {
+    flex: 10,
+  },
   buttonBg: {
-    height: 50,
+    flexShrink: 1,
     backgroundColor: accentBlue,
     borderRadius: 0, borderColor: 0,
   },
   buttonText: {
+    paddingBottom: 5, paddingTop: 5,
     ...globalStyle, textAlign: `center`,
     color: white,
   },

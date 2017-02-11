@@ -8,6 +8,7 @@ import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 import { Database } from 'src/config/firebase';
 
 import s from 'src/assets/styles/containers/Dashboard';
+import sSidebar from 'src/assets/styles/components/Sidebar';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
@@ -56,6 +57,7 @@ export default class Dashboard extends Component {
       !this.props.addFamily
         ? <Sidebar action={NEUTRAL_TYPE}>
             <Families
+              style={sSidebar.children}
               families={this.state.families}
               selectedFamily={this.state.selectedFamily}
               didSelectFamily={key => this._setSelectedFamily(key)}
