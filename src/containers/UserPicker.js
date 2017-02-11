@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableWithoutFeedback, Image } from 'react-native';
+import { StatusBar, View, TouchableWithoutFeedback, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import DynamicButton from 'rndynamicbutton';
 
@@ -11,6 +11,7 @@ const AUTH_REGISTER = { action: `registreren`, title: `registreren`, method: `re
 
 const UserPicker = () => (
   <View style={s.container}>
+    <StatusBar hidden={true} />
     <View style={s.buttonsContainer}>
       <View style={s.professionalContainer}>
         <TouchableWithoutFeedback onPress={() => Actions.setupScene({ authType: AUTH_REGISTER })}>
