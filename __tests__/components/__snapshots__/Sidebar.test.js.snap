@@ -3,13 +3,15 @@ exports[`Sidebar <Prop:title> 1`] = `
   style={
     Object {
       "backgroundColor": "rgba(255, 255, 255, 1)",
+      "flexDirection": "column",
+      "justifyContent": "space-around",
+      "minWidth": 276,
       "shadowColor": "rgb(188, 188, 188)",
       "shadowOffset": Object {
         "height": 5,
         "width": 2.5,
       },
       "shadowOpacity": 0.5,
-      "width": 276,
       "zIndex": 8,
     }
   }>
@@ -20,7 +22,7 @@ exports[`Sidebar <Prop:title> 1`] = `
         "backgroundColor": "rgba(0, 122, 255, 1)",
         "borderColor": 0,
         "borderRadius": 0,
-        "height": 50,
+        "flexShrink": 1,
       }
     }
     textStyle={
@@ -29,6 +31,8 @@ exports[`Sidebar <Prop:title> 1`] = `
         "fontFamily": "Bariol",
         "fontSize": 16,
         "fontWeight": "normal",
+        "paddingBottom": 5,
+        "paddingTop": 5,
         "textAlign": "center",
       }
     }
@@ -43,13 +47,15 @@ exports[`Sidebar 1`] = `
   style={
     Object {
       "backgroundColor": "rgba(255, 255, 255, 1)",
+      "flexDirection": "column",
+      "justifyContent": "space-around",
+      "minWidth": 276,
       "shadowColor": "rgb(188, 188, 188)",
       "shadowOffset": Object {
         "height": 5,
         "width": 2.5,
       },
       "shadowOpacity": 0.5,
-      "width": 276,
       "zIndex": 8,
     }
   } />
@@ -60,13 +66,15 @@ exports[`Sidebar: Wrapping 1`] = `
   style={
     Object {
       "backgroundColor": "rgba(255, 255, 255, 1)",
+      "flexDirection": "column",
+      "justifyContent": "space-around",
+      "minWidth": 276,
       "shadowColor": "rgb(188, 188, 188)",
       "shadowOffset": Object {
         "height": 5,
         "width": 2.5,
       },
       "shadowOpacity": 0.5,
-      "width": 276,
       "zIndex": 8,
     }
   } />
@@ -77,13 +85,15 @@ exports[`Sidebar: Wrapping children 1`] = `
   style={
     Object {
       "backgroundColor": "rgba(255, 255, 255, 1)",
+      "flexDirection": "column",
+      "justifyContent": "space-around",
+      "minWidth": 276,
       "shadowColor": "rgb(188, 188, 188)",
       "shadowOffset": Object {
         "height": 5,
         "width": 2.5,
       },
       "shadowOpacity": 0.5,
-      "width": 276,
       "zIndex": 8,
     }
   }>
