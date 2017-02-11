@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TextInput } from 'react-native';
+import { Text, TextInput, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Actions } from 'react-native-router-flux';
 
@@ -20,12 +20,19 @@ export default class Connect extends Component {
   render() {
     return (
       <LinearGradient colors={[`#008EFF`, `#00C8FF`]}  style={s.container}>
-          <Text style={s.title}>Voer de connectiepin in</Text>
-          <TextInput
-            style={s.input} keyboardType='number-pad' placeholder='0000'
-            maxLength={4}
-            onChangeText={pin => this._matchPin(parseInt(pin))}
-          />
+          <View style={s.titleContainer}>
+            <Text style={s.title}>{`Voer de connectiepin in`.toUpperCase()}</Text>
+          </View>
+          <View style={s.introContainer}>
+            <Text style={s.intro}>Voer hier de code van de begeleider in om verder te gaan</Text>
+          </View>
+          <View style={s.inputContainer}>
+            <TextInput
+              style={s.input} keyboardType='numeric' placeholder='0000' returnKeyType='go'
+              maxLength={4} onSubmitEditing={pin => this._matchPin(parseInt(pin))}
+              onChangeText={pin => this._matchPin(parseInt(pin))}
+            />
+          </View>
       </LinearGradient>
     );
   }

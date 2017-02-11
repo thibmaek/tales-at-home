@@ -20,13 +20,14 @@ export default class Setup extends Component {
   }
 
   render() {
-    const { action, title } = this.props.authType;
+    const { action, title, actionTitle } = this.props.authType;
 
     return (
       <View style={s.container}>
         <StatusBar hidden={true} />
         <View style={s.view}>
-          <AuthType action={action} title={title} {...this.props.authType} />
+          <AuthType action={action}
+            title={title} actionTitle={actionTitle} {...this.props.authType} />
         </View>
       </View>
     );
