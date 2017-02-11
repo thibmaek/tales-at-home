@@ -44,16 +44,16 @@
      backgroundColor: `transparent`,
      borderBottomColor: white, borderBottomWidth: 0.5, borderStyle: `solid`,
    },
+   underlineLink: {
+     marginBottom: 50,
+     ...globalStyle, fontSize: 14, textDecorationLine: `underline`,
+     backgroundColor: `transparent`, color: white,
+   },
    textLink: {
      marginTop: 20,
      ...globalStyle, ...fontIsLabel, fontWeight: `normal`, fontSize: 14,
      backgroundColor: `transparent`,
      color: white,
-   },
-   underlineLink: {
-     marginBottom: 50,
-     ...globalStyle, fontSize: 11, textDecorationLine: `underline`,
-     backgroundColor: `transparent`, color: white,
    },
    warning: {
      marginTop: 20, marginBottom: 20,
