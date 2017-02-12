@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import { Loading, Families, Results, NewFamily } from 'src/containers/';
@@ -44,9 +44,21 @@ export default class Dashboard extends Component {
     this.setState({ selectedFamily });
   }
 
-  _renderLoading = () => <Loading title='Families aan het ophalen…' />
+  _renderLoading () {
+    setTimeout(() => {
+      this.setState({
+        noFamilies: true,
+      });
+    }, 10000);
+
+    return (
+      <Loading title='Families aan het ophalen…' />
+    );
+  }
 
   _renderSidebar() {
+    const { noFamilies } = this.state;
+
     const NEUTRAL_TYPE = {
       type: `neutral`,
       text: `nieuw gezin aanmaken`,
@@ -55,13 +67,18 @@ export default class Dashboard extends Component {
 
     return (
       !this.props.addFamily
-        ? <Sidebar action={NEUTRAL_TYPE}>
-            <Families
-              style={sSidebar.children}
-              families={this.state.families}
-              selectedFamily={this.state.selectedFamily}
-              didSelectFamily={key => this._setSelectedFamily(key)}
-            />
+        ? <Sidebar action={NEUTRAL_TYPE} style={s.sidebar}>
+            { noFamilies
+              ? <View style={s.noFamily}>
+                  <Text style={s.noFamilyText}>Momenteel zijn er geen gezinnen</Text>
+                </View>
+              : <Families
+                  style={sSidebar.children}
+                  families={this.state.families}
+                  selectedFamily={this.state.selectedFamily}
+                  didSelectFamily={key => this._setSelectedFamily(key)}
+                />
+            }
           </Sidebar>
         : <Sidebar><NewFamily /></Sidebar>
     );
