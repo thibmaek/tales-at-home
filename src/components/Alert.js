@@ -5,8 +5,8 @@ import DynamicButton from 'rndynamicbutton';
 import s from 'src/assets/styles/components/Alert';
 import cross from 'src/assets/img/icons/cross@2x.png';
 
-const Alert = ({ action, title, children, side, closeAction }) => (
-  <View style={side === `left` ? s.containerLeft : s.containerRight}>
+const Alert = ({ action, title, children, closeAction }) => (
+  <View style={s.container}>
     <View style={s.alertContainer}>
       <Text style={s.title}>{ title }</Text>
       { children ? <Text style={s.message}>{ children }</Text> : null }

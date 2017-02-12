@@ -13,13 +13,9 @@ const globalContainer = {
 };
 
 export default StyleSheet.create({
-  containerLeft: {
+  container: {
     ...globalContainer,
     left: 0,
-  },
-  containerRight: {
-    ...globalContainer,
-    right: 0,
   },
   alertContainer: {
     flexDirection: `column`, alignItems: `center`, justifyContent: `center`,

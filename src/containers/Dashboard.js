@@ -114,7 +114,6 @@ export default class Dashboard extends Component {
         <Alert
           title='Uitloggen'
           action={LOGOUT_ACTION}
-          side='right'
           closeAction={() => this._closeAlert()}>
           Door af te melden heb je geen toegang tot alle huidige sessies & resultaten.
           Ben je zeker dat je wilt doorgaan?
@@ -122,9 +121,11 @@ export default class Dashboard extends Component {
       );
     case `Archiveren`:
       return (
-        <Alert title='Archiveren' action={ARCHIVE_ACTION} side='right'>
-          Door af te melden heb je geen toegang tot alle huidige sessies & resultaten.
-          Ben je zeker dat je wilt doorgaan?
+        <Alert
+          title='Archiveren'
+          action={ARCHIVE_ACTION}
+          closeAction={() => this._closeAlert()}>
+          U kunt deze later steeds terugvinden onder 'gearchiveerde gezinnen'.
         </Alert>
       );
     default:
