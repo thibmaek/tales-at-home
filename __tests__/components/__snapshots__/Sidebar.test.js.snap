@@ -4,7 +4,7 @@ exports[`Sidebar <Prop:title> 1`] = `
     Object {
       "backgroundColor": "rgba(255, 255, 255, 1)",
       "flexDirection": "column",
-      "justifyContent": "space-around",
+      "justifyContent": "space-between",
       "minWidth": 276,
       "shadowColor": "rgb(188, 188, 188)",
       "shadowOffset": Object {
@@ -48,7 +48,7 @@ exports[`Sidebar 1`] = `
     Object {
       "backgroundColor": "rgba(255, 255, 255, 1)",
       "flexDirection": "column",
-      "justifyContent": "space-around",
+      "justifyContent": "space-between",
       "minWidth": 276,
       "shadowColor": "rgb(188, 188, 188)",
       "shadowOffset": Object {
@@ -67,7 +67,7 @@ exports[`Sidebar: Wrapping 1`] = `
     Object {
       "backgroundColor": "rgba(255, 255, 255, 1)",
       "flexDirection": "column",
-      "justifyContent": "space-around",
+      "justifyContent": "space-between",
       "minWidth": 276,
       "shadowColor": "rgb(188, 188, 188)",
       "shadowOffset": Object {
@@ -86,7 +86,7 @@ exports[`Sidebar: Wrapping children 1`] = `
     Object {
       "backgroundColor": "rgba(255, 255, 255, 1)",
       "flexDirection": "column",
-      "justifyContent": "space-around",
+      "justifyContent": "space-between",
       "minWidth": 276,
       "shadowColor": "rgb(188, 188, 188)",
       "shadowOffset": Object {
