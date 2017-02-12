@@ -11,7 +11,6 @@ import Note from 'src/components/Note';
 import Preloader from 'src/components/Preloader';
 import Sidebar from 'src/components/Sidebar';
 import SessionDetails from 'src/components/SessionDetails';
-import SessionOptionList from 'src/components/SessionOptionList';
 import SessionOption from 'src/components/SessionOption';
 import User from 'src/components/User';
 
@@ -28,7 +27,6 @@ export {
   Note,
   Preloader,
   SessionDetails,
-  SessionOptionList,
   SessionOption,
   Sidebar,
   User,

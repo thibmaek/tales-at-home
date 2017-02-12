@@ -7,6 +7,7 @@ import NewFamily from 'src/containers/NewFamily';
 import Results from 'src/containers/Results';
 import Setup from 'src/containers/Setup';
 import UserPicker from 'src/containers/UserPicker';
+import SessionContainer from 'src/containers/SessionContainer';
 
 export {
   App,
@@ -18,4 +19,5 @@ export {
   Results,
   Setup,
   UserPicker,
+  SessionContainer,
 };

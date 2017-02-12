@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { View, TouchableHighlight, Text } from 'react-native';
 import DynamicButton from 'rndynamicbutton';
 
-import { AddNote, SessionOptionList } from 'src/components/';
+import { AddNote } from 'src/components/';
+import { SessionContainer } from 'src/containers/';
 
 import s from 'src/assets/styles/components/ActionMenu';
 
@@ -12,7 +13,7 @@ export default class ActionMenu extends Component {
     this.state = {
       displayActionButton: true,
       displayMenuOptions: false,
-      displaySessionOptions: false,
+      displaySessionContainer: false,
       displayNoteInput: false,
     };
   }
@@ -23,10 +24,10 @@ export default class ActionMenu extends Component {
     });
   }
 
-  _handleToggleSessionOptionList() {
+  _handleToggleSessionContainer() {
     this.setState({
       displayMenuOptions: false,
-      displaySessionOptions: !this.state.displaySessionOptions,
+      displaySessionContainer: !this.state.displaySessionContainer,
     });
   }
 
@@ -45,16 +46,16 @@ export default class ActionMenu extends Component {
     });
   }
 
-  _handleCloseSessionList() {
+  _handleCloseSessionContainer() {
     this.setState({
       displayActionButton: true,
-      displaySessionOptions: !this.state.displaySessionOptions,
+      displaySessionContainer: !this.state.displaySessionContainer,
     });
   }
 
   render() {
     const {
-      displayMenuOptions, displayNoteInput, displayActionButton, displaySessionOptions,
+      displayMenuOptions, displayNoteInput, displayActionButton, displaySessionContainer,
     } = this.state;
 
     return (
@@ -65,7 +66,7 @@ export default class ActionMenu extends Component {
                 touchable='highlight'
                 style={s.button}
                 textStyle={s.buttonText}
-                action={() => this._handleToggleSessionOptionList()}
+                action={() => this._handleToggleSessionContainer()}
               >
                 Nieuwe sessie starten
               </DynamicButton>
@@ -86,8 +87,8 @@ export default class ActionMenu extends Component {
           : null
         }
 
-        {displaySessionOptions
-          ? <SessionOptionList onClose={() => this._handleCloseSessionList()} />
+        {displaySessionContainer
+          ? <SessionContainer onClose={() => this._handleCloseSessionContainer()} />
           : null
         }
 
