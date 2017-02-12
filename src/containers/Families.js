@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { ListView, TouchableHighlight, TouchableOpacity, View, Text } from 'react-native';
 import { SwipeListView } from 'react-native-swipe-list-view';
+
 import { Database } from 'src/config/firebase';
 import { FamilyItem, Alert } from 'src/components/';
 

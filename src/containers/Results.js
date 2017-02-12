@@ -17,8 +17,10 @@ export default class Results extends Component {
   }
 
   componentDidMount() {
-    this._getNotes(this.props);
-    this._getMembers(this.props);
+    if (this.props.selectedFamily !== null) {
+      this._getNotes(this.props);
+      this._getMembers(this.props);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -91,6 +93,6 @@ export default class Results extends Component {
   }
 
   static propTypes = {
-    selectedFamily: PropTypes.string.isRequired,
+    selectedFamily: PropTypes.string,
   }
 }

@@ -31,10 +31,15 @@ export default class Dashboard extends Component {
         });
 
         let selectedFamily = null;
-        this.props.selectedFamily
-          ? selectedFamily = this.props.selectedFamily
-          : selectedFamily = families[0].key;
 
+        if (this.props.selectedFamily) {
+          selectedFamily = this.props.selectedFamily;
+        } else {
+          const obj = families.filter(f => f.active)[0];
+          obj && obj.hasOwnProperty(`key`)
+            ? selectedFamily = obj.key
+            : selectedFamily;
+        }
         this.setState({ families, selectedFamily });
       })
       .catch(e => console.error(e));
@@ -74,7 +79,7 @@ export default class Dashboard extends Component {
         { this._renderSidebar() }
         { this.props.dimmed ? <View style={s.dimmed}></View> : null }
         <Results selectedFamily={selectedFamily} />
-        <ActionMenu selectedFamily={selectedFamily} />
+        { selectedFamily ? <ActionMenu selectedFamily={selectedFamily} /> : null }
       </View>
     );
   }
