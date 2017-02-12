@@ -5,10 +5,10 @@ import { SessionOption, SessionDetails, Preloader } from 'src/components/';
 
 import { Database } from 'src/config/firebase';
 
-import s from 'src/assets/styles/components/SessionOptionList';
+import s from 'src/assets/styles/components/SessionContainer';
 import cross from 'src/assets/img/icons/cross@2x.png';
 
-export default class SessionOptionList extends Component {
+export default class SessionContainer extends Component {
   constructor(props, context) {
     super(props, context);
 
