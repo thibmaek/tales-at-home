@@ -6,7 +6,7 @@ import {
 
 export default StyleSheet.create({
   container: {
-    flex: 1, flexDirection: `row`,
+    flexDirection: `row`,
     marginTop: 10, marginBottom: 10,
     backgroundColor: white,
     borderColor: lightGray, borderWidth: 1, borderRadius: 5,

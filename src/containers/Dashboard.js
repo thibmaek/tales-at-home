@@ -8,6 +8,7 @@ import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
 import { Database } from 'src/config/firebase';
 
 import s from 'src/assets/styles/containers/Dashboard';
+import sSidebar from 'src/assets/styles/components/Sidebar';
 
 export default class Dashboard extends Component {
   constructor(props, context) {
@@ -30,10 +31,15 @@ export default class Dashboard extends Component {
         });
 
         let selectedFamily = null;
-        this.props.selectedFamily
-          ? selectedFamily = this.props.selectedFamily
-          : selectedFamily = families[0].key;
 
+        if (this.props.selectedFamily) {
+          selectedFamily = this.props.selectedFamily;
+        } else {
+          const obj = families.filter(f => f.active)[0];
+          obj && obj.hasOwnProperty(`key`)
+            ? selectedFamily = obj.key
+            : selectedFamily;
+        }
         this.setState({ families, selectedFamily });
       })
       .catch(e => console.error(e));
@@ -56,6 +62,7 @@ export default class Dashboard extends Component {
       !this.props.addFamily
         ? <Sidebar action={NEUTRAL_TYPE}>
             <Families
+              style={sSidebar.children}
               families={this.state.families}
               selectedFamily={this.state.selectedFamily}
               didSelectFamily={key => this._setSelectedFamily(key)}
@@ -72,7 +79,7 @@ export default class Dashboard extends Component {
         { this._renderSidebar() }
         { this.props.dimmed ? <View style={s.dimmed}></View> : null }
         <Results selectedFamily={selectedFamily} />
-        <ActionMenu selectedFamily={selectedFamily} />
+        { selectedFamily ? <ActionMenu selectedFamily={selectedFamily} /> : null }
       </View>
     );
   }
