@@ -7,7 +7,6 @@ import {
 const navbar = {
   flexDirection: `row`, alignItems: `center`,
   height: 50,
-  paddingRight: 20, paddingLeft: 20,
   zIndex: 2,
 };
 
@@ -28,6 +27,7 @@ export default StyleSheet.create({
   },
   title: {
     flex: 1,
+    paddingLeft: 20,
     ...globalStyle, ...fontIsHeader,
   },
   input: {
