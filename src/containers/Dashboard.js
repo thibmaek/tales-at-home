@@ -3,19 +3,32 @@ import { View, StatusBar } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import { Loading, Families, Results, NewFamily } from 'src/containers/';
-import { NavigationBar, Sidebar, ActionMenu  } from 'src/components/';
+import { NavigationBar, Sidebar, ActionMenu, Alert } from 'src/components/';
 
-import { Database } from 'src/config/firebase';
+import { Database, Auth } from 'src/config/firebase';
 
 import s from 'src/assets/styles/containers/Dashboard';
 import sSidebar from 'src/assets/styles/components/Sidebar';
+
+const LOGOUT_ACTION = {
+  title: `uitloggen`,
+  func: () => Auth.signOut().then(Actions.rootScene),
+};
+
+const ARCHIVE_ACTION = {
+  title: `Archiveer familie`,
+  func: () => this._archiveFamily(),
+};
 
 export default class Dashboard extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.ref = Database.ref(`/families`);
-    this.state = {};
+    this.ref = Database.ref(`families`);
+    this.state = {
+      displayAlert: false,
+      alertAction: null,
+    };
   }
 
   componentDidMount() {
@@ -61,6 +74,7 @@ export default class Dashboard extends Component {
               families={this.state.families}
               selectedFamily={this.state.selectedFamily}
               didSelectFamily={key => this._setSelectedFamily(key)}
+              onPress={() => this._toggleAlert()}
             />
           </Sidebar>
         : <Sidebar><NewFamily /></Sidebar>
@@ -79,11 +93,52 @@ export default class Dashboard extends Component {
     );
   }
 
+  _toggleAlert() {
+    this.setState({
+      alertAction: `Uitloggen`,
+      displayAlert: !this.state.displayAlert,
+    });
+  }
+
+  _closeAlert() {
+    this.setState({
+      alertAction: null,
+      displayAlert: !this.state.displayAlert,
+    });
+  }
+
+  _renderAlert(action) {
+    switch (action) {
+    case `Uitloggen`:
+      return (
+        <Alert
+          title='Uitloggen'
+          action={LOGOUT_ACTION}
+          closeAction={() => this._closeAlert()}>
+          Door af te melden heb je geen toegang tot alle huidige sessies & resultaten.
+          Ben je zeker dat je wilt doorgaan?
+        </Alert>
+      );
+    case `Archiveren`:
+      return (
+        <Alert
+          title='Archiveren'
+          action={ARCHIVE_ACTION}
+          closeAction={() => this._closeAlert()}>
+          U kunt deze later steeds terugvinden onder 'gearchiveerde gezinnen'.
+        </Alert>
+      );
+    default:
+      return null;
+    }
+  }
+
   render() {
     return (
       <View style={s.container}>
         <StatusBar hidden={true} />
-        <NavigationBar title='Dashboard' action='SEARCH' />
+        {this._renderAlert(this.state.alertAction)}
+        <NavigationBar title='Dashboard' action='SEARCH' onPress={() => this._toggleAlert()} />
         { this.state.families  ? this._renderView() : this._renderLoading() }
       </View>
     );

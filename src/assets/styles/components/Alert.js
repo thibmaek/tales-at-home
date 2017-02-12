@@ -13,13 +13,9 @@ const globalContainer = {
 };
 
 export default StyleSheet.create({
-  containerLeft: {
+  container: {
     ...globalContainer,
     left: 0,
-  },
-  containerRight: {
-    ...globalContainer,
-    right: 0,
   },
   alertContainer: {
     flexDirection: `column`, alignItems: `center`, justifyContent: `center`,
@@ -27,10 +23,13 @@ export default StyleSheet.create({
     backgroundColor: white,
     borderRadius: 5,
   },
-  cross: {
-    width: 15, height: 15,
+  crossContainer: {
+    width: 15, height: 15, maxWidth: 15, maxHeight: 15,
     position: `absolute`, top: 18, right: 18,
     zIndex: 2,
+  },
+  cross: {
+    width: 15, height: 15, maxWidth: 15, maxHeight: 15,
   },
   title: {
     width: 420,

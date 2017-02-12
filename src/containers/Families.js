@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ListView, TouchableHighlight, TouchableOpacity, View, Text } from 'react-native';
+import { ListView, TouchableHighlight, View, Text } from 'react-native';
 import { SwipeListView } from 'react-native-swipe-list-view';
 import { Database } from 'src/config/firebase';
 import { FamilyItem, Alert } from 'src/components/';
@@ -58,14 +58,12 @@ export default class Families extends Component {
   render() {
     return (
       <View style={this.props.style}>
-        <TouchableOpacity onPress={() => this._toggleAlert()}>
-          {this.state.showArchiveAlert
-            ? <Alert title='Gezin archiveren?' action={this.ARCHIVE_ACTION} side='left'>
-                U kunt deze later steeds terugvinden onder 'gearchiveerde gezinnen'.
-              </Alert>
-            : null
-          }
-        </TouchableOpacity>
+        {this.state.showArchiveAlert
+          ? <Alert title='Gezin archiveren?' action={this.ARCHIVE_ACTION} side='left'>
+              U kunt deze later steeds terugvinden onder 'gearchiveerde gezinnen'.
+            </Alert>
+          : null
+        }
         <SwipeListView dataSource={this.ds.cloneWithRows(this.state.active)}
           renderRow={family => (
             <TouchableHighlight

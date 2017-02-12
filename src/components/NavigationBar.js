@@ -36,7 +36,7 @@ const _getAction = (action, actionTitle) => {
   }
 };
 
-const NavigationBar = ({ transparent, title, action, actionTitle }) => (
+const NavigationBar = ({ transparent, title, action, actionTitle, onPress }) => (
   <View style={transparent ? s.transparentNavbar : s.navbar}>
     <View style={s.leftNav}>
       { title === `Dashboard`
@@ -44,7 +44,9 @@ const NavigationBar = ({ transparent, title, action, actionTitle }) => (
         : null }
       { action ? _getAction(action, actionTitle) : null }
     </View>
-    { title === `Dashboard` ? <User style={s.user} name={Auth.currentUser.email} /> : null }
+    { title === `Dashboard`
+      ? <User style={s.user} name={Auth.currentUser.email} onPress={onPress} />
+      : null }
   </View>
 );
 
@@ -54,6 +56,7 @@ NavigationBar.propTypes = {
   title: PropTypes.string,
   actionTitle: PropTypes.string,
   action: PropTypes.string,
+  onPress: PropTypes.func,
 };
 
 export default NavigationBar;

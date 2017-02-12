@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import DynamicButton from 'rndynamicbutton';
 
 import s from 'src/assets/styles/components/Alert';
 import cross from 'src/assets/img/icons/cross@2x.png';
 
-const Alert = ({ action, title, children, side }) => (
-  <View style={side === `left` ? s.containerLeft : s.containerRight}>
+const Alert = ({ action, title, children, closeAction }) => (
+  <View style={s.container}>
     <View style={s.alertContainer}>
       <Text style={s.title}>{ title }</Text>
       { children ? <Text style={s.message}>{ children }</Text> : null }
@@ -20,7 +20,9 @@ const Alert = ({ action, title, children, side }) => (
           </DynamicButton>
         : null
       }
-      <Image source={cross} style={s.cross} />
+      <TouchableOpacity onPress={closeAction} style={s.crossContainer}>
+        <Image source={cross} style={s.cross} />
+      </TouchableOpacity>
     </View>
   </View>
 );
@@ -30,6 +32,7 @@ Alert.propTypes = {
   action: PropTypes.object,
   children: PropTypes.string,
   side: PropTypes.string,
+  closeAction: PropTypes.func,
 };
 
 export default Alert;
