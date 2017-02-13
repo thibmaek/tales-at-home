@@ -57,7 +57,6 @@ export default class Families extends Component {
   shouldHighlight = key => key === this.props.selectedFamily ? true : false
 
   render() {
-    console.log(this.state.active);
     return (
       <View style={this.props.style}>
         {this.state.active.length > 0

@@ -50,8 +50,6 @@ export const s = StyleSheet.create({
     marginBottom: 50,
   },
   noNotesText: {
-    //flex: 1,
-    //alignItems: `center`, justifyContent: `center`,
     marginTop: 43,
     ...globalStyle,
   },
