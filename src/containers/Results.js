@@ -87,7 +87,10 @@ export default class Results extends Component {
     return (
       <View style={s.container}>
         {this.state.members ? this._renderMembers() : null}
-        {this.state.notes && this.state.notes.length > 0 ? this._renderNotes() : null}
+        {this.state.notes && this.state.notes.length > 0
+          ? this._renderNotes()
+          : <Text style={s.noNotesText}>Er zijn nog geen notities toegevoegd aan dit gezin.</Text>
+        }
       </View>
     );
   }

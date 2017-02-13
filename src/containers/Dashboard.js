@@ -58,6 +58,8 @@ export default class Dashboard extends Component {
       handler: Actions.dashboardScene_new,
     };
 
+    console.log(this.state.families);
+
     return (
       !this.props.addFamily
         ? <Sidebar action={NEUTRAL_TYPE}>

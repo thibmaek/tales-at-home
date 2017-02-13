@@ -10,6 +10,7 @@ export default StyleSheet.create({
     shadowColor: shadowColorGray, shadowOffset: { width: 2.5, height: 5 }, shadowOpacity: .5,
   },
   children: {
+    alignItems: `center`,
     flex: 10,
   },
   buttonBg: {

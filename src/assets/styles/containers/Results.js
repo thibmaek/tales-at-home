@@ -38,6 +38,7 @@ export const familyMember = {
 export const s = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: `center`,
   },
   familyMembers: {
     flexDirection: `row`, justifyContent: `center`,
@@ -47,5 +48,11 @@ export const s = StyleSheet.create({
     flex: 1,
     marginTop: 43,
     marginBottom: 50,
+  },
+  noNotesText: {
+    //flex: 1,
+    //alignItems: `center`, justifyContent: `center`,
+    marginTop: 43,
+    ...globalStyle,
   },
 });
