@@ -9,6 +9,7 @@
     "start:iphone": "react-native run-ios --simulator=\"iPhone SE\"",
     "start:ipad": "react-native run-ios --simulator=\"iPad Air\"",
     "release:ipad": "npm run start:ipad -- --configuration Release",
+    "open:simulator": "open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/",
     "test": "jest",
     "test:update": "npm t -- --updateSnapshot",
     "test:coverage": "npm t -- --coverage",
