@@ -59,38 +59,43 @@ export default class Families extends Component {
   render() {
     return (
       <View style={this.props.style}>
-        <TouchableOpacity onPress={() => this._toggleAlert()}>
-          {this.state.showArchiveAlert
-            ? <Alert title='Gezin archiveren?' action={this.ARCHIVE_ACTION} side='left'>
-                U kunt deze later steeds terugvinden onder 'gearchiveerde gezinnen'.
-              </Alert>
-            : null
-          }
-        </TouchableOpacity>
-        <SwipeListView dataSource={this.ds.cloneWithRows(this.state.active)}
-          renderRow={family => (
-            <TouchableHighlight
-              onPress={() => this.props.didSelectFamily(family.key)}
-              underlayColor={highLightNeutral}
-            >
-              <FamilyItem
-                key={family.key}
-                shouldHighlight={this.shouldHighlight(family.key)}
-                {...family}
+        {this.state.active.length > 0
+          ? <View>
+              <TouchableOpacity onPress={() => this._toggleAlert()}>
+                {this.state.showArchiveAlert
+                  ? <Alert title='Gezin archiveren?' action={this.ARCHIVE_ACTION} side='left'>
+                      U kunt deze later steeds terugvinden onder 'gearchiveerde gezinnen'.
+                    </Alert>
+                  : null
+                }
+              </TouchableOpacity>
+              <SwipeListView dataSource={this.ds.cloneWithRows(this.state.active)}
+                renderRow={family => (
+                  <TouchableHighlight
+                    onPress={() => this.props.didSelectFamily(family.key)}
+                    underlayColor={highLightNeutral}
+                  >
+                    <FamilyItem
+                      key={family.key}
+                      shouldHighlight={this.shouldHighlight(family.key)}
+                      {...family}
+                    />
+                  </TouchableHighlight>
+                )}
+                renderHiddenRow={(family, secId, rowId, rowMap) => (
+                  <View style={s.archiveRow}>
+                    <TouchableHighlight style={s.archiveButton} underlayColor={accentYellow}
+                      onPress={() => this._toggleAlert(family.key, secId, rowId, rowMap)}>
+                      <Text style={s.buttonText}>Archiveren</Text>
+                    </TouchableHighlight>
+                  </View>
+                )}
+                disableRightSwipe
+                rightOpenValue={- 85}
               />
-            </TouchableHighlight>
-          )}
-          renderHiddenRow={(family, secId, rowId, rowMap) => (
-            <View style={s.archiveRow}>
-              <TouchableHighlight style={s.archiveButton} underlayColor={accentYellow}
-                onPress={() => this._toggleAlert(family.key, secId, rowId, rowMap)}>
-                <Text style={s.buttonText}>Archiveren</Text>
-              </TouchableHighlight>
             </View>
-          )}
-          disableRightSwipe
-          rightOpenValue={- 85}
-        />
+          : <Text style={s.noFamiliesText}>U heeft geen actieve gezinnen</Text>
+        }
       </View>
     );
   }
