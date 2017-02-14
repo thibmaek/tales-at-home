@@ -21,6 +21,7 @@ export default StyleSheet.create({
     marginBottom: 30,
   },
   intro: {
+    marginBottom: 20,
     ...globalStyle, fontSize: 16, lineHeight: 24, textAlign: `center`,
     color: white, backgroundColor: `transparent`,
   },
@@ -31,5 +32,9 @@ export default StyleSheet.create({
   input: {
     height: 40,
     ...globalStyle, ...fontIsTitle,
+  },
+  awaiting: {
+    flex: 1,
+    alignItems: `center`,
   },
 });

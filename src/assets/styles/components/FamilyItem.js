@@ -47,4 +47,8 @@ export default StyleSheet.create({
     ...globalStyle,
     color: white,
   },
+  noFamiliesText: {
+    marginTop: 43,
+    ...globalStyle,
+  },
 });
