@@ -8,6 +8,7 @@
     "start:packager": "node node_modules/react-native/local-cli/cli.js start",
     "start:iphone": "react-native run-ios --simulator=\"iPhone SE\"",
     "start:ipad": "react-native run-ios --simulator=\"iPad Air\"",
+    "release:generic": "react-native run-ios --configuration Release",
     "release:ipad": "npm run start:ipad -- --configuration Release",
     "open:simulator": "open -n /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/",
     "test": "jest",

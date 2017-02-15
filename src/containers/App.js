@@ -8,7 +8,7 @@ import { NavigationBar } from 'src/components/';
 /* eslint-disable max-len*/
 const App = () => (
   <Router hideNavBar={true}>
-    <Scene key='rootScene' component={UserPicker} initial={true} />
+    <Scene key='rootScene' component={UserPicker} initial />
     <Scene key='connectionScene' action='BACK' component={Connect} actionTitle='terug naar het keuzemenu' hideNavBar={false} navBar={NavigationBar} />
     <Scene key='setupScene' action='BACKTOROOT' component={Setup} hideNavBar={false} actionTitle='terug naar het keuzemenu' title='Registreren' navBar={NavigationBar} navigate='BACK' />
     <Scene key='dashboardScene' component={Dashboard} title='Dashboard' type='reset' />
@@ -16,6 +16,8 @@ const App = () => (
     <Scene key='sessionSwiping'>
       <Scene key='swipeInitial' component={Swiping} step='select' />
       <Scene key='swipeUp' component={Swiping} step='swipe' />
+      <Scene key='swipeAwaiting' component={Swiping} step='awaiting' />
+      <Scene key='swipeReceived' component={Swiping} step='received' />
     </Scene>
   </Router>
 );
