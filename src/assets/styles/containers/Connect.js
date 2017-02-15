@@ -17,7 +17,7 @@ export default StyleSheet.create({
     color: white, backgroundColor: `transparent`,
   },
   introContainer: {
-    width: 200,
+    width: 300,
     marginBottom: 30,
   },
   intro: {
@@ -31,6 +31,7 @@ export default StyleSheet.create({
   },
   input: {
     height: 40,
+    marginTop: 20,
     ...globalStyle, ...fontIsTitle,
   },
   awaiting: {

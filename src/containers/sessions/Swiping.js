@@ -6,6 +6,8 @@ import DynamicButton from 'rndynamicbutton';
 
 import { Flag, RateCard } from 'src/components/';
 
+import { Database } from 'src/config/firebase';
+
 import s from 'src/assets/styles/containers/sessions/Swiping';
 import upperCase from 'src/lib/upperCaseString';
 
@@ -15,6 +17,7 @@ export default class Swiping extends Component {
 
     BluetoothCP.advertise(`WIFI-BT`);
 
+    this.ref = Database.ref(`/results`);
     this.state = {
       animation: new Animated.Value(0),
       langs: [
@@ -30,7 +33,9 @@ export default class Swiping extends Component {
     BluetoothCP.getNearbyPeers(peers => console.log(peers));
     if (this.props.step === `awaiting`) {
       setTimeout(() => Actions.swipeReceived({
-        dimmed: true, received: this.props.received,
+        dimmed: true,
+        received: this.props.received,
+        name: this.props.name,
       }), 2000);
     }
   }
@@ -41,11 +46,20 @@ export default class Swiping extends Component {
     this.state.received = [...this.state.received, lang, this.state.langs[2]]; //eslint-disable-line
     console.log(this.state);
 
-    setTimeout(() => Actions.swipeAwaiting({ dimmed: true, received: this.state.received }), 200);
+    setTimeout(() => Actions.swipeAwaiting({
+      dimmed: true,
+      received: this.state.received,
+      name: this.props.name,
+    }), 200);
   }
 
-  _didRate() {
-
+  _didRate(rating) {
+    this.ref.push({
+      name: this.props.name,
+      lang: this.props.received[1],
+      rating,
+    }).then(res => console.log(res))
+    .catch(e => console.error(e.msg));
   }
 
   _renderControl() {
@@ -67,7 +81,10 @@ export default class Swiping extends Component {
             touchable='highlight'
             style={s.button}
             textStyle={s.buttonText}
-            action={() => Actions.swipeInitial({ direction: `leftToRight` })}>
+            action={() => Actions.swipeInitial({
+              direction: `leftToRight`,
+              name: this.props.name,
+            })}>
             Mijn keuze veranderen
           </DynamicButton>
         </View>
@@ -98,6 +115,7 @@ export default class Swiping extends Component {
               <TouchableOpacity key={lang.name} onPress={() => Actions.swipeUp({
                 selected: lang,
                 dimmed: true,
+                name: this.props.name,
               })}>
                 <Flag {...lang} />
               </TouchableOpacity>
@@ -134,5 +152,6 @@ export default class Swiping extends Component {
     selected: PropTypes.object,
     received: PropTypes.array,
     dimmed: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
   }
 }
