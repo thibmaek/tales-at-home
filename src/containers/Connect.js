@@ -73,8 +73,7 @@ export default class Connect extends Component {
         <View style={s.titleContainer}>
           <Text style={s.title}>{`Voer de connectiepin in`.toUpperCase()}</Text>
         </View>
-        {/* { this.state.pin ? this._renderInput() : this._renderWaiting() } */}
-        {this._renderInput()}
+        { this.state.pin ? this._renderInput() : this._renderWaiting() }
       </LinearGradient>
     );
   }
