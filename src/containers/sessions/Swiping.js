@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Animated } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import BluetoothCP from 'react-native-bluetooth-cross-platform';
 import DynamicButton from 'rndynamicbutton';
 
-import { Flag } from 'src/components/';
+import { Flag, RateCard } from 'src/components/';
 
 import s from 'src/assets/styles/containers/sessions/Swiping';
 import upperCase from 'src/lib/upperCaseString';
@@ -16,16 +16,36 @@ export default class Swiping extends Component {
     BluetoothCP.advertise(`WIFI-BT`);
 
     this.state = {
+      animation: new Animated.Value(0),
       langs: [
         { uri: require(`src/assets/img/flags/flag_be.png`), name: `Vlaams` },
         { uri: require(`src/assets/img/flags/flag_fr.png`), name: `Frans` },
         { uri: require(`src/assets/img/flags/flag_deu.png`), name: `Deutsch` },
       ],
+      received: [],
     };
   }
 
   componentDidMount() {
     BluetoothCP.getNearbyPeers(peers => console.log(peers));
+    if (this.props.step === `awaiting`) {
+      setTimeout(() => Actions.swipeReceived({
+        dimmed: true, received: this.props.received,
+      }), 2000);
+    }
+  }
+
+  _delegateSwipes(lang) {
+    Animated.timing(this.state.animation, { toValue: - 768 }).start();
+
+    this.state.received = [...this.state.received, lang, this.state.langs[2]]; //eslint-disable-line
+    console.log(this.state);
+
+    setTimeout(() => Actions.swipeAwaiting({ dimmed: true, received: this.state.received }), 200);
+  }
+
+  _didRate() {
+
   }
 
   _renderControl() {
@@ -34,10 +54,14 @@ export default class Swiping extends Component {
       return (
         <View style={s.swipe}>
           <Text style={s.swipeTitle}>{this.props.selected.name}</Text>
-          <Flag
-            uri={this.props.selected.uri}
-            subStyle={s.swipeImage}
-          />
+          <TouchableOpacity onPress={() => this._delegateSwipes(this.props.selected.name)}>
+            <Flag
+              uri={this.props.selected.uri}
+              subStyle={[s.swipeImage, {
+                transform: [{ translateY: this.state.animation }] },
+              ]}
+            />
+          </TouchableOpacity>
           <Text style={s.swipeAction}>{upperCase(`Swipe omhoog!`)}</Text>
           <DynamicButton
             touchable='highlight'
@@ -46,6 +70,24 @@ export default class Swiping extends Component {
             action={() => Actions.swipeInitial({ direction: `leftToRight` })}>
             Mijn keuze veranderen
           </DynamicButton>
+        </View>
+      );
+    case `awaiting`:
+      return (
+        <View style={s.swipe}>
+          <Text style={s.swipeTitle}>Aan het wachten op andere gezinsleden…</Text>
+        </View>
+      );
+    case `received`:
+      return (
+        <View style={s.swipe}>
+          <Text style={[s.swipeTitle, { marginTop: 150 }]}>{this.props.received[1].name}</Text>
+          <Flag uri={this.props.received[1].uri} subStyle={s.swipeImage} />
+          <View style={s.rateCardContainer}>
+            <RateCard type='negative' onPress={() => this._didRate(- 1)} />
+            <RateCard type='neutral' onPress={() => this._didRate(0)} />
+            <RateCard type='positive' onPress={() => this._didRate(1)} />
+          </View>
         </View>
       );
     default:
@@ -90,6 +132,7 @@ export default class Swiping extends Component {
     case: PropTypes.object.isRequired,
     step: PropTypes.string.isRequired,
     selected: PropTypes.object,
+    received: PropTypes.array,
     dimmed: PropTypes.bool.isRequired,
   }
 }
