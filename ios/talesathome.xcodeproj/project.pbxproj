@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -39,6 +38,7 @@
 		C3DCB8F71E478BF500EF8ABB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCB8EC1E478BF500EF8ABB /* User.swift */; };
 		C3DCB8FC1E478F7300EF8ABB /* ProtocolBuffers.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3DCB8E11E478BF500EF8ABB /* ProtocolBuffers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3DCB8FD1E478F7300EF8ABB /* Underdark.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C3DCB8E21E478BF500EF8ABB /* Underdark.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41A4A19FBB714C579DA6AFB4 /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA62BAB48B8C469ABDFC376A /* libRCTVideo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +285,8 @@
 		C3DCB8EA1E478BF500EF8ABB /* ReactNearbyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactNearbyProtocol.swift; sourceTree = "<group>"; };
 		C3DCB8EB1E478BF500EF8ABB /* TransportHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportHandler.swift; sourceTree = "<group>"; };
 		C3DCB8EC1E478BF500EF8ABB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B9CBF5B73FB943A2B6EF0FFA /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		CA62BAB48B8C469ABDFC376A /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 				AAFA2A337C614255AACE27E5 /* libBVLinearGradient.a in Frameworks */,
 				C3DCB8ED1E478BF500EF8ABB /* ProtocolBuffers.framework in Frameworks */,
 				C3DCB8EE1E478BF500EF8ABB /* Underdark.framework in Frameworks */,
+				41A4A19FBB714C579DA6AFB4 /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +462,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				61F52B2871954DCCBF6B288F /* BVLinearGradient.xcodeproj */,
+				B9CBF5B73FB943A2B6EF0FFA /* RCTVideo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -569,7 +573,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = 8JFDJTA7JN;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 820;
 					};
 				};
 			};
@@ -929,6 +933,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/talesathome.app/talesathome";
@@ -946,6 +951,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
