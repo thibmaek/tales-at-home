@@ -11,7 +11,9 @@ export default class Connect extends Component {
     super(props, context);
 
     BlueToothCP.advertise(`WIFI`);
-    this.state = {};
+    this.state = {
+      pin: 8310,
+    };
   }
 
   componentDidMount() {

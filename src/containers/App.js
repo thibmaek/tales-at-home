@@ -18,6 +18,7 @@ const App = () => (
       <Scene key='swipeUp' component={Swiping} step='swipe' />
       <Scene key='swipeAwaiting' component={Swiping} step='awaiting' />
       <Scene key='swipeReceived' component={Swiping} step='received' />
+      <Scene key='swipeComplete' component={Swiping} step='completed' dimmed />
     </Scene>
   </Router>
 );

@@ -58,7 +58,7 @@ export default class Swiping extends Component {
       name: this.props.name,
       lang: this.props.received[1],
       rating,
-    }).then(res => console.log(res))
+    }).then(Actions.swipeComplete())
     .catch(e => console.error(e.msg));
   }
 
@@ -105,6 +105,15 @@ export default class Swiping extends Component {
             <RateCard type='neutral' onPress={() => this._didRate(0)} />
             <RateCard type='positive' onPress={() => this._didRate(1)} />
           </View>
+        </View>
+      );
+    case `completed`:
+      return (
+        <View style={s.swipe}>
+          <Text style={s.swipeTitle}>
+            Klaar, nu nog eventjes wachten op de rest…
+          </Text>
+          <Image source={require(`src/assets/img/chars/professionalChar.png`)} />
         </View>
       );
     default:
