@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, Image, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, TouchableOpacity, Animated } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import BluetoothCP from 'react-native-bluetooth-cross-platform';
 import DynamicButton from 'rndynamicbutton';
+import Video from 'react-native-video';
 
 import { Flag, RateCard } from 'src/components/';
 
@@ -26,11 +27,11 @@ export default class Swiping extends Component {
         { uri: require(`src/assets/img/flags/flag_deu.png`), name: `Deutsch` },
       ],
       received: [],
+      caseNumber: 0,
     };
   }
 
   componentDidMount() {
-    BluetoothCP.getNearbyPeers(peers => console.log(peers));
     if (this.props.step === `awaiting`) {
       setTimeout(() => Actions.swipeReceived({
         dimmed: true,
@@ -44,7 +45,6 @@ export default class Swiping extends Component {
     Animated.timing(this.state.animation, { toValue: - 768 }).start();
 
     this.state.received = [...this.state.received, lang, this.state.langs[2]]; //eslint-disable-line
-    console.log(this.state);
 
     setTimeout(() => Actions.swipeAwaiting({
       dimmed: true,
@@ -58,8 +58,7 @@ export default class Swiping extends Component {
       name: this.props.name,
       lang: this.props.received[1],
       rating,
-    }).then(res => console.log(res))
-    .catch(e => console.error(e.msg));
+    }).catch(e => console.error(e.msg));
   }
 
   _renderControl() {
@@ -81,10 +80,11 @@ export default class Swiping extends Component {
             touchable='highlight'
             style={s.button}
             textStyle={s.buttonText}
-            action={() => Actions.swipeInitial({
-              direction: `leftToRight`,
-              name: this.props.name,
-            })}>
+            action={() => {
+              Actions.swipeInitial({
+                direction: `leftToRight`,
+                name: this.props.name,
+              });}}>
             Mijn keuze veranderen
           </DynamicButton>
         </View>
@@ -112,11 +112,13 @@ export default class Swiping extends Component {
         <View style={s.bar}>
           <View style={s.langs}>
             {this.state.langs.map(lang =>
-              <TouchableOpacity key={lang.name} onPress={() => Actions.swipeUp({
-                selected: lang,
-                dimmed: true,
-                name: this.props.name,
-              })}>
+              <TouchableOpacity key={lang.name} onPress={() => {
+                Actions.swipeUp({
+                  selected: lang,
+                  dimmed: true,
+                  name: this.props.name,
+                });
+              }}>
                 <Flag {...lang} />
               </TouchableOpacity>
             )}
@@ -130,8 +132,11 @@ export default class Swiping extends Component {
     return (
       <View style={s.container}>
         {this.props.dimmed ? <View style={s.dimmer}></View> : null}
-        <Text style={s.title}>{this.props.case.title.toUpperCase()}</Text>
-        <Image style={s.image} source={require(`src/assets/img/cases/playground.jpg`)} />
+        <Video resizeMode='cover' ref={ref => this.video = ref}
+          source={require(`src/assets/animations/playground.mp4`)}
+          playInBackground={false} playWhenInactive={false}
+          style={s.video}
+        />
         {this._renderControl()}
       </View>
     );
