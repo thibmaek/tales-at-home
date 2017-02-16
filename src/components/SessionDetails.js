@@ -41,7 +41,7 @@ export default class SessionDetails extends Component {
       displaySessionDetails: false,
     });
 
-    BlueToothCP.advertise(`WIFI`);
+    BlueToothCP.advertise(`BT`);
     this._handleDetection();
   }
 
