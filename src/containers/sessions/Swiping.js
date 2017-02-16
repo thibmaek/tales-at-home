@@ -79,11 +79,10 @@ export default class Swiping extends Component {
             touchable='highlight'
             style={s.button}
             textStyle={s.buttonText}
-            action={() => {
-              Actions.swipeInitial({
-                direction: `leftToRight`,
-                name: this.props.name,
-              });}}>
+            action={() => Actions.swipeInitial({
+              direction: `leftToRight`,
+              name: this.props.name,
+            })}>
             Mijn keuze veranderen
           </DynamicButton>
         </View>
@@ -111,13 +110,11 @@ export default class Swiping extends Component {
         <View style={s.bar}>
           <View style={s.langs}>
             {this.state.langs.map(lang =>
-              <TouchableOpacity key={lang.name} onPress={() => {
-                Actions.swipeUp({
-                  selected: lang,
-                  dimmed: true,
-                  name: this.props.name,
-                });
-              }}>
+              <TouchableOpacity key={lang.name} onPress={() => Actions.swipeUp({
+                selected: lang,
+                dimmed: true,
+                name: this.props.name,
+              })}>
                 <Flag {...lang} />
               </TouchableOpacity>
             )}
