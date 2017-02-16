@@ -105,6 +105,15 @@ export default class Swiping extends Component {
           </View>
         </View>
       );
+    case `completed`:
+      return (
+        <View style={s.swipe}>
+          <Text style={s.swipeTitle}>
+            Klaar, nu nog eventjes wachten op de rest…
+          </Text>
+          <Image source={require(`src/assets/img/chars/professionalChar.png`)} />
+        </View>
+      );
     default:
       return (
         <View style={s.bar}>
