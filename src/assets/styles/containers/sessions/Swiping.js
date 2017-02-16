@@ -15,8 +15,9 @@ export default StyleSheet.create({
     ...globalStyle, ...fontIsSubHeader,
     color: white, backgroundColor: `transparent`,
   },
-  image: {
+  video: {
     flex: 5,
+    width: 1024, height: 768,
     zIndex: - 1,
   },
   bar: {
