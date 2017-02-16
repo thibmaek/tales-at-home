@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, TouchableOpacity, Animated, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import BluetoothCP from 'react-native-bluetooth-cross-platform';
 import DynamicButton from 'rndynamicbutton';
@@ -57,7 +57,8 @@ export default class Swiping extends Component {
       name: this.props.name,
       lang: this.props.received[1],
       rating,
-    }).catch(e => console.error(e.msg));
+    }).then(Actions.swipeComplete())
+    .catch(e => console.error(e.msg));
   }
 
   _renderControl() {
