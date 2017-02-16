@@ -4,8 +4,6 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Actions } from 'react-native-router-flux';
 import BlueToothCP from 'react-native-bluetooth-cross-platform';
 
-import { Preloader } from 'src/components/';
-
 import s from 'src/assets/styles/containers/Connect';
 
 export default class Connect extends Component {
@@ -34,7 +32,7 @@ export default class Connect extends Component {
   }
 
   _matchPin = input => {
-    this.state.pin === input ? Actions.sessionSwiping() : null;
+    this.state.pin === input ? Actions.sessionSwiping({ name: this.state.name }) : null;
   };
 
   _renderInput() {
@@ -42,10 +40,15 @@ export default class Connect extends Component {
       <View>
         <View style={s.introContainer}>
           <Text style={s.intro}>
-            Voer hier de code van de begeleider in om verder te gaan
+            Voer hier je voornaam en de code van de begeleider in om verder te gaan
           </Text>
         </View>
         <View style={s.inputContainer}>
+          <TextInput
+            style={s.input} placeholder='Voornaam'
+            onSubmitEditing={name => this.setState({ name })}
+            onChangeText={name => this.setState({ name })}
+          />
           <TextInput
             style={s.input} keyboardType='numeric' placeholder='0000' returnKeyType='go'
             maxLength={4} onSubmitEditing={pin => this._matchPin(parseInt(pin))}
@@ -60,7 +63,6 @@ export default class Connect extends Component {
     return (
       <View style={s.awaiting}>
         <Text style={s.intro}>Wachten op een nieuwe sessie…</Text>
-        <Preloader size={64} />
       </View>
     );
   }

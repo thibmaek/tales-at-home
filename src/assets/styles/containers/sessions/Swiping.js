@@ -59,4 +59,11 @@ export default StyleSheet.create({
     zIndex: 2,
     backgroundColor: seeThroughBlack,
   },
+  buttonText: {
+    ...globalStyle,
+  },
+  rateCardContainer: {
+    flexDirection: `row`,
+    marginTop: 80,
+  },
 });
