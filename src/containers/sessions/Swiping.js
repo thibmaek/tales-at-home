@@ -27,7 +27,6 @@ export default class Swiping extends Component {
         { uri: require(`src/assets/img/flags/flag_deu.png`), name: `Deutsch` },
       ],
       received: [],
-      caseNumber: 0,
     };
   }
 
