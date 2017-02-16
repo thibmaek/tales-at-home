@@ -13,7 +13,7 @@ const Flag = ({ uri, name, subStyle }) => (
 Flag.propTypes = {
   uri: PropTypes.number.isRequired,
   name: PropTypes.string,
-  subStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+  subStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object, PropTypes.any]),
 };
 
 export default Flag;
