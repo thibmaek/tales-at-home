@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text, Image, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, TouchableOpacity, Animated, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import BluetoothCP from 'react-native-bluetooth-cross-platform';
 import DynamicButton from 'rndynamicbutton';
+import Video from 'react-native-video';
 
 import { Flag, RateCard } from 'src/components/';
 
@@ -30,7 +31,6 @@ export default class Swiping extends Component {
   }
 
   componentDidMount() {
-    BluetoothCP.getNearbyPeers(peers => console.log(peers));
     if (this.props.step === `awaiting`) {
       setTimeout(() => Actions.swipeReceived({
         dimmed: true,
@@ -44,7 +44,6 @@ export default class Swiping extends Component {
     Animated.timing(this.state.animation, { toValue: - 768 }).start();
 
     this.state.received = [...this.state.received, lang, this.state.langs[2]]; //eslint-disable-line
-    console.log(this.state);
 
     setTimeout(() => Actions.swipeAwaiting({
       dimmed: true,
@@ -139,8 +138,11 @@ export default class Swiping extends Component {
     return (
       <View style={s.container}>
         {this.props.dimmed ? <View style={s.dimmer}></View> : null}
-        <Text style={s.title}>{this.props.case.title.toUpperCase()}</Text>
-        <Image style={s.image} source={require(`src/assets/img/cases/playground.jpg`)} />
+        <Video resizeMode='cover' ref={ref => this.video = ref}
+          source={require(`src/assets/animations/playground.mp4`)}
+          playInBackground={false} playWhenInactive={false}
+          style={s.video}
+        />
         {this._renderControl()}
       </View>
     );

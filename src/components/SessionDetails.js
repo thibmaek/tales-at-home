@@ -41,7 +41,7 @@ export default class SessionDetails extends Component {
       displaySessionDetails: false,
     });
 
-    BlueToothCP.advertise(`WIFI`);
+    BlueToothCP.advertise(`BT`);
     this._handleDetection();
   }
 
@@ -68,7 +68,7 @@ export default class SessionDetails extends Component {
               <View style={s.inputContainer}>
                 <TextInput
                   style={s.input}
-                  placeholder='Kies een situatie'
+                  placeholder='Het speelplein'
                   returnKeyType='next'
                   placeholderTextColor={mediumGray}
                   onChangeText={email => this.setState({ email })}

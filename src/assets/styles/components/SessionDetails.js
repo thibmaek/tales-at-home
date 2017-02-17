@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import {
-  mediumGray, lightBlack, accentGreen, white, globalStyle, fontIsLabel,
+  black, mediumGray, lightBlack, accentGreen, white, globalStyle, fontIsLabel,
 } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
@@ -29,8 +29,8 @@ export default StyleSheet.create({
   input: {
     height: 30,
     ...globalStyle,
-    fontSize: 11, fontWeight: `normal`,
-    color: mediumGray,
+    fontSize: 16, fontWeight: `bold`,
+    color: black,
   },
   label: {
     marginBottom: 20, marginTop: 10,
