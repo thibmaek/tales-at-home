@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { seeThroughBlack } from 'src/assets/styles/vars';
+import { seeThroughBlack, globalStyle, lightGray } from 'src/assets/styles/vars';
 
 export default StyleSheet.create({
   container: {
@@ -19,5 +19,15 @@ export default StyleSheet.create({
   actionButton: {
     position: `absolute`,
     zIndex: 3,
+  },
+  noFamily: {
+    height: 50,
+    backgroundColor: lightGray,
+    justifyContent: `center`,
+  },
+  noFamilyText: {
+    ...globalStyle,
+    fontSize: 14,
+    textAlign: `center`,
   },
 });

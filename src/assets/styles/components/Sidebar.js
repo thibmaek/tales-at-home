@@ -3,7 +3,7 @@ import { globalStyle, accentBlue, white, shadowColorGray } from 'src/assets/styl
 
 export default StyleSheet.create({
   sidebar: {
-    flexDirection: `column`, justifyContent: `space-around`,
+    flexDirection: `column`, justifyContent: `space-between`,
     minWidth: 276,
     zIndex: 8,
     backgroundColor: white,
